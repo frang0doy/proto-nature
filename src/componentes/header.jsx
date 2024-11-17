@@ -41,23 +41,24 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
+    <header className="bg-gray-700">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              alt="Logo"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            />
-          </a>
-        </div>
+      <div className="flex lg:flex-1">
+  <a href="#" className="-m-1.5 p-1.5">
+    <span className="sr-only">Your Company</span>
+    <img
+      alt="Logo"
+      src="/logo512.png"  // Ruta relativa desde la carpeta public
+      className="h-8 w-auto"
+    />
+  </a>
+</div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -65,7 +66,7 @@ export default function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-white">
               Productos
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
             </PopoverButton>
@@ -108,18 +109,18 @@ export default function Header() {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold text-gray-900">
+          <a href="#" className="text-sm font-semibold text-white">
             Nosotros
           </a>
-          <a href="#" className="text-sm font-semibold text-gray-900">
+          <a href="#" className="text-sm font-semibold text-white">
             Acerca de
           </a>
-          <a href="#" className="text-sm font-semibold text-gray-900">
+          <a href="#" className="text-sm font-semibold text-white">
             Compania
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold text-gray-900">
+          <a href="#" className="text-sm font-semibold text-white">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
