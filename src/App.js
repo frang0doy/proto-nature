@@ -1,11 +1,9 @@
-// src/App.js
 import './App.css';
 import Header from './componentes/header';
 import Footer from './componentes/footer';
-import Slider from './componentes/slider'; // IMPORTA EL SLIDER AQUÍ
+import Slider from './componentes/slider';
+import CardSlider from './componentes/cardslider';  
 
-// Eliminar las siguientes líneas, ya que no las estás utilizando
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -15,7 +13,7 @@ function App() {
       </header>
       <main className="flex-grow">
         <Slider /> {/* Aquí está el Slider */}
-        {/* Aquí iría tu contenido */}
+        <CardSlider /> {/* Usa el CardSlider aquí */}
       </main>
       <footer className="App-footer">
         <Footer />
