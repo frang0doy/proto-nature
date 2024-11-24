@@ -1,11 +1,11 @@
 // src/App.js
-
 import './App.css';
 import Header from './componentes/header';
 import Footer from './componentes/footer';
 import Slider from './componentes/slider'; // IMPORTA EL SLIDER AQUÍ
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// Eliminar las siguientes líneas, ya que no las estás utilizando
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
