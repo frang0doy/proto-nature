@@ -7,11 +7,9 @@ const Slider = () => {
 
   // Imágenes del slider
   const images = [
-    "https://via.placeholder.com/800x300/FF5733/ffffff?text=Imagen+1",
-    "https://via.placeholder.com/800x300/33FF57/ffffff?text=Imagen+2",
-    "https://via.placeholder.com/800x300/5733FF/ffffff?text=Imagen+3",
-    "https://via.placeholder.com/800x300/FFD700/ffffff?text=Imagen+4",
-    "https://via.placeholder.com/800x300/8A2BE2/ffffff?text=Imagen+5"
+    "https://earthshotprize.org/wp-content/uploads/2024/09/DLight-Support-Hero-1920x1080_0000_IMG_3773.jpg-1024x576.jpg",
+    "https://earthshotprize.org/wp-content/uploads/2024/09/DLight-1920x1080_0001_IMG_1363.jpg.jpg",
+    "https://earthshotprize.org/wp-content/uploads/2024/09/DLight-1920x1080_0005_IMG_2057.jpg.jpg"
   ];
 
   // Funciones para cambiar de slide
@@ -36,7 +34,7 @@ const Slider = () => {
         <img
           src={images[currentIndex]}
           alt={`Imagen ${currentIndex + 1}`}
-          className="w-full object-cover h-64 sm:h-80 lg:h-96 transition-all duration-300"
+          className="w-full h-70 object-cover transition-all duration-300"
         />
       </div>
 
@@ -59,7 +57,7 @@ const Slider = () => {
         {images.map((_, index) => (
           <button
             key={index}
-            className={`w-4 h-4 rounded-full ${
+            className={`w-2 h-2 rounded-full ${
               currentIndex === index ? "bg-gray-800" : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
