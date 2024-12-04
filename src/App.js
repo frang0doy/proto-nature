@@ -3,7 +3,9 @@ import Header from './componentes/header';
 import Footer from './componentes/footer';
 import Slider from './componentes/slider';
 import CardSlider from './componentes/cardslider';  
-
+import Logo from "./componentes/logo";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       </header>
       <main className="flex-grow">
         <Slider /> {/* Aquí está el Slider */}
+        <Logo/>
         <CardSlider /> {/* Usa el CardSlider aquí */}
       </main>
       <footer className="App-footer">
