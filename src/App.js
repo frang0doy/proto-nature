@@ -7,6 +7,7 @@ import Logo from "./componentes/logo";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { Bars3Icon } from '@heroicons/react/24/outline';
+import Nosotros from './componentes/nosotros';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       </header>
       <main className="flex-grow">
         <Slider /> {/* Aquí está el Slider */}
+        <Nosotros/>
         <Logo/>
         <CardSlider /> {/* Usa el CardSlider aquí */}
       </main>
