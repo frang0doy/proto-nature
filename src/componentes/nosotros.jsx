@@ -33,15 +33,19 @@ export default function Nosotros() {
 
       {/* Contenedor de la imagen con el botón dentro */}
       <div className="relative flex justify-center items-center overflow-hidden rounded-lg">
-        <img
-          alt="Imagen"
-          src="https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fhome%2Fabout-thumbnail.png&w=1080&q=75"
-          className="h-[80%] w-[80%] object-cover transform transition duration-300 ease-in-out hover:scale-105 sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-[30px] md:h-[calc(100%_-_4rem)] md:rounded-[60px]"
-        />
-        
-        {/* Botón de reproducir dentro de la imagen */}
-        <div className="absolute top-4 left-4 z-10">
-          <button onClick={handlePlayClick} className="text-white bg-purple-600 p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110">
+        {/* Imagen ajustada */}
+        <div className="relative h-[80%] w-[80%]">
+          <img
+            alt="Imagen"
+            src="https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fhome%2Fabout-thumbnail.png&w=1080&q=75"
+            className="h-full w-full object-cover rounded-lg"
+          />
+
+          {/* Botón de reproducir dentro de la imagen */}
+          <button
+            onClick={handlePlayClick}
+            className="absolute top-4 left-4 text-white bg-purple-600 p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110"
+          >
             <PlayIcon className="h-8 w-8" />
           </button>
         </div>
@@ -53,7 +57,7 @@ export default function Nosotros() {
           <div className="relative w-full sm:w-4/5 md:w-3/4 lg:w-2/3">
             <iframe
               width="100%"
-              height="600" // Hacemos que el video sea más grande
+              height="600"
               src="https://www.youtube.com/embed/CKfp1-7Pysg"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
