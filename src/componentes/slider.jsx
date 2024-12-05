@@ -1,52 +1,62 @@
-"use client";
+import React, { useState } from "react";
 
-import React from "react";
-import { Carousel } from "flowbite-react"; // Asegúrate de tener instalada la librería Flowbite
+export function Slider() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [
+    "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
+    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+    "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" // Nueva imagen
+  ];
 
-export default function Slider() {
+  const nextSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
-    <div className="relative h-56 sm:h-64 xl:h-80 2xl:h-96 overflow-hidden">
-      <Carousel slideInterval={5000}>
+    <div className="relative w-full h-[calc(100vh-60px)]"> {/* Se ajusta al alto de la pantalla */}
+      {/* Slider Images */}
+      <div className="relative w-full h-full">
         <img
-          src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-          alt="Imagen 1"
+          src={images[activeIndex]}
+          alt={`Slide ${activeIndex + 1}`}
           className="w-full h-full object-cover"
         />
-        <img
-          src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-          alt="Imagen 2"
-          className="w-full h-full object-cover"
-        />
-        <img
-          src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-          alt="Imagen 3"
-          className="w-full h-full object-cover"
-        />
-        <img
-          src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
-          alt="Imagen 4"
-          className="w-full h-full object-cover"
-        />
-        <img
-          src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
-          alt="Imagen 5"
-          className="w-full h-full object-cover"
-        />
-      </Carousel>
-      {/* Agregar controles de navegación personalizados si es necesario */}
-      <div className="absolute inset-0 flex justify-between items-center px-4">
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="absolute top-1/2 left-4 z-10 transform -translate-y-1/2">
         <button
-          className="text-white bg-purple-600 hover:bg-purple-700 rounded-full p-2"
-          aria-label="Anterior"
+          onClick={prevSlide}
+          className="bg-white p-4 rounded-full shadow-lg hover:bg-gray-200 focus:outline-none"
         >
-          &#10094;
+          &lt; {/* Flecha hacia la izquierda */}
         </button>
+      </div>
+      <div className="absolute top-1/2 right-4 z-10 transform -translate-y-1/2">
         <button
-          className="text-white bg-purple-600 hover:bg-purple-700 rounded-full p-2"
-          aria-label="Siguiente"
+          onClick={nextSlide}
+          className="bg-white p-4 rounded-full shadow-lg hover:bg-gray-200 focus:outline-none"
         >
-          &#10095;
+          &gt; {/* Flecha hacia la derecha */}
         </button>
+      </div>
+
+      {/* Navigation Dots */}
+      <div className="absolute bottom-4 left-1/2 z-50 transform -translate-x-1/2 flex gap-2">
+        {images.map((_, i) => (
+          <span
+            key={i}
+            className={`block w-4 h-1 rounded-2xl cursor-pointer transition-all ${
+              activeIndex === i ? "bg-white w-8" : "bg-white/50 w-4"
+            }`}
+            onClick={() => setActiveIndex(i)}
+          />
+        ))}
       </div>
     </div>
   );
