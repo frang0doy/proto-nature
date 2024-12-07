@@ -1,96 +1,107 @@
-// src/componentes/footer.jsx
 import React from 'react';
-import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 mt-auto">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Sección 1 */}
-          <div>
-            <h5 className="text-lg font-semibold mb-4">Acerca de</h5>
-            <ul>
-              <li>
-                <a href="#" className="hover:text-indigo-500">
-                  Dlight
-                </a>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900">
+      <div className="mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-2">
+        {/* Sección superior con el párrafo */}
+        <div className="lg:flex lg:items-start lg:gap-18">
+          <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+            <div className="col-span-2">
+              <div>
+                <h2 className="text-2xl font-bold text-white">Suscríbete a nuestro boletín de noticias</h2>
+                <h4 className="mt-4 text-gray-300 text-sm whitespace-nowrap">
+  Obtenga las últimas actualizaciones y percepciones entregadas en su bandeja de entrada
+</h4>
 
-          {/* Sección 2 */}
-          <div>
-            <h5 className="text-lg font-semibold mb-4">Follow Us</h5>
-            <ul>
-              <li>
-                <a href="#" className="hover:text-indigo-500">
-                  Github
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-indigo-500">
-                  Discord
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Sección 3 */}
-          <div>
-            <h5 className="text-lg font-semibold mb-4">Legal</h5>
-            <ul>
-              <li>
-                <a href="#" className="hover:text-indigo-500">
-                  Nuestras Politicas
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-indigo-500">
-                  Términos y condiciones
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Sección 4 - Iconos de redes sociales */}
-          <div className="flex flex-col items-center">
-            <div className="flex space-x-4 mb-6"> {/* Aumenté el margen inferior a mb-6 */}
-              <a
-                href="#"
-                className="text-white hover:text-indigo-500"
-              >
-                <BsFacebook size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-indigo-500"
-              >
-                <BsInstagram size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-indigo-500"
-              >
-                <BsTwitter size={24} />
-              </a>
+              </div>
             </div>
-            {/* Logo debajo de los íconos */}
-            <img
-              src="/logo512.png" // Ruta del logo dentro de la carpeta public
-              alt="Logo de la empresa"
-              className="mx-auto w-32 mt-4" // Ajusté el margen superior a mt-4 para separar más
-            />
+
+            {/* Aquí separo el formulario para que se quede a la parte derecha */}
+            <div className="col-span-2 lg:col-span-3 mt-10 lg:mt-0 flex justify-end">
+              <form className="w-full lg:w-96">
+                <label htmlFor="UserEmail" className="sr-only">Email</label>
+                <div className="flex items-center w-full">
+                  <input
+                    type="email"
+                    id="UserEmail"
+                    className="flex-1 px-4 py-2 text-black focus:outline-none focus:ring-0 border-2 border-white rounded-l-full"  // Sin borde azul
+                  />
+                  <button
+                    className="bg-gray-900 px-6 py-2 text-sm font-semibold text-white transition-none hover:bg-teal-600 border-2 border-white border-l-0 rounded-r-full"  // Borde solo en la parte derecha del botón
+                  >
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 text-center text-sm">
-          <p>&copy; 2024 ProtoNature™. Todos los derechos reservados.</p>
+        {/* Línea divisora completa con separación */}
+        <div className="mt-16 border-t border-gray-700 w-full"></div>
+
+        {/* Resto de las secciones de productos, compañía y legal */}
+        <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-8 lg:grid-cols-5 lg:gap-y-8">
+          <div className="col-span-2 sm:col-span-1">
+            <p className="font-medium text-white">Productos</p>
+            <ul className="mt-6 space-y-4 text-sm text-gray-300">
+              <li><a href="#" className="text-white transition hover:opacity-75"> Paneles Solares </a></li>
+              <li><a href="#" className="text-white transition hover:opacity-75"> Hidroponia </a></li>
+              <li><a href="#" className="text-white transition hover:opacity-75"> Baterias </a></li>
+              <li><a href="#" className="text-white transition hover:opacity-75"> Energia Eolica </a></li>
+            </ul>
+          </div>
+
+          <div className="col-span-2 sm:col-span-1">
+            <p className="font-medium text-white">Compania</p>
+            <ul className="mt-6 space-y-4 text-sm text-gray-300">
+              <li><a href="#" className="text-white transition hover:opacity-75"> Nosotros </a></li>
+              <li><a href="#" className="text-white transition hover:opacity-75"> Soluciones </a></li>
+              <li><a href="#" className="text-white transition hover:opacity-75"> Equipo </a></li>
+            </ul>
+          </div>
+
+          <div className="col-span-2 sm:col-span-1">
+            <p className="font-medium text-white">Legal</p>
+            <ul className="mt-6 space-y-4 text-sm text-gray-300">
+              <li><a href="#" className="text-white transition hover:opacity-75"> Terminos & Condiciones </a></li>
+            </ul>
+          </div>
+
+          {/* Columna de redes sociales */}
+          <div className="col-span-2 sm:col-span-1">
+            <div className="flex space-x-4 mt-1">
+              <a href="#" className="text-white hover:opacity-75">
+                <FontAwesomeIcon icon={faFacebook} size="lg" />
+              </a>
+              <a href="#" className="text-white hover:opacity-75">
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
+              </a>
+              <a href="#" className="text-white hover:opacity-75">
+                <FontAwesomeIcon icon={faYoutube} size="lg" />
+              </a>
+              <a href="#" className="text-white hover:opacity-75">
+                <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Línea divisora inferior con más separación */}
+      <div className="mt-8 border-t border-gray-700 py-4">
+        <div className="mx-auto max-w-screen-xl px-4 text-center">
+          <p className="text-sm text-gray-300">
+            &copy; 2024 ProtoNature. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;
