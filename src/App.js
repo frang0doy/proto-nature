@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Nosotros from './componentes/nosotros';
 import { Stats } from "./componentes/stats";
+import Productos from './componentes/productos';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Slider /> {/* Aquí está el Slider */}
         <Stats/>
         <Nosotros />
+        <Productos/>
         <Logo />
         <CardSlider /> {/* Usa el CardSlider aquí */}
       </main>
