@@ -1,0 +1,30 @@
+/* Establece el comportamiento del parallax */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .parallax {
+    background-image: url('http://www.protonature.com/img/about-img.jpg'); /* Imagen de fondo */
+    height: 100vh; /* Altura de la sección con efecto parallax */
+    background-attachment: fixed; /* Hace que la imagen se quede fija al hacer scroll */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  }
+  
+  /* Estilos del contenido que va debajo del parallax */
+  .relative {
+    position: relative;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .text-gray-900 {
+    color: #333;
+  }
+  
