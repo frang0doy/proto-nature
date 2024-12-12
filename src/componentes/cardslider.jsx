@@ -1,5 +1,6 @@
 import React from "react";
 import "../cardslider.css";
+import { useLanguage } from './LenguajeContext'; // Importar el hook de idioma
 
 const teamMembers = [
   {
@@ -30,15 +31,28 @@ const teamMembers = [
 ];
 
 const CardSlider = () => {
+  const { language } = useLanguage(); // Obtener el idioma actual
+
+  // Textos según el idioma
+  const texts = {
+    es: {
+      title: "Nuestro Equipo",
+      description:
+        "Detrás de nuestras soluciones hay personas comprometidas con cada uno de los proyectos que llevamos adelante.",
+    },
+    en: {
+      title: "Our Team",
+      description:
+        "Behind our solutions, there are people committed to each project we undertake.",
+    },
+  };
+
   return (
     <section className="card-slider">
       {/* Título principal */}
       <div className="card-slider__header">
-        <h1 className="card-slider__title">Nuestro Equipo</h1>
-        <p>
-          Detrás de nuestras soluciones hay personas comprometidas con cada uno
-          de los proyectos que llevamos adelante.
-        </p>
+        <h1 className="card-slider__title">{texts[language].title}</h1>
+        <p>{texts[language].description}</p>
       </div>
 
       {/* Contenedor de tarjetas */}
