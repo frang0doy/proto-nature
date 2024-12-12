@@ -101,7 +101,7 @@ const Testimonios = () => {
                       <div className="flex justify-center gap-0.5 text-green-500">
                         {/* SVGs and content */}
                       </div>
-                      <p className="mt-0.5 text-lg font-medium text-gray-900">Paul Starr</p>
+                      <p className="mt-0.5 text-lg font-medium text-gray-900">Tomas wentzel</p>
                     </div>
                   </div>
                   <p className="mt-4 text-gray-700">
