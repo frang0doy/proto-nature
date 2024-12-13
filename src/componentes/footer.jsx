@@ -53,21 +53,22 @@ const Footer = () => {
 
             {/* Aquí separo el formulario para que se quede a la parte derecha */}
             <div className="col-span-2 lg:col-span-3 mt-10 lg:mt-0 flex justify-end">
-              <form className="w-full lg:w-96">
-                <label htmlFor="UserEmail" className="sr-only">Email</label>
-                <div className="flex items-center w-full">
-                  <input
-                    type="email"
-                    id="UserEmail"
-                    className="flex-1 px-4 py-2 text-black focus:outline-none focus:ring-0 border-2 border-white rounded-l-full"  // Sin borde azul
-                  />
-                  <button
-                    className="bg-gray-900 px-6 py-2 text-sm font-semibold text-white transition-none hover:bg-teal-600 border-2 border-white border-l-0 rounded-r-full"  // Borde solo en la parte derecha del botón
-                  >
-                    {texts[language].newsletterButton || 'Enviar'}
-                  </button>
-                </div>
-              </form>
+            <form className="w-full lg:w-96">
+  <label htmlFor="UserEmail" className="sr-only">Email</label>
+  <div className="flex w-full">
+    <input
+      type="email"
+      id="UserEmail"
+      className="w-3/4 px-4 py-2 text-black focus:outline-none focus:ring-0 border-2 border-white rounded-l-full"  // Input más largo
+    />
+    <button
+      className="w-1/4 bg-gray-900 px-6 py-2 text-sm font-semibold text-white transition-none hover:bg-teal-600 border-2 border-white border-l-0 rounded-r-full"  // Botón más corto
+    >
+      {texts[language].newsletterButton || 'Enviar'}
+    </button>
+  </div>
+</form>
+
             </div>
           </div>
         </div>

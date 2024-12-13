@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid'; // Icono de play
 import { useLanguage } from './LenguajeContext'; 
 
 const Nosotros = () => {
   const { language } = useLanguage(); // Acceder al idioma actual
+
+  // Estados para mostrar/ocultar el modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Función para abrir el modal
+  const openModal = () => setIsModalOpen(true);
+
+  // Función para cerrar el modal
+  const closeModal = () => setIsModalOpen(false);
 
   // Textos según el idioma
   const texts = {
@@ -56,12 +65,39 @@ const Nosotros = () => {
 
           {/* Botón de reproducir dentro de la imagen */}
           <button
+            onClick={openModal}
             className="absolute top-4 left-4 text-white bg-purple-600 p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110"
           >
             <PlayIcon className="h-8 w-8" />
           </button>
         </div>
       </div>
+
+      {/* Modal con video */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          {/* Fondo borroso */}
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"></div>
+
+          <div className="relative bg-white rounded-lg p-4 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 z-50">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white text-2xl font-bold"
+            >
+              X
+            </button>
+            <iframe
+              width="100%"
+              height="500"  // Aumentamos la altura del video
+              src="https://www.youtube.com/embed/CKfp1-7Pysg?autoplay=1"  // Aquí se coloca el ID del video y autoplay
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

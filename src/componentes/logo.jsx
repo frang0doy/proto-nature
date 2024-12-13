@@ -11,7 +11,7 @@ const CarouselWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 2px; /* Espacio entre logos */
+    padding: 0 10px; /* Espacio consistente entre los logos */
   }
 
   .slick-slide img {
@@ -19,6 +19,13 @@ const CarouselWrapper = styled.div`
     height: 80px; /* Altura uniforme */
     object-fit: contain; /* Ajusta la imagen sin deformarla */
     display: block;
+    margin: 0 auto; /* Asegura que los logos estén centrados dentro del contenedor */
+  }
+
+  /* Seleccionamos el logo 5 (usando nth-child) */
+  .slick-slide:nth-child(5) img {
+    width: 80px; /* Hacemos el logo 5 más pequeño */
+    height: 60px; /* Ajustamos la altura */
   }
 
   .slick-list {
@@ -36,7 +43,7 @@ const logos = [
   { id: 2, src: "https://www.sevensensor.com/files/2020/05/sma.jpg", alt: "Logo 2" },
   { id: 3, src: "https://cdn.worldvectorlogo.com/logos/hoppecke.svg", alt: "Logo 3" },
   { id: 4, src: "https://www.conveyorsolutions.com/wp-content/uploads/2022/04/UniversalRobots-manufacturer.webp", alt: "Logo 4" },
-  { id: 5, src: "https://play-lh.googleusercontent.com/zyNcm6V7DMJHqUp8EF0gRoy1y0BMbAsKwCFc9pENw3bAKz0QjwAVGekN-ZMqMS-I", alt: "Logo 5" },
+  { id: 5, src: "https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Flogo-primary.png&w=128&q=75", alt: "Logo 5" },
   { id: 6, src: "https://flex-lineautomation.com/wp-content/uploads/2022/09/mir-Mobile-Industrial-Robots.jpeg", alt: "Logo 6" },
 ];
 

@@ -1,21 +1,6 @@
-import React, { useState } from 'react';
-import {
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from '@headlessui/react'; // Importa los componentes de Headless UI
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  ShoppingCartIcon,
-  GlobeAltIcon,
-  Battery50Icon,
-  CloudIcon,
-  SunIcon,
-  ShoppingBagIcon,
-} from '@heroicons/react/24/outline'; // Importamos los íconos adecuados
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import React, { useState, useEffect } from 'react';
+import { ChevronDownIcon, ShoppingCartIcon, SunIcon, ShoppingBagIcon, Battery50Icon, CloudIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/react';
 import { useLanguage } from './LenguajeContext';
 
 const translations = {
@@ -45,44 +30,63 @@ const products = [
 ];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // Estado para el menú móvil
-  const [popoverOpen, setPopoverOpen] = useState(false); // Estado para el menú de productos
-  const { language, toggleLanguage } = useLanguage(); // Contexto para el idioma
-  const t = translations[language]; // Traducciones dinámicas según el idioma
+  const [scrolling, setScrolling] = useState(0);
+  const [bgColor, setBgColor] = useState('transparent');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const opacity = Math.min(scrollPosition / 300, 1);
+      setScrolling(opacity);
+
+      if (scrollPosition > window.innerHeight * 0.6) {  
+        setBgColor('bg-black');
+      } else {
+        setBgColor('transparent');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="bg-gray-900 fixed top-0 left-0 w-full z-50 shadow-lg">
-      <nav
-        aria-label="Global"
-        className="mx-auto flex items-center justify-between p-6 lg:px-8"
+    <>
+      {/* Header */}
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${bgColor}`}
+        style={{
+          boxShadow: scrolling > 0 ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
+        }}
       >
-        {/* Logo a la izquierda */}
-        <div className="flex flex-shrink-0 ml-4 lg:ml-0">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
-          </a>
-        </div>
+        <nav className="mx-auto flex items-center justify-between p-6 lg:px-8">
+          {/* Logo */}
+          <div className="flex flex-shrink-0 ml-4 lg:ml-0 relative">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Logo</span>
+              <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
+            </a>
+          </div>
 
-        {/* Menú de productos en el centro */}
-        <div className="hidden lg:flex lg:gap-x-12 flex-1 justify-center">
-          <PopoverGroup className="flex items-center space-x-12">
-            <Popover className="relative">
-              <PopoverButton
-                onClick={() => setPopoverOpen(!popoverOpen)}
-                className="flex items-center gap-x-1 text-sm font-semibold text-white relative group"
-              >
-                {t.products}
-                <ChevronDownIcon
-                  className={`h-5 w-5 text-white transition-transform duration-200 ${
-                    popoverOpen ? 'rotate-180' : ''
-                  }`}
-                  aria-hidden="true"
-                />
-              </PopoverButton>
+          {/* Menú de navegación en pantallas grandes */}
+          <div className="hidden lg:flex lg:gap-x-12 flex-1 justify-center">
+            <PopoverGroup className="flex items-center space-x-12">
+              <Popover className="relative">
+                <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-white relative group">
+                  {t.products}
+                  <ChevronDownIcon
+                    className="h-5 w-5 text-white transition-transform duration-200"
+                    aria-hidden="true"
+                  />
+                </PopoverButton>
 
-              {popoverOpen && (
-                <PopoverPanel className="absolute -left-2 top-full z-10 mt-3 inline-block overflow-hidden rounded-4xl bg-white shadow-lg ring-1 ring-gray-900/5 min-w-[280px]">
+                <Popover.Panel className="absolute -left-2 top-full z-10 mt-3 inline-block overflow-hidden rounded-4xl bg-white shadow-lg ring-1 ring-gray-900/5 min-w-[280px]">
                   <div className="p-4">
                     {products.map((item) => (
                       <div
@@ -115,80 +119,91 @@ export default function Header() {
                       {t.viewAll}
                     </a>
                   </div>
-                </PopoverPanel>
-              )}
-            </Popover>
+                </Popover.Panel>
+              </Popover>
 
-            {/* Enlaces de navegación */}
-            {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
-              <a
-                key={index}
-                href="#"
-                className="relative text-sm font-semibold text-white group"
-              >
-                {item}
-                <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </a>
-            ))}
-          </PopoverGroup>
-        </div>
-
-        {/* Íconos a la derecha */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
-          <button onClick={toggleLanguage}>
-            <GlobeAltIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
-          </button>
-        </div>
-
-        {/* Botón para menú móvil */}
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
-        </div>
-      </nav>
-
-      {/* Menú en móvil */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden fixed top-0 right-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm transition-all duration-500 ease-in-out">
-          <div className="bg-gray-800 text-white p-4 w-64 h-full fixed right-0 top-0 transform translate-x-0 transition-transform duration-500 ease-in-out">
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-4 right-4 text-white text-xl"
-            >
-              X
-            </button>
-
-            <div className="flex justify-between mb-8">
-              <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
-            </div>
-
-            <div className="flex flex-col space-y-4">
+              {/* Otros enlaces de navegación */}
               {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
                 <a
                   key={index}
                   href="#"
-                  className="text-sm font-semibold py-3 px-4 hover:bg-gray-700 rounded-md transition-all"
+                  className="relative text-sm font-semibold text-white group"
                 >
                   {item}
+                  <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </a>
               ))}
-              <div className="flex justify-center items-center space-x-6 mt-8">
-                <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
-                <button onClick={toggleLanguage}>
-                  <GlobeAltIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
-                </button>
-              </div>
-            </div>
+            </PopoverGroup>
           </div>
-        </div>
-      )}
-    </header>
+
+          {/* Íconos en pantallas grandes */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
+            <button
+              onClick={toggleLanguage}
+              className="text-white text-sm font-semibold py-2 px-4 rounded-md hover:bg-indigo-600 transition-all"
+            >
+              {language === 'es' ? 'IN' : 'ES'}
+            </button>
+          </div>
+
+          {/* Menú desplegable para dispositivos móviles */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white p-2"
+            >
+              <Bars3Icon className="h-6 w-6" />
+            </button>
+
+            {mobileMenuOpen && (
+              <div className="fixed top-0 right-0 w-[300px] h-full bg-black text-white p-6">
+                <div className="flex items-center justify-between mb-6">
+                  {/* Logo y Botón X */}
+                  <a href="#" className="-m-1.5 p-1.5">
+                    <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
+                  </a>
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-white p-2"
+                  >
+                    <XMarkIcon className="h-6 w-6" />
+                  </button>
+                </div>
+
+                {/* Enlaces de navegación */}
+                <div className="flex flex-col space-y-4 mb-6">
+                  {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
+                    <div key={index}>
+                      <a
+                        href="#"
+                        className="text-sm font-semibold cursor-pointer hover:text-indigo-600 py-2 px-4 w-full text-center rounded-md transition-all"
+                      >
+                        {item}
+                      </a>
+                      {index < 3 && <hr className="my-2 border-t border-gray-300" />}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Espacio para íconos y botones alineados al final */}
+                <div className="flex flex-col items-center justify-end mt-auto space-y-4">
+  <div className="flex items-center justify-center space-x-4">
+    <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
+    <button
+      onClick={toggleLanguage}
+      className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
+    >
+      {language === 'es' ? 'IN' : 'ES'}
+    </button>
+  </div>
+</div>
+
+              </div>
+            )}
+          </div>
+        </nav>
+      </header>
+    </>
   );
 }

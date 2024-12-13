@@ -6,6 +6,35 @@ import 'keen-slider/keen-slider.min.css';
 const Testimonios = () => {
   const { language } = useLanguage(); // Obtenemos el idioma actual desde el contexto
 
+  // Array de testimonios con nombre y texto
+  const testimonials = [
+    {
+      name: 'Centro de salud de Otodo',
+      description: 'Centro de salud que ahora disfruta de energía confiable.',
+      text: 'Antes del Dlight iMAX10, nuestro centro de salud lucho con frecuentes cortes de energia afectando al paciente, gracias a Dlight ahora tenemos un poder confiable de energia.',
+    },
+    {
+      name: 'Dickson Mbuvi',
+      description: 'Trabajador y estudiante que aprovecha la energía confiable.',
+      text: 'Equilibrar el trabajo en la ferretería de mi familia de día y estudiar por la noche fue duro, especialmente con constantes cortes de energía. Pero descubrir la linterna de la luz S30 lo cambió todo. Ahora, tengo las horas extras que necesito estudiar sin interrupción.',
+    },
+    {
+      name: 'Mary',
+      description: 'Cliente leal que ha usado Dlight por años.',
+      text: 'Mary ha usado Dlight por mas de tres anos, y esta increiblemente satisfecha con la experiencia.',
+    },
+    {
+      name: 'Beth karimi',
+      description: 'Residente de área sin electricidad que experimentó un cambio con Dlight.',
+      text: 'Beth esta contenta con la transformacion de d.light ha traido a su vida. Viviente en un area sin electricidad, acostumbrada a la oscuridad pero desde la instalacion todo cambio.',
+    },
+    {
+      name: 'Joseph Odero',
+      description: 'Cliente satisfecho con la iluminación consistente por años.',
+      text: 'Joseph ha usado d.light por mas de ocho anos y no puede estar mas feliz con la iluminacion consistente y toda la noche que proporciona.',
+    },
+  ];
+
   useEffect(() => {
     const keenSliderActive = document.getElementById('keen-slider-active');
     const keenSliderCount = document.getElementById('keen-slider-count');
@@ -88,27 +117,16 @@ const Testimonios = () => {
         </h2>
         <div className="mt-8">
           <div id="keen-slider" className="keen-slider">
-            {[...Array(6)].map((_, index) => (
+            {testimonials.map((testimonial, index) => (
               <div key={index} className="keen-slider__slide opacity-40 transition-opacity duration-500">
-                <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
+                <blockquote className="flex flex-col h-full justify-between rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                   <div className="flex items-center gap-4">
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                      className="size-14 rounded-full object-cover"
-                    />
                     <div>
-                      <div className="flex justify-center gap-0.5 text-green-500">
-                        {/* SVGs and content */}
-                      </div>
-                      <p className="mt-0.5 text-lg font-medium text-gray-900">Tomas wentzel</p>
+                      <p className="mt-0.5 text-lg font-medium text-gray-900">{testimonial.name}</p>
+                      <p className="mt-1 text-sm text-gray-500">{testimonial.description}</p>
                     </div>
                   </div>
-                  <p className="mt-4 text-gray-700">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                    consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius
-                    accusamus error officiis atque voluptates magnam!
-                  </p>
+                  <p className="mt-4 text-gray-700 flex-grow">{testimonial.text}</p>
                 </blockquote>
               </div>
             ))}
