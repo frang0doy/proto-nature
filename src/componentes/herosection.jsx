@@ -41,8 +41,7 @@ export default function HeroSection() {
           'url(https://images.pexels.com/photos/13018432/pexels-photo-13018432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        // Aplicar el efecto parallax
-        backgroundPosition: `center ${scrollPosition * 0.5}px`, // Controlar el movimiento de la imagen de fondo
+        backgroundAttachment: 'fixed', // La imagen de fondo se queda fija
       }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>

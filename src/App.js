@@ -11,7 +11,7 @@ import { Stats } from "./componentes/stats";
 import Productos from './componentes/productos';
 import Testimonios from './componentes/testimonios';
 import { LanguageProvider } from './componentes/LenguajeContext'; 
-import HeroSection from './componentes/herosection';  // Importa el HeroSection
+import HeroSection from './componentes/herosection'; 
 
 function App() {
   return (
@@ -22,22 +22,22 @@ function App() {
         </header>
 
         {/* Hero Section - La sección destacada en la parte superior */}
-        <HeroSection /> {/* Asegúrate de que esté solo una vez */}
+        <HeroSection /> 
 
         {/* Cuerpo de la aplicación */}
         <main className="flex-grow">
-          <Slider />
           <Stats />
+          <Slider />
           <Nosotros />
           <Productos />
           <Testimonios />
           <Logo />
-          <CardSlider />
+          <CardSlider /> {/* Asegúrate de que este componente tenga suficiente espacio */}
         </main>
 
         {/* Pie de página */}
         <footer className="App-footer">
-          <Footer /> {/* Pie de página con información adicional */}
+          <Footer />
         </footer>
       </div>
     </LanguageProvider>
