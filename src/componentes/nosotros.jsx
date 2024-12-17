@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid'; // Icono de play
-import { useLanguage } from './LenguajeContext'; 
+import { useLanguage } from './LenguajeContext';
+import AOS from 'aos'; // Importamos AOS
+import 'aos/dist/aos.css'; // Importamos los estilos de AOS
 
 const Nosotros = () => {
   const { language } = useLanguage(); // Acceder al idioma actual
@@ -30,46 +32,69 @@ const Nosotros = () => {
     },
   };
 
+  // Inicializamos AOS cuando el componente se monta
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duración de la animación
+      easing: 'ease-in-out', // Tipo de suavizado de la animación
+      once: true, // Solo se ejecuta una vez
+    });
+  }, []);
+
   return (
-    <section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
-      <div className="p-8 md:p-12 lg:px-16 lg:py-24">
-        <div className="mx-auto max-w-xl text-center sm:text-left">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+    <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16">
+      {/* Contenedor centralizado con flexbox */}
+      <div className="flex flex-col sm:flex-row items-center justify-center w-full max-w-screen-xl px-8 md:px-16 gap-8 mx-auto">
+        <div className="text-center sm:text-left sm:w-1/2">
+          <h2
+            className="text-2xl font-bold text-gray-900 md:text-3xl mb-4"
+            data-aos="fade-up" // Animación de aparición hacia arriba
+          >
             {texts[language].title}
           </h2>
 
-          <p className="hidden text-gray-500 md:mt-4 md:block">
+          <p
+            className="mt-4 text-gray-500"
+            data-aos="fade-up" // Animación de aparición hacia arriba
+            data-aos-delay="200" // Añadimos un pequeño retraso para que no todo ocurra a la vez
+          >
             {texts[language].description}
           </p>
 
-          <div className="mt-4 md:mt-8">
+          <div className="mt-6">
             <a
               href="#"
-              className="inline-block rounded bg-purple-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-purple-700 focus:outline-none focus:ring focus:ring-yellow-400"
+              className="inline-block rounded bg-purple-600 px-8 py-3 text-sm font-medium text-white transition hover:bg-purple-700 focus:outline-none focus:ring focus:ring-yellow-400"
+              data-aos="fade-up" // Animación de aparición hacia arriba
+              data-aos-delay="400" // Retraso para la animación
             >
               {texts[language].moreInfo}
             </a>
           </div>
         </div>
-      </div>
 
-      {/* Contenedor de la imagen con el botón dentro */}
-      <div className="relative flex justify-center items-center overflow-hidden rounded-lg">
-        {/* Imagen ajustada */}
-        <div className="relative h-[80%] w-[80%]">
-          <img
-            alt="Imagen"
-            src="https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fhome%2Fabout-thumbnail.png&w=1080&q=75"
-            className="h-full w-full object-cover rounded-lg"
-          />
+        {/* Contenedor de la imagen con el botón dentro */}
+        <div
+          className="relative flex justify-center items-center sm:w-1/2"
+          data-aos="zoom-in" // Efecto de zoom al entrar
+          data-aos-delay="500" // Retraso para la animación
+        >
+          {/* Imagen ajustada */}
+          <div className="relative w-full h-64 sm:h-[80%]">
+            <img
+              alt="Imagen"
+              src="https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fhome%2Fabout-thumbnail.png&w=1080&q=75"
+              className="h-full w-full object-cover rounded-lg"
+            />
 
-          {/* Botón de reproducir dentro de la imagen */}
-          <button
-            onClick={openModal}
-            className="absolute top-4 left-4 text-white bg-purple-600 p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110"
-          >
-            <PlayIcon className="h-8 w-8" />
-          </button>
+            {/* Botón de reproducir dentro de la imagen */}
+            <button
+              onClick={openModal}
+              className="absolute top-4 left-4 text-white bg-purple-600 p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110"
+            >
+              <PlayIcon className="h-8 w-8" />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -88,11 +113,11 @@ const Nosotros = () => {
             </button>
             <iframe
               width="100%"
-              height="500"  // Aumentamos la altura del video
-              src="https://www.youtube.com/embed/CKfp1-7Pysg?autoplay=1"  // Aquí se coloca el ID del video y autoplay
+              height="500" // Aumentamos la altura del video
+              src="https://www.youtube.com/embed/CKfp1-7Pysg?autoplay=1" // Aquí se coloca el ID del video y autoplay
               title="YouTube video player"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>

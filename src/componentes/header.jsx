@@ -5,19 +5,19 @@ import { useLanguage } from './LenguajeContext';
 
 const translations = {
   es: {
-    products: 'Productos',
-    aboutUs: 'Nosotros',
-    solutions: 'Soluciones',
-    team: 'Equipo',
-    contact: 'Contacto',
+    products: 'PRODUCTOS',
+    aboutUs: 'NOSOTROS',
+    solutions: 'SOLUCIONES',
+    team: 'EQUIPO',
+    contact: 'CONTACTO',
     viewAll: 'Ver Todo',
   },
   en: {
-    products: 'Products',
-    aboutUs: 'About Us',
-    solutions: 'Solutions',
-    team: 'Team',
-    contact: 'Contact',
+    products: 'PRODUCTS',
+    aboutUs: 'ABOUT US',
+    solutions: 'SOLUTIONS',
+    team: 'TEAM',
+    contact: 'CONTACT',
     viewAll: 'View All',
   },
 };

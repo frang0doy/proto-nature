@@ -76,12 +76,13 @@ const CardSlider = () => {
         body, html {
           margin: 0;
           padding: 0;
+          background-color: #ffffff; /* Fondo blanco para todo el sitio */
         }
 
         /* Contenedor principal del slider */
         .card-slider {
           padding: 0; /* Eliminamos el padding de arriba y abajo */
-          background-color: #f8f8f8; /* Fondo claro */
+          background-color: #ffffff; /* Fondo blanco */
           margin: 0; /* Aseguramos que no haya márgenes innecesarios */
         }
 
@@ -129,11 +130,12 @@ const CardSlider = () => {
           width: 100%;
           height: 250px; /* Ajustamos la altura de la imagen */
           object-fit: cover; /* La imagen se ajusta completamente sin bordes */
+          transition: transform 0.8s ease; /* Cambio para hacer el zoom más lento */
         }
 
         /* Efecto hover solo en la imagen para hacer zoom */
         .card__image:hover img {
-          transform: scale(1.05); /* Efecto de zoom solo en la imagen */
+          transform: scale(1.1); /* Efecto de zoom más suave y lento */
         }
 
         /* Contenido de la tarjeta */

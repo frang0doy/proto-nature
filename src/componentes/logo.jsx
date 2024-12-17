@@ -6,6 +6,7 @@ import styled from "styled-components";
 const CarouselWrapper = styled.div`
   width: 100%;
   margin: auto;
+  background-color: white; /* Fondo blanco para el carrusel */
 
   .slick-slide {
     display: flex;

@@ -1,5 +1,5 @@
-import React from "react";
-import { useLanguage } from './LenguajeContext'; // Importa el hook de Lenguaje
+import React, { useState, useEffect } from "react";
+import { useLanguage } from './LenguajeContext'; // Importa el hook de LenguajeContext
 
 export function Stats() {
   const { language } = useLanguage(); // Obtenemos el idioma actual desde el contexto
@@ -30,54 +30,74 @@ export function Stats() {
     }
   };
 
-  // Definición de estilos en línea
+  // Estado para manejar la activación del parallax
+  const [isParallaxActive, setIsParallaxActive] = useState(false);
+
+  // Función que escucha el evento de scroll
+  const handleScroll = () => {
+    // Activar el parallax solo una vez cuando se hace scroll hacia abajo
+    if (window.scrollY > 100 && !isParallaxActive) {
+      setIsParallaxActive(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isParallaxActive]);
+
+  // Estilos
   const styles = {
     statsContainer: {
       textAlign: 'center',
-      padding: '50px',
-      background: 'linear-gradient(to bottom, #000000, #808080)', // De negro a gris
+      padding: '50px 20px',
       fontFamily: "'Arial', sans-serif",
-      color: 'white',
+      color: 'black',
+      backgroundColor: 'white',
+      marginBottom: '30px',
+      position: 'relative',
     },
     title: {
       fontSize: '2.5rem',
       fontWeight: 700,
-      marginBottom: '20px',
+      marginBottom: '15px',  // Menos espacio debajo del título
+      transition: 'transform 1s ease', // Mayor duración para ver mejor el efecto
     },
     subtitle: {
       fontSize: '1.25rem',
       fontWeight: 600,
-      marginBottom: '30px',
+      marginBottom: '20px',  // Espacio reducido entre título y párrafo
+      transition: 'transform 1s ease',
     },
     cardsContainer: {
       display: 'flex',
       justifyContent: 'center',
-      gap: '30px',
-      marginBottom: '20px',
-      alignItems: 'center', // Alinea las tarjetas verticalmente
+      alignItems: 'center',
+      position: 'relative',
+      zIndex: 1,
+      maxWidth: '1200px',
+      margin: '0 auto',
+      gap: '2rem', // Espacio entre las tarjetas
+      flexWrap: 'wrap', // Para que las tarjetas se ajusten si es necesario
     },
     card: {
       backgroundColor: '#fff',
       padding: '20px',
       borderRadius: '8px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      width: '250px', // Ancho constante
-      height: '180px', // Alargadas
+      width: '350px', // Las tarjetas siempre tienen el mismo tamaño
+      height: '150px', // Altura constante para las tarjetas
       textAlign: 'center',
-      transition: 'transform 0.3s ease, opacity 0.3s ease',
-      opacity: 0.8,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-    },
-    cardHover: {
-      transform: 'scale(1.05)',
-      opacity: 1,
-      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)',
+      zIndex: 2,
+      transition: 'transform 2s ease, opacity 2s ease', // Animación más lenta
+      opacity: isParallaxActive ? 1 : 0.8, // Las tarjetas se vuelven opacas solo cuando el parallax está activo
     },
     cardTitle: {
-      fontSize: '1.125rem',
+      fontSize: '1.25rem',
       fontWeight: 700,
       marginBottom: '8px',
     },
@@ -85,14 +105,32 @@ export function Stats() {
       fontSize: '0.875rem',
       lineHeight: '1.3',
     },
+    // Efectos de deslizamiento de las tarjetas
+    cardLeft: {
+      transform: isParallaxActive ? `translateX(-50%)` : 'translateX(0)', // Desliza desde la izquierda
+      opacity: isParallaxActive ? 1 : 0.8, // Se vuelve opaca después de la animación
+    },
+    cardCenter: {
+      transform: 'scale(1.1) translateY(-10px)', // La tarjeta central se escala ligeramente
+      opacity: 1,
+    },
+    cardRight: {
+      transform: isParallaxActive ? `translateX(50%)` : 'translateX(0)', // Desliza desde la derecha
+      opacity: isParallaxActive ? 1 : 0.8, // Se vuelve opaca después de la animación
+    },
+    footer: {
+      marginTop: '20px', // Separar más el párrafo del pie de la tarjeta
+      fontSize: '1rem',
+      fontWeight: 400,
+      textAlign: 'center',
+      paddingBottom: '30px', // Añadir más espacio debajo del pie
+    },
   };
 
-  // Animaciones en línea (dificultoso en estilo en línea, por lo tanto se mantiene fuera del alcance aquí)
-
   return (
-    <div style={styles.statsContainer}>
-      <h2 style={styles.title}>{texts[language].title}</h2>
-      <h4 style={styles.subtitle}>{texts[language].subtitle}</h4>
+    <div className="bg-gradient-to-r from-gray-300 via-gray-400 to-white" style={styles.statsContainer}>
+      <h2 style={styles.title} className="title">{texts[language].title}</h2>
+      <h4 style={styles.subtitle} className="subtitle">{texts[language].subtitle}</h4>
 
       <div style={styles.cardsContainer}>
         {texts[language].cards.map((card, index) => (
@@ -100,7 +138,7 @@ export function Stats() {
             key={index}
             style={{
               ...styles.card,
-              ...(index === 0 ? {} : index === 1 ? { opacity: 0.7 } : {}),
+              ...(index === 0 ? styles.cardLeft : index === 1 ? styles.cardCenter : styles.cardRight),
             }}
             className={`card-${index}`}
           >
@@ -110,7 +148,7 @@ export function Stats() {
         ))}
       </div>
 
-      <p>{texts[language].footer}</p>
+      <p style={styles.footer}>{texts[language].footer}</p>
       <p>{texts[language].currentStatus}</p>
     </div>
   );
