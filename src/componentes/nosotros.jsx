@@ -19,13 +19,14 @@ const Nosotros = () => {
   // Textos según el idioma
   const texts = {
     es: {
-      title: 'Haz tu vida más brillante con d.light',
+      title: 'Haz tu vida mas brillante con d.light',
       description:
         'En d.light, nos dedicamos a transformar vidas a través de soluciones de energía solar asequibles y sostenibles, empoderando a más de 175 millones de personas en todo el mundo. Nuestro objetivo es proporcionar acceso a energía limpia que fomente la educación, mejore la salud y cree oportunidades económicas. Nuestra visión es transformar mil millones de vidas para 2030, allanando el camino hacia un futuro más brillante y sostenible.',
       moreInfo: 'Más información',
     },
     en: {
-      title: 'Make Your Life Brighter with d.light',
+      title: 'Make Your Life Brighter',
+      subtitle: 'with d.light',
       description:
         'At d.light, we are dedicated to transforming lives through affordable and sustainable solar energy solutions, empowering over 175 million people around the world. Our goal is to provide access to clean energy that fosters education, improves health, and creates economic opportunities. Our vision is to transform one billion lives by 2030, paving the way for a brighter and more sustainable future.',
       moreInfo: 'More Information',
@@ -42,42 +43,51 @@ const Nosotros = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16">
-      {/* Contenedor centralizado con flexbox */}
-      <div className="flex flex-col sm:flex-row items-center justify-center w-full max-w-screen-xl px-8 md:px-16 gap-8 mx-auto">
-        <div className="text-center sm:text-left sm:w-1/2">
+    <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62"> {/* Padding bottom mucho mayor (pb-72 = 18rem) */}
+      {/* Contenedor centralizado con flexbox y más margen de los bordes */}
+      <div className="flex flex-col sm:flex-row items-start justify-between w-full px-60 gap-12 mx-auto">
+        <div className="text-center sm:text-left sm:w-2/3 md:w-1/2">
           <h2
-            className="text-2xl font-bold text-gray-900 md:text-3xl mb-4"
+            className="text-2xl font-bold text-black md:text-3xl mb-4"
             data-aos="fade-up" // Animación de aparición hacia arriba
           >
-            {texts[language].title}
+            <span className="block">{texts[language].title}</span>
+            <span className="block text-purple-600">{texts[language].subtitle}</span>
           </h2>
 
           <p
-            className="mt-4 text-gray-500"
-            data-aos="fade-up" // Animación de aparición hacia arriba
-            data-aos-delay="200" // Añadimos un pequeño retraso para que no todo ocurra a la vez
+            className="mt-2 text-lg text-gray-900 sm:text-xl sm:text-left leading-relaxed text-justify"
+            style={{
+              wordBreak: 'keep-all',  // Evita que se rompan las palabras
+              textAlignLast: 'justify',  // Alinea la última línea también
+              whiteSpace: 'pre-line',  // Asegura que no haya saltos de línea innecesarios
+            }}
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
-            {texts[language].description}
+            {/* Aquí modificamos para que "sostenible" esté en la línea correcta */}
+            En d.light, nos dedicamos a transformar vidas a través de soluciones de energía solar asequibles y{' '}
+            <span className="font-semibold">sostenibles</span>, empoderando a más de 175 millones de personas en todo el mundo. 
+            Nuestro objetivo es proporcionar acceso a energía limpia que fomente la educación, mejore la salud y cree oportunidades económicas. 
+            Nuestra visión es transformar mil millones de vidas para 2030, allanando el camino hacia un futuro más brillante.
           </p>
 
           <div className="mt-6">
             <a
               href="#"
-              className="inline-block rounded bg-purple-600 px-8 py-3 text-sm font-medium text-white transition hover:bg-purple-700 focus:outline-none focus:ring focus:ring-yellow-400"
-              data-aos="fade-up" // Animación de aparición hacia arriba
-              data-aos-delay="400" // Retraso para la animación
+              className="inline-block rounded bg-white px-8 py-3 text-sm font-medium text-black transition hover:bg-gray-400 focus:outline-none focus:ring focus:ring-yellow-400"
+              data-aos="fade-up"
+              data-aos-delay="400"
             >
               {texts[language].moreInfo}
             </a>
           </div>
         </div>
 
-        {/* Contenedor de la imagen con el botón dentro */}
         <div
-          className="relative flex justify-center items-center sm:w-1/2"
-          data-aos="zoom-in" // Efecto de zoom al entrar
-          data-aos-delay="500" // Retraso para la animación
+          className="relative flex justify-center items-center sm:w-2/3 md:w-1/2"
+          data-aos="zoom-in"
+          data-aos-delay="500"
         >
           {/* Imagen ajustada */}
           <div className="relative w-full h-64 sm:h-[80%]">
@@ -87,10 +97,9 @@ const Nosotros = () => {
               className="h-full w-full object-cover rounded-lg"
             />
 
-            {/* Botón de reproducir dentro de la imagen */}
             <button
               onClick={openModal}
-              className="absolute top-4 left-4 text-white bg-purple-600 p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110"
+              className="absolute top-4 left-4 text-black bg-white p-3 rounded-full shadow-md transition transform duration-300 ease-in-out hover:scale-110"
             >
               <PlayIcon className="h-8 w-8" />
             </button>
@@ -98,10 +107,8 @@ const Nosotros = () => {
         </div>
       </div>
 
-      {/* Modal con video */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          {/* Fondo borroso */}
           <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"></div>
 
           <div className="relative bg-white rounded-lg p-4 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 z-50">
@@ -113,8 +120,8 @@ const Nosotros = () => {
             </button>
             <iframe
               width="100%"
-              height="500" // Aumentamos la altura del video
-              src="https://www.youtube.com/embed/CKfp1-7Pysg?autoplay=1" // Aquí se coloca el ID del video y autoplay
+              height="500"
+              src="https://www.youtube.com/embed/CKfp1-7Pysg?autoplay=1"
               title="YouTube video player"
               frameBorder="0"
               allow="; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

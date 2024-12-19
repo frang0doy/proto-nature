@@ -1,26 +1,34 @@
 .testimonios {
-    text-align: center;
-  }
-  
-  .carrusel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-  }
-  
-  .tarjeta {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px; /* Ajusta el ancho según tus necesidades */
-    flex-shrink: 0;
-  }
-  
-  .tarjeta img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+  text-align: center;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+}
+
+.tarjeta {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+  flex-shrink: 0;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Estilo para la tarjeta activa con el gradiente */
+.active-card {
+  background: linear-gradient(to right, #e2e8f0, #cbd5e0, #fff); /* Gradiente gris */
+  padding: 24px; /* Opcional: ajusta el padding para mayor estilo */
+}
+
+/* Otros estilos para las imágenes */
+.tarjeta img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}

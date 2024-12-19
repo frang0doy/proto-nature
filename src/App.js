@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './componentes/header';
 import Footer from './componentes/footer';
-import CardSlider from './componentes/cardslider';  
+import Equipo from './componentes/equipo';  
 import Logo from "./componentes/logo";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,8 @@ import Productos from './componentes/productos';
 import Testimonios from './componentes/testimonios';
 import { LanguageProvider } from './componentes/LenguajeContext'; 
 import HeroSection from './componentes/herosection'; 
+import Soluciones from './componentes/soluciones';
+
 
 function App() {
   return (
@@ -25,12 +27,13 @@ function App() {
 
         {/* Cuerpo de la aplicación */}
         <main className="flex-grow">
+        <Nosotros />
+        <Soluciones />
           <Stats />
-          <Nosotros />
           <Productos />
           <Testimonios />
           <Logo />
-          <CardSlider /> {/* Asegúrate de que este componente tenga suficiente espacio */}
+          <Equipo /> {/* Asegúrate de que este componente tenga suficiente espacio */}
         </main>
 
         {/* Pie de página */}

@@ -11,7 +11,7 @@ const Testimonios = () => {
     {
       name: 'Centro de salud de Otodo',
       description: 'Centro de salud que ahora disfruta de energía confiable.',
-      text: 'Antes del Dlight iMAX10, nuestro centro de salud lucho con frecuentes cortes de energia afectando al paciente, gracias a Dlight ahora tenemos un poder confiable de energia.',
+      text: 'Antes del Dlight iMAX10, nuestro centro de salud luchó con frecuentes cortes de energía afectando al paciente, gracias a Dlight ahora tenemos un poder confiable de energía.',
     },
     {
       name: 'Dickson Mbuvi',
@@ -81,6 +81,14 @@ const Testimonios = () => {
         slider.slides.forEach((slide) => slide.classList.add('opacity-40'));
         slider.slides[slider.track.details.rel].classList.remove('opacity-40');
         keenSliderActive.innerText = slider.track.details.rel + 1;
+
+        // Eliminar la clase de fondo de gradiente de todas las tarjetas
+        slider.slides.forEach((slide) => {
+          slide.classList.remove('active-card');
+        });
+
+        // Añadir la clase 'active-card' a la tarjeta activa en el centro
+        slider.slides[slider.track.details.rel].classList.add('active-card');
       },
     });
 
@@ -98,7 +106,7 @@ const Testimonios = () => {
   // Los textos en español o inglés según el idioma actual
   const texts = {
     es: {
-      title: "Experiencia del cliente",
+      title: "EXPERIENCIA DEL CLIENTE",
       prev: "Anterior",
       next: "Siguiente"
     },
@@ -111,72 +119,78 @@ const Testimonios = () => {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          {texts[language].title}
-        </h2>
-        <div className="mt-8">
-          <div id="keen-slider" className="keen-slider">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="keen-slider__slide opacity-40 transition-opacity duration-500">
-                <blockquote className="flex flex-col h-full justify-between rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <p className="mt-0.5 text-lg font-medium text-gray-900">{testimonial.name}</p>
-                      <p className="mt-1 text-sm text-gray-500">{testimonial.description}</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-gray-700 flex-grow">{testimonial.text}</p>
-                </blockquote>
+  <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <h2 className="text-center text-3xl font-bold text-black">
+      {texts[language].title}
+    </h2>
+    <div className="mt-8">
+      <div id="keen-slider" className="keen-slider">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="keen-slider__slide opacity-40 transition-opacity duration-500"
+          >
+            <blockquote className="flex flex-col h-full justify-between rounded-lg p-6 sm:p-8 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 shadow-md">
+              <div className="flex items-center gap-4">
+                <div>
+                  <p className="mt-0.5 text-lg font-medium text-black">{testimonial.name}</p>
+                  <p className="mt-1 text-sm text-gray-900">{testimonial.description}</p>
+                </div>
               </div>
-            ))}
+              <p className="mt-4 text-black flex-grow">{testimonial.text}</p>
+            </blockquote>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-4">
-            <button
-              aria-label={texts[language].prev}
-              id="keen-slider-previous"
-              className="text-gray-600 transition-colors hover:text-gray-900"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-            <p className="w-16 text-center text-sm text-gray-700">
-              <span id="keen-slider-active"></span>
-              /
-              <span id="keen-slider-count"></span>
-            </p>
-            <button
-              aria-label={texts[language].next}
-              id="keen-slider-next"
-              className="text-gray-600 transition-colors hover:text-gray-900"
-            >
-              <svg
-                className="size-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 5l7 7-7 7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+      <div className="mt-6 flex items-center justify-center gap-4">
+        <button
+          aria-label={texts[language].prev}
+          id="keen-slider-previous"
+          className="text-gray-600 transition-colors hover:text-gray-900"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-5"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <p className="w-16 text-center text-sm text-gray-700">
+          <span id="keen-slider-active"></span>
+          /
+          <span id="keen-slider-count"></span>
+        </p>
+        <button
+          aria-label={texts[language].next}
+          id="keen-slider-next"
+          className="text-gray-600 transition-colors hover:text-gray-900"
+        >
+          <svg
+            className="size-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 5l7 7-7 7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  {/* Padding final igual que al principio */}
+  <div className="px-4 py-8 sm:px-6 lg:px-8 lg:py-16" />
+</section>
+
   );
 };
 

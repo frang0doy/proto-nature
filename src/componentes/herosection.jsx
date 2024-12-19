@@ -75,7 +75,7 @@ export default function HeroSection() {
 
           <div className="mt-16 flex flex-wrap justify-center gap-4">
             <a
-              className="block w-full rounded bg-gray-900 px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-500 focus:outline-none focus:ring sm:w-auto sm:text-base"
+              className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
               href="#"
               style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
             >
@@ -83,7 +83,7 @@ export default function HeroSection() {
             </a>
 
             <a
-              className="block w-full rounded bg-gray-900 px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-500 focus:outline-none focus:ring sm:w-auto sm:text-base"
+              className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
               href="#"
               style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
             >

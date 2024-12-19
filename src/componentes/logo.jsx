@@ -7,7 +7,10 @@ const CarouselWrapper = styled.div`
   width: 100%;
   margin: auto;
   background-color: white; /* Fondo blanco para el carrusel */
-
+  padding: 0 20px 40px; /* Padding en la parte inferior de 40px */
+  
+  /* Si prefieres más espacio en los lados también, puedes modificar el padding superior o lateral */
+  
   .slick-slide {
     display: flex;
     justify-content: center;
