@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importamos el archivo CSS de AOS
 import { FaSolarPanel, FaSnowflake, FaWater, FaSeedling, FaRecycle, FaUsers } from 'react-icons/fa'; // Importamos los iconos de react-icons
+import { useLanguage } from './LenguajeContext'; // Asegurarnos de que el contexto de idioma esté disponible
 
 const Soluciones = () => {
+  const { language } = useLanguage(); // Usamos el contexto para obtener el idioma actual
+
   useEffect(() => {
     // Inicializamos AOS
     AOS.init({
@@ -20,54 +23,105 @@ const Soluciones = () => {
     });
   }, []);
 
+  const texts = {
+    electricidad: {
+      es: "Electricidad",
+      en: "Electricity"
+    },
+    climatizacion: {
+      es: "Climatización",
+      en: "Climate Control"
+    },
+    agua: {
+      es: "Agua Potable",
+      en: "Drinking Water"
+    },
+    alimento: {
+      es: "Alimento",
+      en: "Food"
+    },
+    residuos: {
+      es: "Residuos",
+      en: "Waste"
+    },
+    inclusion: {
+      es: "Inclusión Social",
+      en: "Social Inclusion"
+    },
+    backElectricidad: {
+      es: "Sistemas on-grid y off-grid con la posibilidad de aprovechar tanto la energía eólica como la energía solar. ¿Alguna vez imaginaste ganar dinero con la energía que generás?",
+      en: "On-grid and off-grid systems with the ability to harness both wind and solar energy. Have you ever imagined earning money from the energy you generate?"
+    },
+    backClimatizacion: {
+      es: "Hay innumerables formas de generar frío y calor de manera sustentable. ¿Un aire acondicionado, un sistema de refrigeración para un edificio entero? Tenemos la manera de concretar esa visión.",
+      en: "There are countless ways to generate cold and heat sustainably. An air conditioner, a refrigeration system for an entire building? We have the way to make that vision a reality."
+    },
+    backAgua: {
+      es: "Contamos con sistemas que garantizan el auto abastecimiento de agua potable, a medida de cualquier volumen de demanda. Tu propia fuente de agua natural.",
+      en: "We offer systems that guarantee self-sufficiency in drinking water, tailored to any demand volume. Your own natural water source."
+    },
+    backAlimento: {
+      es: "Somos los que comemos. Te acercamos una revolución en la forma de obtener alimentos 100% naturales y orgánicos. Una huerta saludable, sin necesidad de tierra, sustratos, o luz del sol.",
+      en: "We are what we eat. We bring you a revolution in obtaining 100% natural and organic food. A healthy garden, without the need for soil, substrates, or sunlight."
+    },
+    backResiduos: {
+      es: "Mediante inteligencia artificial, podés reducir el consumo innecesario, analizando lo que tirás a la basura. Tecnología disruptiva, ideal para optimizar lo que comprás.",
+      en: "Using artificial intelligence, you can reduce unnecessary consumption by analyzing what you throw away. Disruptive technology, ideal for optimizing what you buy."
+    },
+    backInclusion: {
+      es: "La energía sustentable es la mejor manera de mejorar la calidad de vida de quienes no tienen acceso (económico o geográfico) a una red tradicional. Un mundo mejor para miles de familias, hasta hoy, ignoradas.",
+      en: "Sustainable energy is the best way to improve the quality of life for those without access (economically or geographically) to a traditional grid. A better world for thousands of families, until now, ignored."
+    }
+  };
+
   return (
     <div className="soluciones-container">
       <h1 className="titulo text-3xl font-bold tracking-wide" data-aos="fade-down">
-        Soluciones
+        {language === 'es' ? 'Soluciones' : 'Solutions'}
       </h1>
       <h2 className="subtitulo text-2xl font-medium mt-2" data-aos="fade-down" data-aos-delay="200">
-        Encuentra lo que buscas
+        {language === 'es' ? 'Encuentra lo que buscas' : 'Find what you are looking for'}
       </h2>
       <div className="card-container">
         <Card 
           cardNumber={1} 
-          frontContent="Electricidad" 
-          backContent="Sistemas on-grid y off-grid con la posibilidad de aprovechar tanto la energía eólica como la energía solar. ¿Alguna vez imaginaste ganar dinero con la energía que generás?" 
+          frontContent={texts.electricidad[language]} 
+          backContent={texts.backElectricidad[language]} 
           delay={100} 
           Icon={<FaSolarPanel size={50} />}
         />
         <Card 
           cardNumber={2} 
-          frontContent="Climatizacion" 
-          backContent="Hay innumerables formas de generar frío y calor de manera sustentable. ¿Un aire acondicionado, un sistema de refrigeración para un edificio entero? Tenemos la manera de concretar esa visión." 
+          frontContent={texts.climatizacion[language]} 
+          backContent={texts.backClimatizacion[language]} 
           delay={200} 
           Icon={<FaSnowflake size={50} />}
         />
         <Card 
           cardNumber={3} 
-          frontContent="Agua Potable" 
-          backContent="Contamos con sistemas que garantizan el auto abastecimiento de agua potable, a medida de cualquier volumen de demanda. Tu propia fuente de agua natural." 
+          frontContent={texts.agua[language]} 
+          backContent={texts.backAgua[language]} 
           delay={300} 
           Icon={<FaWater size={50} />}
         />
         <Card 
           cardNumber={4} 
-          frontContent="Alimento" 
-          backContent="Somos los que comemos. Te acercamos una revolución en la forma de obtener alimentos 100% naturales y orgánicos. Una huerta saludable, sin necesidad de tierra, sustratos, o luz del sol." 
+          frontContent={texts.alimento[language]} 
+          backContent={texts.backAlimento[language]} 
           delay={400} 
           Icon={<FaSeedling size={50} />}
         />
         <Card 
           cardNumber={5} 
-          frontContent="Reciduos" 
-          backContent="Mediante inteligencia artificial, podés reducir el consumo innecesario, analizando lo que tirás a la basura. Tecnología disruptiva, ideal para optimizar lo que comprás." 
+          frontContent={texts.residuos[language]} 
+          backContent={texts.backResiduos[language]} 
           delay={500} 
           Icon={<FaRecycle size={50} />}
         />
         <Card 
           cardNumber={6} 
-          frontContent="Inclusion Social" 
-          backContent="La energía sustentables es la mejor manera de mejorar la calidad de vida de quienes no tienen acceso (económico o geográfico) a una red tradicional. Un mundo mejor para miles de familias, hasta hoy, ignoradas." 
+          frontContent={texts.inclusion[language]} 
+          backContent={texts.backInclusion[language]} 
           delay={600} 
           Icon={<FaUsers size={50} />}
         />
@@ -157,6 +211,41 @@ const Soluciones = () => {
         /* Icono debajo del título */
         .card__front .icon {
           margin-top: 10px;
+        }
+
+        /* Estilos para pantallas pequeñas */
+        @media (max-width: 768px) {
+          .card-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+            gap: 20px; /* Menos espacio entre tarjetas */
+          }
+
+          .card {
+            width: 100%;
+            max-width: 350px; /* Tamaño más pequeño de las tarjetas */
+            height: 220px;
+          }
+
+          .card__back {
+            font-size: 1em; /* Ajustar tamaño de texto */
+          }
+        }
+
+        @media (max-width: 480px) {
+          .card-container {
+            grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+            gap: 10px;
+          }
+
+          .card {
+            width: 100%;
+            max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+            height: 200px;
+          }
+
+          .card__back {
+            font-size: 0.9em; /* Ajustar aún más el tamaño del texto */
+          }
         }
       `}</style>
     </div>
