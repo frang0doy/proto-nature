@@ -45,7 +45,8 @@ const Nosotros = () => {
   return (
     <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
       {/* Contenedor centralizado con flexbox */}
-      <div className="flex flex-col sm:flex-row items-start justify-between w-full px-12 sm:px-60 gap-12 mx-auto">
+      <div className="flex flex-col sm:flex-row items-center justify-between w-full px-12 sm:px-60 gap-12 mx-auto">
+        {/* Contenido de texto */}
         <div className="text-center sm:text-left sm:w-2/3 md:w-1/2">
           <h2
             className="text-2xl font-bold text-black md:text-3xl mb-4"

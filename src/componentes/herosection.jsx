@@ -27,8 +27,8 @@ export default function HeroSection() {
   // Contenido para español e inglés
   const texts = {
     heading: {
-      es: "UNIDOS POR UNA NUEVA CONCIENCIA.",
-      en: "UNITED FOR A NEW CONSCIOUSNESS."
+      es: "UNIDOS POR UNA NUEVA CONCIENCIA",
+      en: "UNITED FOR A NEW CONSCIOUSNESS"
     },
     subheading: {
       es: "Soluciones energéticas innovadoras para un futuro más limpio y eficiente.",
@@ -84,14 +84,14 @@ export default function HeroSection() {
       <div className="absolute inset-0 flex justify-center items-center text-center text-white">
         <div>
           <h1
-            className="text-3xl font-extrabold sm:text-5xl"
+            className="text-3xl font-extrabold sm:text-5xl lg:text-5xl"
             style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
           >
             {language === 'es' ? texts.heading.es : texts.heading.en}
           </h1>
 
           <p
-            className="mt-4 text-sm sm:text-xl text-white"
+            className="mt-4 text-sm sm:text-2xl lg:text-4xl xl:text-3xl text-white"
             style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
           >
             {language === 'es' ? texts.subheading.es : texts.subheading.en}
