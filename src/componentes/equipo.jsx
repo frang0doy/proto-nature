@@ -56,8 +56,8 @@ const Equipo = () => {
         </p>
       </div>
 
-      {/* Contenedor de perfiles con grid para 3 arriba y 2 abajo */}
-      <div className="profiles-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 justify-items-center">
+      {/* Contenedor de perfiles con grid */}
+      <div className="profiles-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-2 justify-items-center">
         {teamMembers.map((member, index) => (
           <div
             key={index}

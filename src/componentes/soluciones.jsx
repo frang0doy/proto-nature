@@ -196,6 +196,18 @@ const Soluciones = () => {
         .card__back {
           background-color: white;
           transform: rotateY(180deg); /* Gira la parte trasera */
+          display: flex;
+          justify-content: center; /* Centra horizontalmente */
+          align-items: center; /* Centra verticalmente */
+          padding: 20px; /* Márgenes internos */
+          box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+          font-size: 1.2em;
+        }
+
+        /* Ajuste para el texto */
+        .card__back p {
+          text-align: center; /* Alinea el texto al centro */
+          margin: 0; /* Elimina márgenes predeterminados */
         }
 
         /* Efecto de voltear la tarjeta */

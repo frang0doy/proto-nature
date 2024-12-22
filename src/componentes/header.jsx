@@ -141,7 +141,7 @@ export default function Header() {
             <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
             <button
               onClick={toggleLanguage}
-              className="text-white text-sm font-semibold py-2 px-4 rounded-md hover:bg-indigo-600 transition-all"
+              className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
             >
               {language === 'es' ? 'IN' : 'ES'}
             </button>
@@ -188,16 +188,16 @@ export default function Header() {
 
                 {/* Espacio para íconos y botones alineados al final */}
                 <div className="flex flex-col items-center justify-end mt-auto space-y-4">
-  <div className="flex items-center justify-center space-x-4">
-    <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
-    <button
-      onClick={toggleLanguage}
-      className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
-    >
-      {language === 'es' ? 'IN' : 'ES'}
-    </button>
-  </div>
-</div>
+                  <div className="flex items-center justify-center space-x-4">
+                    <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
+                    <button
+                      onClick={toggleLanguage}
+                      className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
+                    >
+                      {language === 'es' ? 'IN' : 'ES'}
+                    </button>
+                  </div>
+                </div>
 
               </div>
             )}

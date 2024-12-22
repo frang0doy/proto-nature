@@ -43,13 +43,13 @@ const Nosotros = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62"> {/* Padding bottom mucho mayor (pb-72 = 18rem) */}
-      {/* Contenedor centralizado con flexbox y más margen de los bordes */}
-      <div className="flex flex-col sm:flex-row items-start justify-between w-full px-60 gap-12 mx-auto">
+    <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
+      {/* Contenedor centralizado con flexbox */}
+      <div className="flex flex-col sm:flex-row items-start justify-between w-full px-12 sm:px-60 gap-12 mx-auto">
         <div className="text-center sm:text-left sm:w-2/3 md:w-1/2">
           <h2
             className="text-2xl font-bold text-black md:text-3xl mb-4"
-            data-aos="fade-up" // Animación de aparición hacia arriba
+            data-aos="fade-up"
           >
             <span className="block">{texts[language].title}</span>
             <span className="block text-purple-600">{texts[language].subtitle}</span>
@@ -58,18 +58,14 @@ const Nosotros = () => {
           <p
             className="mt-2 text-lg text-gray-900 sm:text-xl sm:text-left leading-relaxed text-justify"
             style={{
-              wordBreak: 'keep-all',  // Evita que se rompan las palabras
-              textAlignLast: 'justify',  // Alinea la última línea también
-              whiteSpace: 'pre-line',  // Asegura que no haya saltos de línea innecesarios
+              wordBreak: 'keep-all',
+              textAlignLast: 'justify',
+              whiteSpace: 'pre-line',
             }}
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            {/* Aquí modificamos para que "sostenible" esté en la línea correcta */}
-            En d.light, nos dedicamos a transformar vidas a través de soluciones de energía solar asequibles y{' '}
-            <span className="font-semibold">sostenibles</span>, empoderando a más de 175 millones de personas en todo el mundo. 
-            Nuestro objetivo es proporcionar acceso a energía limpia que fomente la educación, mejore la salud y cree oportunidades económicas. 
-            Nuestra visión es transformar mil millones de vidas para 2030, allanando el camino hacia un futuro más brillante.
+            {texts[language].description}
           </p>
 
           <div className="mt-6">
@@ -84,12 +80,12 @@ const Nosotros = () => {
           </div>
         </div>
 
+        {/* Imagen ajustada */}
         <div
-          className="relative flex justify-center items-center sm:w-2/3 md:w-1/2"
+          className="relative flex justify-center items-center sm:w-2/3 md:w-1/2 sm:mt-8"
           data-aos="zoom-in"
           data-aos-delay="500"
         >
-          {/* Imagen ajustada */}
           <div className="relative w-full h-64 sm:h-[80%]">
             <img
               alt="Imagen"

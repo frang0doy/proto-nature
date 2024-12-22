@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from './LenguajeContext'; // Asegúrate de que este archivo existe y tiene el contexto de idioma
 
 export default function HeroSection() {
   // Estado para manejar la posición del scroll
@@ -19,6 +20,29 @@ export default function HeroSection() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Obtener el idioma actual desde el contexto
+  const { language } = useLanguage();
+
+  // Contenido para español e inglés
+  const texts = {
+    heading: {
+      es: "UNIDOS POR UNA NUEVA CONCIENCIA.",
+      en: "UNITED FOR A NEW CONSCIOUSNESS."
+    },
+    subheading: {
+      es: "Soluciones energéticas innovadoras para un futuro más limpio y eficiente.",
+      en: "Innovative energy solutions for a cleaner and more efficient future."
+    },
+    button1: {
+      es: "Conoce más",
+      en: "Learn More"
+    },
+    button2: {
+      es: "Contáctanos",
+      en: "Contact Us"
+    }
+  };
 
   // Estilos para el texto con desplazamiento
   const textStyle = {
@@ -63,14 +87,14 @@ export default function HeroSection() {
             className="text-3xl font-extrabold sm:text-5xl"
             style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
           >
-            UNIDOS POR UNA NUEVA CONCIENCIA.
+            {language === 'es' ? texts.heading.es : texts.heading.en}
           </h1>
 
           <p
             className="mt-4 text-sm sm:text-xl text-white"
             style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
           >
-            Soluciones energéticas innovadoras para un futuro más limpio y eficiente.
+            {language === 'es' ? texts.subheading.es : texts.subheading.en}
           </p>
 
           <div className="mt-16 flex flex-wrap justify-center gap-4">
@@ -79,7 +103,7 @@ export default function HeroSection() {
               href="#"
               style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
             >
-              Conoce más
+              {language === 'es' ? texts.button1.es : texts.button1.en}
             </a>
 
             <a
@@ -87,7 +111,7 @@ export default function HeroSection() {
               href="#"
               style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
             >
-              Contáctanos
+              {language === 'es' ? texts.button2.es : texts.button2.en}
             </a>
           </div>
         </div>
