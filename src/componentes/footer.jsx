@@ -37,7 +37,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900">
+    <footer id="contact" className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900">
       <div className="mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-2">
         {/* Sección superior con el párrafo */}
         <div className="lg:flex lg:items-start lg:gap-18">
@@ -53,22 +53,21 @@ const Footer = () => {
 
             {/* Aquí separo el formulario para que se quede a la parte derecha */}
             <div className="col-span-2 lg:col-span-3 mt-10 lg:mt-0 flex justify-end">
-            <form className="w-full lg:w-96">
-  <label htmlFor="UserEmail" className="sr-only">Email</label>
-  <div className="flex w-full">
-    <input
-      type="email"
-      id="UserEmail"
-      className="w-3/4 px-4 py-2 text-black focus:outline-none focus:ring-0 border-2 border-white rounded-l-full"  // Input más largo
-    />
-    <button
-      className="w-1/4 bg-gray-900 px-6 py-2 text-sm font-semibold text-white transition-none hover:bg-teal-600 border-2 border-white border-l-0 rounded-r-full"  // Botón más corto
-    >
-      {texts[language].newsletterButton || 'Enviar'}
-    </button>
-  </div>
-</form>
-
+              <form className="w-full lg:w-96">
+                <label htmlFor="UserEmail" className="sr-only">Email</label>
+                <div className="flex w-full">
+                  <input
+                    type="email"
+                    id="UserEmail"
+                    className="w-3/4 px-4 py-2 text-black focus:outline-none focus:ring-0 border-2 border-white rounded-l-full"  // Input más largo
+                  />
+                  <button
+                    className="w-1/4 bg-gray-900 px-6 py-2 text-sm font-semibold text-white transition-none hover:bg-teal-600 border-2 border-white border-l-0 rounded-r-full"  // Botón más corto
+                  >
+                    {texts[language].newsletterButton || 'Enviar'}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

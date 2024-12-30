@@ -13,7 +13,6 @@ import { LanguageProvider } from './componentes/LenguajeContext';
 import HeroSection from './componentes/herosection'; 
 import Soluciones from './componentes/soluciones';
 
-
 function App() {
   return (
     <LanguageProvider> {/* Envuelve con el proveedor de idioma */}
@@ -27,17 +26,31 @@ function App() {
 
         {/* Cuerpo de la aplicación */}
         <main className="flex-grow">
-        <Nosotros />
-        <Soluciones />
-          <Stats />
-          <Productos />
-          <Testimonios />
-          <Logo />
-          <Equipo /> {/* Asegúrate de que este componente tenga suficiente espacio */}
+          <section id="nosotros">
+            <Nosotros />
+          </section>
+          <section id="soluciones">
+            <Soluciones />
+          </section>
+          <section>
+            <Stats />
+          </section>
+          <section id="productos">
+            <Productos />
+          </section>
+          <section>
+            <Testimonios />
+          </section>
+          <section>
+            <Logo />
+          </section>
+          <section id="equipo">
+            <Equipo />
+          </section>
         </main>
 
         {/* Pie de página */}
-        <footer className="App-footer">
+        <footer id="contacto" className="App-footer">
           <Footer />
         </footer>
       </div>

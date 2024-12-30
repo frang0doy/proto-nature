@@ -23,10 +23,10 @@ const translations = {
 };
 
 const products = [
-  { name: 'Paneles Solares', href: '#', icon: SunIcon },
-  { name: 'Hidroponia', href: '#', icon: ShoppingBagIcon },
-  { name: 'Baterías', href: '#', icon: Battery50Icon },
-  { name: 'Energía Eólica', href: '#', icon: CloudIcon },
+  { name: 'Paneles Solares', href: '#productos', icon: SunIcon },
+  { name: 'Hidroponia', href: '#productos', icon: ShoppingBagIcon },
+  { name: 'Baterías', href: '#productos', icon: Battery50Icon },
+  { name: 'Energía Eólica', href: '#productos', icon: CloudIcon },
 ];
 
 export default function Header() {
@@ -42,7 +42,7 @@ export default function Header() {
       const opacity = Math.min(scrollPosition / 300, 1);
       setScrolling(opacity);
 
-      if (scrollPosition > window.innerHeight * 0.6) {
+      if (scrollPosition > window.innerHeight * 0.6) {  
         setBgColor('bg-black');
       } else {
         setBgColor('transparent');
@@ -58,14 +58,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Efecto de desenfoque cuando el menú está abierto */}
-      <div
-        className={`fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity duration-300 ${
-          mobileMenuOpen ? 'opacity-100 visible backdrop-blur-sm' : 'opacity-0 invisible'
-        }`}
-        onClick={() => setMobileMenuOpen(false)}
-      ></div>
-
       {/* Header */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${bgColor}`}
@@ -120,27 +112,32 @@ export default function Header() {
                     ))}
                   </div>
                   <div className="flex justify-center bg-gray-50 p-4">
-                    <a
-                      href="#"
-                      className="flex items-center gap-x-2 px-6 py-3 text-sm font-semibold text-gray-900 bg-gray-200 rounded-md hover:bg-gray-300"
-                    >
-                      {t.viewAll}
-                    </a>
-                  </div>
+  <a
+    href="#productos"
+    onClick={() => setMobileMenuOpen(false)} // Cerrar el menú al hacer clic
+    className="flex items-center gap-x-2 px-6 py-3 text-sm font-semibold text-gray-900 bg-gray-200 rounded-md hover:bg-gray-300"
+  >
+    {t.viewAll}
+  </a>
+</div>
+
                 </Popover.Panel>
               </Popover>
 
               {/* Otros enlaces de navegación */}
-              {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="relative text-sm font-semibold text-white group"
-                >
-                  {item}
-                  <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </a>
-              ))}
+              {[{ id: "about-us", label: t.aboutUs }, { id: "solutions", label: t.solutions }, { id: "team", label: t.team }, { id: "contact", label: t.contact }].map(
+  (item, index) => (
+    <a
+  key={index}
+  href={`#${item.id}`}
+  className="relative text-sm font-semibold text-white group"
+>
+  {item.label}
+  <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
+</a>
+
+  )
+)}
             </PopoverGroup>
           </div>
 
@@ -164,52 +161,56 @@ export default function Header() {
               <Bars3Icon className="h-6 w-6" />
             </button>
 
-            <div
-              className={`fixed top-0 right-0 w-[300px] h-full bg-black text-white p-6 transition-transform duration-500 transform ${
-                mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-              }`}
-            >
-              <div className="flex items-center justify-between mb-6">
-                {/* Logo y Botón X */}
-                <a href="#" className="-m-1.5 p-1.5">
-                  <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
-                </a>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-white p-2"
-                >
-                  <XMarkIcon className="h-6 w-6" />
-                </button>
-              </div>
-
-              {/* Enlaces de navegación */}
-              <div className="flex flex-col space-y-4 mb-6">
-                {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
-                  <div key={index}>
-                    <a
-                      href="#"
-                      className="text-sm font-semibold cursor-pointer hover:text-indigo-600 py-2 px-4 w-full text-center rounded-md transition-all"
-                    >
-                      {item}
+            {mobileMenuOpen && (
+              <>
+                {/* Fondo borroso cuando el menú se abre */}
+                <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40"></div>
+                
+                {/* Menú deslizante */}
+                <div className={`fixed top-0 right-0 w-[300px] h-full bg-black text-white p-6 z-50 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                  <div className="flex items-center justify-between mb-6">
+                    {/* Logo y Botón X */}
+                    <a href="#" className="-m-1.5 p-1.5">
+                      <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
                     </a>
-                    {index < 3 && <hr className="my-2 border-t border-gray-300" />}
+                    <button
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-white p-2"
+                    >
+                      <XMarkIcon className="h-6 w-6" />
+                    </button>
                   </div>
-                ))}
-              </div>
 
-              {/* Íconos y botones al final */}
-              <div className="flex flex-col items-center justify-end mt-auto space-y-4">
-                <div className="flex items-center justify-center space-x-4">
-                  <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
-                  <button
-                    onClick={toggleLanguage}
-                    className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
-                  >
-                    {language === 'es' ? 'IN' : 'ES'}
-                  </button>
+                  {/* Enlaces de navegación */}
+                  <div className="flex flex-col space-y-4 mb-6">
+                    {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
+                      <div key={index}>
+                        <a
+                          href="#"
+                          className="text-sm font-semibold cursor-pointer hover:text-indigo-600 py-2 px-4 w-full text-center rounded-md transition-all"
+                        >
+                          {item}
+                        </a>
+                        {index < 3 && <hr className="my-2 border-t border-gray-300" />}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Espacio para íconos y botones alineados al final */}
+                  <div className="flex flex-col items-center justify-end mt-auto space-y-4">
+                    <div className="flex items-center justify-center space-x-4">
+                      <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
+                      <button
+                        onClick={toggleLanguage}
+                        className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
+                      >
+                        {language === 'es' ? 'IN' : 'ES'}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </nav>
       </header>

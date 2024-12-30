@@ -43,7 +43,7 @@ const Nosotros = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
+    <section id="about-us"className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
       {/* Contenedor centralizado con flexbox */}
       <div className="flex flex-col sm:flex-row items-center justify-between w-full px-12 sm:px-60 gap-12 mx-auto">
         {/* Contenido de texto */}

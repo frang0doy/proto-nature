@@ -98,22 +98,23 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-16 flex flex-wrap justify-center gap-4">
-            <a
-              className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
-              href="#"
-              style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-            >
-              {language === 'es' ? texts.button1.es : texts.button1.en}
-            </a>
+  <a
+    className="block w-full sm:w-auto rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
+    href="#"
+    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
+  >
+    {language === 'es' ? texts.button1.es : texts.button1.en}
+  </a>
 
-            <a
-              className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
-              href="#"
-              style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-            >
-              {language === 'es' ? texts.button2.es : texts.button2.en}
-            </a>
-          </div>
+  <a
+    className="block w-full sm:w-auto rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
+    href="#"
+    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
+  >
+    {language === 'es' ? texts.button2.es : texts.button2.en}
+  </a>
+</div>
+
         </div>
       </div>
     </section>

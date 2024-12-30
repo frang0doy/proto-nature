@@ -1,3 +1,4 @@
+// Equipo.jsx
 import React from "react";
 import { useLanguage } from './LenguajeContext'; // Importar el hook de idioma
 
@@ -46,7 +47,7 @@ const Equipo = () => {
   };
 
   return (
-    <section className="profile-slider py-16 px-4 bg-white">
+    <section id="team" className="profile-slider py-16 px-4 bg-white">
       <div className="profile-slider__header text-center mb-12">
         <h1 className="profile-slider__title text-3xl font-bold text-black">
           {texts[language].title}

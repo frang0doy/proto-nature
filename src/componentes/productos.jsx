@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import AOS from 'aos'; // Importa AOS
 import 'aos/dist/aos.css'; // Importa los estilos de AOS
+import { useLanguage } from './LenguajeContext'; 
 
 const Productos = () => {
   const [showModal, setShowModal] = useState(false);  
@@ -132,7 +133,7 @@ const Productos = () => {
     },
   ];
   return (
-    <section className="productos-section py-6">
+    <section id="products"className="productos-section py-6">
   <div className="container mx-auto px-1">
     <div className="max-w-[1280px] mx-auto">
       {/* Contenedor centrado */}

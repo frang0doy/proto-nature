@@ -75,192 +75,194 @@ const Soluciones = () => {
   };
 
   return (
-    <div className="soluciones-container">
-      <h1 className="titulo text-3xl font-bold tracking-wide" data-aos="fade-down">
-        {language === 'es' ? 'Soluciones' : 'Solutions'}
-      </h1>
-      <h2 className="subtitulo text-2xl font-medium mt-2" data-aos="fade-down" data-aos-delay="200">
-        {language === 'es' ? 'Encuentra lo que buscas' : 'Find what you are looking for'}
-      </h2>
-      <div className="card-container">
-        <Card 
-          cardNumber={1} 
-          frontContent={texts.electricidad[language]} 
-          backContent={texts.backElectricidad[language]} 
-          delay={100} 
-          Icon={<FaSolarPanel size={50} />}
-        />
-        <Card 
-          cardNumber={2} 
-          frontContent={texts.climatizacion[language]} 
-          backContent={texts.backClimatizacion[language]} 
-          delay={200} 
-          Icon={<FaSnowflake size={50} />}
-        />
-        <Card 
-          cardNumber={3} 
-          frontContent={texts.agua[language]} 
-          backContent={texts.backAgua[language]} 
-          delay={300} 
-          Icon={<FaWater size={50} />}
-        />
-        <Card 
-          cardNumber={4} 
-          frontContent={texts.alimento[language]} 
-          backContent={texts.backAlimento[language]} 
-          delay={400} 
-          Icon={<FaSeedling size={50} />}
-        />
-        <Card 
-          cardNumber={5} 
-          frontContent={texts.residuos[language]} 
-          backContent={texts.backResiduos[language]} 
-          delay={500} 
-          Icon={<FaRecycle size={50} />}
-        />
-        <Card 
-          cardNumber={6} 
-          frontContent={texts.inclusion[language]} 
-          backContent={texts.backInclusion[language]} 
-          delay={600} 
-          Icon={<FaUsers size={50} />}
-        />
+    <section id="solutions" className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
+      <div className="soluciones-container">
+        <h1 className="titulo text-3xl font-bold tracking-wide" data-aos="fade-down">
+          {language === 'es' ? 'Soluciones' : 'Solutions'}
+        </h1>
+        <h2 className="subtitulo text-2xl font-medium mt-2" data-aos="fade-down" data-aos-delay="200">
+          {language === 'es' ? 'Encuentra lo que buscas' : 'Find what you are looking for'}
+        </h2>
+        <div className="card-container">
+          <Card 
+            cardNumber={1} 
+            frontContent={texts.electricidad[language]} 
+            backContent={texts.backElectricidad[language]} 
+            delay={100} 
+            Icon={<FaSolarPanel size={50} />}
+          />
+          <Card 
+            cardNumber={2} 
+            frontContent={texts.climatizacion[language]} 
+            backContent={texts.backClimatizacion[language]} 
+            delay={200} 
+            Icon={<FaSnowflake size={50} />}
+          />
+          <Card 
+            cardNumber={3} 
+            frontContent={texts.agua[language]} 
+            backContent={texts.backAgua[language]} 
+            delay={300} 
+            Icon={<FaWater size={50} />}
+          />
+          <Card 
+            cardNumber={4} 
+            frontContent={texts.alimento[language]} 
+            backContent={texts.backAlimento[language]} 
+            delay={400} 
+            Icon={<FaSeedling size={50} />}
+          />
+          <Card 
+            cardNumber={5} 
+            frontContent={texts.residuos[language]} 
+            backContent={texts.backResiduos[language]} 
+            delay={500} 
+            Icon={<FaRecycle size={50} />}
+          />
+          <Card 
+            cardNumber={6} 
+            frontContent={texts.inclusion[language]} 
+            backContent={texts.backInclusion[language]} 
+            delay={600} 
+            Icon={<FaUsers size={50} />}
+          />
+        </div>
+
+        {/* Estilos internos */}
+        <style jsx>{`
+          /* Contenedor principal */
+          .soluciones-container {
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 60px; /* Espacio adicional en la parte inferior */
+          }
+
+          /* Estilos del título */
+          .titulo {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+          }
+
+          /* Estilos del subtítulo */
+          .subtitulo {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+          }
+
+          /* Contenedor de las tarjetas */
+          .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 400px); /* 3 columnas de 400px */
+            gap: 40px; /* Espacio entre tarjetas */
+            justify-content: center; /* Centra las tarjetas en el contenedor */
+            margin-top: 40px;
+          }
+
+          /* Estilos individuales para las tarjetas */
+          .card {
+            width: 400px;
+            height: 250px;
+            perspective: 1500px; /* Perspectiva para el efecto 3D */
+          }
+
+          .card__inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d; /* Mantener las caras en 3D */
+            transition: transform 1s ease; /* Aumentamos la duración de la rotación */
+          }
+
+          /* Estilo de la parte frontal de la tarjeta */
+          .card__front,
+          .card__back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            backface-visibility: hidden; /* Esconde la parte de atrás cuando está volteada */
+            flex-direction: column;
+          }
+
+          .card__front {
+            background-color: #f0f0f0;
+          }
+
+          /* Estilo de la parte posterior de la tarjeta */
+          .card__back {
+            background-color: white;
+            transform: rotateY(180deg); /* Gira la parte trasera */
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            padding: 20px; /* Márgenes internos */
+            box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+            font-size: 1.2em;
+          }
+
+          /* Ajuste para el texto */
+          .card__back p {
+            text-align: center; /* Alinea el texto al centro */
+            margin: 0; /* Elimina márgenes predeterminados */
+          }
+
+          /* Efecto de voltear la tarjeta */
+          .card:hover .card__inner {
+            transform: rotateY(180deg); /* Al hacer hover, la tarjeta se voltea */
+          }
+
+          /* Animaciones cuando las tarjetas entran en pantalla */
+          .card.show {
+            opacity: 1;
+          }
+
+          /* Icono debajo del título */
+          .card__front .icon {
+            margin-top: 10px;
+          }
+
+          /* Estilos para pantallas pequeñas */
+          @media (max-width: 768px) {
+            .card-container {
+              grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+              gap: 20px; /* Menos espacio entre tarjetas */
+            }
+
+            .card {
+              width: 100%;
+              max-width: 350px; /* Tamaño más pequeño de las tarjetas */
+              height: 220px;
+            }
+
+            .card__back {
+              font-size: 1em; /* Ajustar tamaño de texto */
+            }
+          }
+
+          @media (max-width: 480px) {
+            .card-container {
+              grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+              gap: 10px;
+            }
+
+            .card {
+              width: 100%;
+              max-width: 250px; /* Ajuste para pantallas muy pequeñas */
+              height: 200px;
+            }
+
+            .card__back {
+              font-size: 0.9em; /* Ajustar aún más el tamaño del texto */
+            }
+          }
+        `}</style>
       </div>
-
-      {/* Estilos internos */}
-      <style jsx>{`
-        /* Contenedor principal */
-        .soluciones-container {
-          text-align: center;
-          padding: 20px;
-          padding-bottom: 60px; /* Espacio adicional en la parte inferior */
-        }
-
-        /* Estilos del título */
-        .titulo {
-          font-size: 2.5em;
-          margin-bottom: 10px;
-        }
-
-        /* Estilos del subtítulo */
-        .subtitulo {
-          font-size: 1.5em;
-          margin-bottom: 20px;
-        }
-
-        /* Contenedor de las tarjetas */
-        .card-container {
-          display: grid;
-          grid-template-columns: repeat(3, 400px); /* 3 columnas de 400px */
-          gap: 40px; /* Espacio entre tarjetas */
-          justify-content: center; /* Centra las tarjetas en el contenedor */
-          margin-top: 40px;
-        }
-
-        /* Estilos individuales para las tarjetas */
-        .card {
-          width: 400px;
-          height: 250px;
-          perspective: 1500px; /* Perspectiva para el efecto 3D */
-        }
-
-        .card__inner {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          transform-style: preserve-3d; /* Mantener las caras en 3D */
-          transition: transform 1s ease; /* Aumentamos la duración de la rotación */
-        }
-
-        /* Estilo de la parte frontal de la tarjeta */
-        .card__front,
-        .card__back {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 1.2em;
-          backface-visibility: hidden; /* Esconde la parte de atrás cuando está volteada */
-          flex-direction: column;
-        }
-
-        .card__front {
-          background-color: #f0f0f0;
-        }
-
-        /* Estilo de la parte posterior de la tarjeta */
-        .card__back {
-          background-color: white;
-          transform: rotateY(180deg); /* Gira la parte trasera */
-          display: flex;
-          justify-content: center; /* Centra horizontalmente */
-          align-items: center; /* Centra verticalmente */
-          padding: 20px; /* Márgenes internos */
-          box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-          font-size: 1.2em;
-        }
-
-        /* Ajuste para el texto */
-        .card__back p {
-          text-align: center; /* Alinea el texto al centro */
-          margin: 0; /* Elimina márgenes predeterminados */
-        }
-
-        /* Efecto de voltear la tarjeta */
-        .card:hover .card__inner {
-          transform: rotateY(180deg); /* Al hacer hover, la tarjeta se voltea */
-        }
-
-        /* Animaciones cuando las tarjetas entran en pantalla */
-        .card.show {
-          opacity: 1;
-        }
-
-        /* Icono debajo del título */
-        .card__front .icon {
-          margin-top: 10px;
-        }
-
-        /* Estilos para pantallas pequeñas */
-        @media (max-width: 768px) {
-          .card-container {
-            grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
-            gap: 20px; /* Menos espacio entre tarjetas */
-          }
-
-          .card {
-            width: 100%;
-            max-width: 350px; /* Tamaño más pequeño de las tarjetas */
-            height: 220px;
-          }
-
-          .card__back {
-            font-size: 1em; /* Ajustar tamaño de texto */
-          }
-        }
-
-        @media (max-width: 480px) {
-          .card-container {
-            grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-            gap: 10px;
-          }
-
-          .card {
-            width: 100%;
-            max-width: 250px; /* Ajuste para pantallas muy pequeñas */
-            height: 200px;
-          }
-
-          .card__back {
-            font-size: 0.9em; /* Ajustar aún más el tamaño del texto */
-          }
-        }
-      `}</style>
-    </div>
+    </section>
   );
 };
 
