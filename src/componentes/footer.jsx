@@ -80,19 +80,19 @@ const Footer = () => {
           <div className="col-span-2 sm:col-span-1">
             <p className="font-medium text-white">{texts[language].products}</p>
             <ul className="mt-6 space-y-4 text-sm text-gray-300">
-              <li><a href="#" className="text-white transition hover:opacity-75"> Paneles Solares </a></li>
-              <li><a href="#" className="text-white transition hover:opacity-75"> Hidroponia </a></li>
-              <li><a href="#" className="text-white transition hover:opacity-75"> Baterias </a></li>
-              <li><a href="#" className="text-white transition hover:opacity-75"> Energia Eolica </a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75"> Paneles Solares </a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75"> Hidroponia </a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75"> Baterias </a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75"> Energia Eolica </a></li>
             </ul>
           </div>
 
           <div className="col-span-2 sm:col-span-1">
             <p className="font-medium text-white">{texts[language].company}</p>
             <ul className="mt-6 space-y-4 text-sm text-gray-300">
-              <li><a href="#" className="text-white transition hover:opacity-75"> Nosotros </a></li>
-              <li><a href="#" className="text-white transition hover:opacity-75"> Soluciones </a></li>
-              <li><a href="#" className="text-white transition hover:opacity-75"> Equipo </a></li>
+              <li><a href="#nosotros" className="text-white transition hover:opacity-75"> Nosotros </a></li>
+              <li><a href="#solutions" className="text-white transition hover:opacity-75"> Soluciones </a></li>
+              <li><a href="#team" className="text-white transition hover:opacity-75"> Equipo </a></li>
             </ul>
           </div>
 
@@ -106,18 +106,11 @@ const Footer = () => {
           {/* Columna de redes sociales */}
           <div className="col-span-2 sm:col-span-1">
             <div className="flex space-x-4 mt-1">
-              <a href="#" className="text-white hover:opacity-75">
+              <a href="https://www.facebook.com/p/Protonature-100081917389045/?locale=es_LA" className="text-white hover:opacity-75">
                 <FontAwesomeIcon icon={faFacebook} size="lg" />
               </a>
-              <a href="#" className="text-white hover:opacity-75">
-                <FontAwesomeIcon icon={faInstagram} size="lg" />
-              </a>
-              <a href="#" className="text-white hover:opacity-75">
-                <FontAwesomeIcon icon={faYoutube} size="lg" />
-              </a>
-              <a href="#" className="text-white hover:opacity-75">
-                <FontAwesomeIcon icon={faLinkedin} size="lg" />
-              </a>
+              
+             
             </div>
           </div>
         </div>
