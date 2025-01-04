@@ -133,135 +133,135 @@ const Productos = () => {
     },
   ];
   return (
-    <section id="products"className="productos-section py-6">
-  <div className="container mx-auto px-1">
-    <div className="max-w-[1280px] mx-auto">
-      {/* Contenedor centrado */}
-      <div className="text-center w-full flex flex-col items-center justify-center">
-        <h2 className="text-3xl font-bold text-black" data-aos="fade-up">
-          NUESTROS PRODUCTOS
-        </h2>
-        <p className="mt-4 text-xl text-black" data-aos="fade-up" data-aos-delay="100">
-          Empoderar soluciones para la Transformación de la vida
-        </p>
-      </div>
-    </div>
-
-    <div className="mt-8 relative">
-      <button
-        onClick={handlePrev}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white bg-gray-900 p-2 rounded-full shadow-lg md:hidden"
-        aria-label="Desplazar carrusel a la izquierda"
-        data-aos="fade-right"
-        data-aos-delay="200"
-      >
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </button>
-
-      <div
-        ref={carouselRef}
-        className="flex gap-8 overflow-x-auto snap-x scroll-smooth pb-4 justify-center"
-      >
-        {products.map((product, index) => (
-          <div
-            key={index}
-            className="cursor-pointer rounded-md overflow-hidden flex flex-col h-[440px] w-[320px] transition-all duration-500 hover:bg-white hover:shadow-lg bg-white shadow-lg p-4 px-6 transform hover:scale-105 hover:translate-y-[-4px]"
-            data-aos="zoom-in"
-            data-aos-delay={index * 100}
+    <section id="products" className="productos-section py-6">
+      <div className="container mx-auto px-1">
+        <div className="max-w-[1280px] mx-auto">
+          {/* Contenedor centrado */}
+          <div className="text-center w-full flex flex-col items-center justify-center">
+            <h2 className="text-3xl font-bold text-black" data-aos="fade-up">
+              NUESTROS PRODUCTOS
+            </h2>
+            <p className="mt-4 text-xl text-black" data-aos="fade-up" data-aos-delay="100">
+              Empoderar soluciones para la Transformación de la vida
+            </p>
+          </div>
+        </div>
+  
+        <div className="mt-8 relative">
+          {/* Elimina los botones de las flechas */}
+          {/* <button
+            onClick={handlePrev}
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white bg-gray-900 p-2 rounded-full shadow-lg md:hidden"
+            aria-label="Desplazar carrusel a la izquierda"
+            data-aos="fade-right"
+            data-aos-delay="200"
           >
-            <div className="flex items-center justify-center h-[220px] mb-4">
-              <img
-                alt={product.title}
-                className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-105"
-                src={product.image}
-              />
-            </div>
-            <div className="flex items-center flex-col flex-grow">
-              <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#020202] whitespace-nowrap overflow-hidden text-ellipsis">
-                {product.title}
-              </h3>
-              <p className="text-lg md:text-xl mb-4 text-center text-black/80">
-                {product.description}
-              </p>
-              <button
-                onClick={() => handleOpenModal(product)}
-                className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-300 group mt-auto"
-                data-aos="fade-up"
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button> */}
+  
+          {/* Contenedor de las tarjetas con grid para formato móvil */}
+          <div
+            ref={carouselRef}
+            className="grid grid-cols-2 gap-8 md:grid-cols-4 xl:grid-cols-4 overflow-x-auto snap-x scroll-smooth pb-4 justify-center"
+          >
+            {products.map((product, index) => (
+              <div
+                key={index}
+                className="cursor-pointer rounded-md overflow-hidden flex flex-col h-[440px] w-full transition-all duration-500 hover:bg-white hover:shadow-lg bg-white shadow-lg p-4 px-6 transform hover:scale-105 hover:translate-y-[-4px]"
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus text-black w-6 h-6">
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5v14"></path>
-                  </svg>
+                <div className="flex items-center justify-center h-[220px] mb-4">
+                  <img
+                    alt={product.title}
+                    className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-105"
+                    src={product.image}
+                  />
                 </div>
+                <div className="flex items-center flex-col flex-grow">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#020202] whitespace-nowrap overflow-hidden text-ellipsis">
+                    {product.title}
+                  </h3>
+                  <p className="text-lg md:text-xl mb-4 text-center text-black/80">
+                    {product.description}
+                  </p>
+                  <button
+                    onClick={() => handleOpenModal(product)}
+                    className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-300 group mt-auto"
+                    data-aos="fade-up"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus text-black w-6 h-6">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+  
+          {/* <button
+            onClick={handleNext}
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white bg-gray-900 p-2 rounded-full shadow-lg md:hidden"
+            aria-label="Desplazar carrusel a la derecha"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button> */}
+        </div>
+      </div>
+  
+      {/* Modal (Mini Página) */}
+      {showModal && selectedProduct && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-6 rounded-md shadow-xl max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] w-full relative overflow-hidden">
+            <button onClick={handleCloseModal} className="absolute top-2 right-2 text-white">
+              <FontAwesomeIcon icon={faTimes} size="lg" />
+            </button>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-3xl font-semibold text-[#020202]" data-aos="fade-up">{selectedProduct.title}</h3>
+            </div>
+            <hr className="mb-6" />
+            <div className="flex gap-6 overflow-y-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-h-[70vh]">
+              {miniCards.map((miniCard, index) => (
+                <div key={index} className="cursor-pointer rounded-md overflow-hidden flex flex-col w-full max-w-[300px] transition-all duration-500 hover:bg-white hover:shadow-lg bg-white shadow-lg p-6 transform hover:scale-105 hover:translate-y-[-4px]" data-aos="zoom-in-up">
+                  <div className="flex items-center justify-center h-[200px] mb-4">
+                    <img src={miniCard.imageLink} alt={miniCard.title} className="object-contain max-w-full max-h-full" />
+                  </div>
+                  <div className="flex items-center flex-col flex-grow">
+                    <h3 className="text-xl font-semibold text-[#020202] mb-2">{miniCard.title}</h3>
+                    <p className="text-sm text-center text-black/80 mb-4">{miniCard.description}</p>
+                  </div>
+                  <div className="flex justify-center items-center mt-auto">
+                    <button className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus text-black w-6 h-6">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5v14"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Botón "Ver todos los productos" con más padding al final */}
+            <div className="flex justify-center mt-6 pb-8">
+              <button
+                onClick={() => alert("Ver todos los productos...")}
+                className="relative text-gray-800 text-lg font-semibold py-3 px-8 rounded-md group"
+              >
+                Ver todos los productos
+                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-800 scale-x-0 group-hover:scale-x-100 transform transition-all duration-300"></span>
               </button>
             </div>
           </div>
-        ))}
-      </div>
-
-      <button
-        onClick={handleNext}
-        className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white bg-gray-900 p-2 rounded-full shadow-lg md:hidden"
-        aria-label="Desplazar carrusel a la derecha"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
-        <FontAwesomeIcon icon={faChevronRight} />
-      </button>
-    </div>
-  </div>
-
-  {/* Modal (Mini Página) */}
-  {showModal && selectedProduct && (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-6 rounded-md shadow-xl max-w-4xl w-full relative overflow-hidden">
-        <button onClick={handleCloseModal} className="absolute top-2 right-2 text-white">
-          <FontAwesomeIcon icon={faTimes} size="lg" />
-        </button>
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-3xl font-semibold text-[#020202]" data-aos="fade-up">{selectedProduct.title}</h3>
         </div>
-        <hr className="mb-6" />
-        <div className="flex gap-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-h-[70vh]">
-          {miniCards.map((miniCard, index) => (
-            <div key={index} className="cursor-pointer rounded-md overflow-hidden flex flex-col w-full max-w-[300px] transition-all duration-500 hover:bg-white hover:shadow-lg bg-white shadow-lg p-6 transform hover:scale-105 hover:translate-y-[-4px]" data-aos="zoom-in-up">
-              <div className="flex items-center justify-center h-[200px] mb-4">
-                <img src={miniCard.imageLink} alt={miniCard.title} className="object-contain max-w-full max-h-full" />
-              </div>
-              <div className="flex items-center flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-[#020202] mb-2">{miniCard.title}</h3>
-                <p className="text-sm text-center text-black/80 mb-4">{miniCard.description}</p>
-              </div>
-              <div className="flex justify-center items-center mt-auto">
-                <button className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus text-black w-6 h-6">
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5v14"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* Botón "Ver todos los productos" con más padding al final */}
-        <div className="flex justify-center mt-6 pb-8">
-          <button
-            onClick={() => alert("Ver todos los productos...")}
-            className="relative text-gray-800 text-lg font-semibold py-3 px-8 rounded-md group"
-          >
-            Ver todos los productos
-            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-800 scale-x-0 group-hover:scale-x-100 transform transition-all duration-300"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  )}
-</section>
-
-
-
+      )}
+    </section>
   );
+  
 };
 
 export default Productos;
