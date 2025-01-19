@@ -111,16 +111,7 @@ export default function Header() {
                       </div>
                     ))}
                   </div>
-                  <div className="flex justify-center bg-gray-50 p-4">
-  <a
-    href="#productos"
-    onClick={() => setMobileMenuOpen(false)} // Cerrar el menú al hacer clic
-    className="flex items-center gap-x-2 px-6 py-3 text-sm font-semibold text-gray-900 bg-gray-200 rounded-md hover:bg-gray-300"
-  >
-    {t.viewAll}
-  </a>
-</div>
-
+                  
                 </Popover.Panel>
               </Popover>
 
@@ -143,7 +134,7 @@ export default function Header() {
 
           {/* Íconos en pantallas grandes */}
           <div className="hidden lg:flex items-center space-x-4">
-            <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer hover:text-indigo-600 transition-all" />
+            
             <button
               onClick={toggleLanguage}
               className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"

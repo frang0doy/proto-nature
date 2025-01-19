@@ -240,20 +240,21 @@ const Productos = () => {
                     <path d="M12 5v14"></path>
                   </svg>
                 </button>
-              </div>
+              </div>  
             </div>
           ))}
         </div>
         {/* Botón "Ver todos los productos" con más padding al final */}
         <div className="flex justify-center mt-6 pb-8">
-          <button
-            onClick={() => alert("Ver todos los productos...")}
-            className="relative text-gray-800 text-lg font-semibold py-3 px-8 rounded-md group"
-          >
-            Ver todos los productos
-            <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-800 scale-x-0 group-hover:scale-x-100 transform transition-all duration-300"></span>
-          </button>
-        </div>
+  <a
+    href="https://shop-ecomerse.vercel.app/"
+    className="relative text-gray-800 text-lg font-semibold py-3 px-8 rounded-md group"
+  >
+    Ver todos los productos
+    <span className="absolute left-0 bottom-0 w-full h-[2px] bg-gray-800 scale-x-0 group-hover:scale-x-100 transform transition-all duration-300"></span>
+  </a>
+</div>
+
       </div>
     </div>
   )}
