@@ -68,7 +68,6 @@ export default function HeroSection() {
     ...buttonStyle,
     transform: 'translateY(0)', // Desactivar el parallax en móviles
   };
-
   return (
     <section
       className="relative h-screen bg-cover bg-center"
@@ -89,34 +88,37 @@ export default function HeroSection() {
           >
             {language === 'es' ? texts.heading.es : texts.heading.en}
           </h1>
-
+  
           <p
             className="mt-4 text-sm sm:text-2xl lg:text-4xl xl:text-3xl text-white"
             style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
           >
             {language === 'es' ? texts.subheading.es : texts.subheading.en}
           </p>
-
-          <div className="mt-16 flex flex-wrap justify-center gap-4">
-  <a
-    className="block w-full sm:w-auto rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
-    href="#"
-    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-  >
-    {language === 'es' ? texts.button1.es : texts.button1.en}
-  </a>
-
-  <a
-    className="block w-full sm:w-auto rounded bg-white px-12 py-3 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
-    href="#"
-    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-  >
-    {language === 'es' ? texts.button2.es : texts.button2.en}
-  </a>
-</div>
-
+  
+          <div className="mt-16 flex flex-col sm:flex-row sm:gap-4 sm:justify-center gap-6">
+            {/* Botón 1 */}
+            <a
+              className="block w-full sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
+              href="#nosotros"
+              style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
+            >
+              {language === 'es' ? texts.button1.es : texts.button1.en}
+            </a>
+  
+            {/* Botón 2 */}
+            <a
+              className="block w-full sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
+              href="#contact"
+              style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
+            >
+              {language === 'es' ? texts.button2.es : texts.button2.en}
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
+  
+  
 }

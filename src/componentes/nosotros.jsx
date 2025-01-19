@@ -70,15 +70,18 @@ const Nosotros = () => {
           </p>
 
           <div className="mt-6">
-            <a
-              href="#"
-              className="inline-block rounded bg-white px-8 py-3 text-sm font-medium text-black transition hover:bg-gray-400 focus:outline-none focus:ring focus:ring-yellow-400"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              {texts[language].moreInfo}
-            </a>
-          </div>
+  <a
+    href="https://www.dlight.com/"
+    target="_blank"  // Este atributo abre el enlace en una nueva pestaña
+    rel="noopener noreferrer"  // Seguridad adicional para abrir en una nueva pestaña
+    className="inline-block rounded bg-white px-8 py-3 text-sm font-medium text-black transition hover:bg-gray-400 focus:outline-none focus:ring focus:ring-yellow-400"
+    data-aos="fade-up"
+    data-aos-delay="400"
+  >
+    {texts[language].moreInfo}
+  </a>
+</div>
+
         </div>
 
         {/* Imagen ajustada */}
