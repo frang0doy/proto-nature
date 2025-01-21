@@ -73,7 +73,7 @@ export default function HeroSection() {
       className="relative h-screen bg-cover bg-center"
       style={{
         backgroundImage:
-          'url(https://images.pexels.com/photos/18316989/pexels-photo-18316989/free-photo-of-negro-energia-renovable-paneles-solares-energia-solar.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+          'url(https://images.pexels.com/photos/977772/pexels-photo-977772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed', // La imagen de fondo se queda fija

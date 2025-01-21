@@ -25,8 +25,8 @@ const Soluciones = () => {
 
   const texts = {
     electricidad: {
-      es: "Electricidad",
-      en: "Electricity"
+      es: "Energia",
+      en: "Energy"
     },
     climatizacion: {
       es: "Climatización",

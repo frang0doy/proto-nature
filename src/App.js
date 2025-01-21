@@ -6,9 +6,9 @@ import Logo from "./componentes/logo";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Nosotros from './componentes/nosotros';
-import { Stats } from "./componentes/stats";
+
 import Productos from './componentes/productos';
-import Testimonios from './componentes/testimonios';
+
 import { LanguageProvider } from './componentes/LenguajeContext'; 
 import HeroSection from './componentes/herosection'; 
 import Soluciones from './componentes/soluciones';
@@ -32,15 +32,11 @@ function App() {
           <section id="soluciones">
             <Soluciones />
           </section>
-          <section>
-            <Stats />
-          </section>
+          
           <section id="productos">
             <Productos />
           </section>
-          <section>
-            <Testimonios />
-          </section>
+         
           <section>
             <Logo />
           </section>
