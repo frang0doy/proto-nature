@@ -255,7 +255,7 @@ const Productos = () => {
             {/* Botón "Ver todos los productos" con más padding al final */}
             <div className="flex justify-center mt-6 pb-8">
               <a
-                href="https://shop-ecomerse.vercel.app/"
+                href="https://shop-nature.vercel.app/"
                 className="relative text-gray-800 text-lg font-semibold py-3 px-8 rounded-md group"
               >
                 Ver todos los productos
