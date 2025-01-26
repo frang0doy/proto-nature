@@ -96,25 +96,26 @@ export default function HeroSection() {
             {language === 'es' ? texts.subheading.es : texts.subheading.en}
           </p>
   
-          <div className="mt-16 flex flex-col sm:flex-row sm:gap-4 sm:justify-center gap-6">
-            {/* Botón 1 */}
-            <a
-              className="block w-full sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
-              href="#nosotros"
-              style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-            >
-              {language === 'es' ? texts.button1.es : texts.button1.en}
-            </a>
-  
-            {/* Botón 2 */}
-            <a
-              className="block w-full sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:w-auto sm:text-base"
-              href="#contact"
-              style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-            >
-              {language === 'es' ? texts.button2.es : texts.button2.en}
-            </a>
-          </div>
+          <div className="mt-16 flex sm:flex-row justify-center gap-4 sm:space-x-2">
+  {/* Botón 1 */}
+  <a
+    className="block sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:text-base"
+    href="#nosotros"
+    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
+  >
+    {language === 'es' ? texts.button1.es : texts.button1.en}
+  </a>
+
+  {/* Botón 2 */}
+  <a
+    className="block sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:text-base"
+    href="#contact"
+    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
+  >
+    {language === 'es' ? texts.button2.es : texts.button2.en}
+  </a>
+</div>
+
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { useLanguage } from './LenguajeContext'; // Importar el hook de idioma
 
 const Footer = () => {
@@ -13,12 +13,10 @@ const Footer = () => {
       newsletterDesc: 'Obtenga las últimas actualizaciones y percepciones entregadas en su bandeja de entrada',
       products: 'Productos',
       company: 'Compañía',
-      legal: 'Legal',
       facebook: 'Facebook',
       instagram: 'Instagram',
       youtube: 'YouTube',
       linkedin: 'LinkedIn',
-      terms: 'Términos & Condiciones',
       copyright: '© 2024 ProtoNature. Todos los derechos reservados.',
     },
     en: {
@@ -26,12 +24,10 @@ const Footer = () => {
       newsletterDesc: 'Get the latest updates and insights delivered to your inbox',
       products: 'Products',
       company: 'Company',
-      legal: 'Legal',
       facebook: 'Facebook',
       instagram: 'Instagram',
       youtube: 'YouTube',
       linkedin: 'LinkedIn',
-      terms: 'Terms & Conditions',
       copyright: '© 2024 ProtoNature. All rights reserved.',
     },
   };
@@ -96,12 +92,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-2 sm:col-span-1">
-            <p className="font-medium text-white">{texts[language].legal}</p>
-            <ul className="mt-6 space-y-4 text-sm text-gray-300">
-              <li><a href="#" className="text-white transition hover:opacity-75">{texts[language].terms}</a></li>
-            </ul>
-          </div>
+          
 
           {/* Columna de redes sociales */}
           <div className="col-span-2 sm:col-span-1">
