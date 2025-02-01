@@ -44,10 +44,7 @@ const Soluciones = () => {
       es: "Residuos",
       en: "Waste"
     },
-    inclusion: {
-      es: "Inclusión Social",
-      en: "Social Inclusion"
-    },
+   
     backElectricidad: {
       es: "Sistemas on-grid y off-grid con la posibilidad de aprovechar tanto la energía eólica como la energía solar. ¿Alguna vez imaginaste ganar dinero con la energía que generás?",
       en: "On-grid and off-grid systems with the ability to harness both wind and solar energy. Have you ever imagined earning money from the energy you generate?"
@@ -68,10 +65,7 @@ const Soluciones = () => {
       es: "Mediante inteligencia artificial, podés reducir el consumo innecesario, analizando lo que tirás a la basura. Tecnología disruptiva, ideal para optimizar lo que comprás.",
       en: "Using artificial intelligence, you can reduce unnecessary consumption by analyzing what you throw away. Disruptive technology, ideal for optimizing what you buy."
     },
-    backInclusion: {
-      es: "La energía sustentable es la mejor manera de mejorar la calidad de vida de quienes no tienen acceso (económico o geográfico) a una red tradicional. Un mundo mejor para miles de familias, hasta hoy, ignoradas.",
-      en: "Sustainable energy is the best way to improve the quality of life for those without access (economically or geographically) to a traditional grid. A better world for thousands of families, until now, ignored."
-    }
+    
   };
 
   return (
@@ -93,24 +87,24 @@ const Soluciones = () => {
           />
           <Card 
             cardNumber={2} 
-            frontContent={texts.climatizacion[language]} 
-            backContent={texts.backClimatizacion[language]} 
-            delay={200} 
-            Icon={<FaSnowflake size={50} />}
-          />
-          <Card 
-            cardNumber={3} 
             frontContent={texts.agua[language]} 
             backContent={texts.backAgua[language]} 
             delay={300} 
             Icon={<FaWater size={50} />}
           />
           <Card 
-            cardNumber={4} 
+            cardNumber={3} 
             frontContent={texts.alimento[language]} 
             backContent={texts.backAlimento[language]} 
             delay={400} 
             Icon={<FaSeedling size={50} />}
+          />
+          <Card 
+            cardNumber={4} 
+            frontContent={texts.climatizacion[language]} 
+            backContent={texts.backClimatizacion[language]} 
+            delay={200} 
+            Icon={<FaSnowflake size={50} />}
           />
           <Card 
             cardNumber={5} 
@@ -119,147 +113,158 @@ const Soluciones = () => {
             delay={500} 
             Icon={<FaRecycle size={50} />}
           />
-          <Card 
-            cardNumber={6} 
-            frontContent={texts.inclusion[language]} 
-            backContent={texts.backInclusion[language]} 
-            delay={600} 
-            Icon={<FaUsers size={50} />}
-          />
+         
         </div>
 
         {/* Estilos internos */}
         <style jsx>{`
           /* Contenedor principal */
-          .soluciones-container {
-            text-align: center;
-            padding: 20px;
-            padding-bottom: 60px; /* Espacio adicional en la parte inferior */
-          }
+.soluciones-container {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 60px; /* Espacio adicional en la parte inferior */
+}
 
-          /* Estilos del título */
-          .titulo {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-          }
+/* Estilos del título */
+.titulo {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
 
-          /* Estilos del subtítulo */
-          .subtitulo {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-          }
+/* Estilos del subtítulo */
+.subtitulo {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
 
-          /* Contenedor de las tarjetas */
-          .card-container {
-            display: grid;
-            grid-template-columns: repeat(3, 400px); /* 3 columnas de 400px */
-            gap: 40px; /* Espacio entre tarjetas */
-            justify-content: center; /* Centra las tarjetas en el contenedor */
-            margin-top: 40px;
-          }
+/* Contenedor de las tarjetas */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 400px); /* Primera fila con 3 columnas */
+  gap: 40px; /* Espacio entre tarjetas */
+  justify-content: center; /* Centra las tarjetas en el contenedor */
+  margin-top: 40px;
+}
 
-          /* Estilos individuales para las tarjetas */
-          .card {
-            width: 400px;
-            height: 250px;
-            perspective: 1500px; /* Perspectiva para el efecto 3D */
-          }
+/* Segunda fila con 2 tarjetas centradas */
+.card-container > :nth-child(4),
+.card-container > :nth-child(5) {
+  grid-column: span 1;
+}
 
-          .card__inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d; /* Mantener las caras en 3D */
-            transition: transform 1s ease; /* Aumentamos la duración de la rotación */
-          }
+.card-container > :nth-child(4) {
+  grid-column: 2 / 3;
+}
 
-          /* Estilo de la parte frontal de la tarjeta */
-          .card__front,
-          .card__back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2em;
-            backface-visibility: hidden; /* Esconde la parte de atrás cuando está volteada */
-            flex-direction: column;
-          }
+.card-container > :nth-child(5) {
+  grid-column: 3 / 4;
+}
 
-          .card__front {
-            background-color: #f0f0f0;
-          }
+@media (min-width: 769px) {
+  .card-container {
+    grid-template-columns: repeat(3, 400px);
+  }
+  .card-container > :nth-child(4) {
+    grid-column: 2 / 3;
+  }
+  .card-container > :nth-child(5) {
+    grid-column: 3 / 4;
+  }
+}
 
-          /* Estilo de la parte posterior de la tarjeta */
-          .card__back {
-            background-color: white;
-            transform: rotateY(180deg); /* Gira la parte trasera */
-            display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente */
-            padding: 20px; /* Márgenes internos */
-            box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-            font-size: 1.2em;
-          }
+/* Estilos individuales para las tarjetas */
+.card {
+  width: 400px;
+  height: 250px;
+  perspective: 1500px; /* Perspectiva para el efecto 3D */
+}
 
-          /* Ajuste para el texto */
-          .card__back p {
-            text-align: center; /* Alinea el texto al centro */
-            margin: 0; /* Elimina márgenes predeterminados */
-          }
+.card__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Mantener las caras en 3D */
+  transition: transform 1s ease; /* Aumentamos la duración de la rotación */
+}
 
-          /* Efecto de voltear la tarjeta */
-          .card:hover .card__inner {
-            transform: rotateY(180deg); /* Al hacer hover, la tarjeta se voltea */
-          }
+/* Estilo de la parte frontal y trasera de la tarjeta */
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  backface-visibility: hidden; /* Esconde la parte de atrás cuando está volteada */
+  flex-direction: column;
+}
 
-          /* Animaciones cuando las tarjetas entran en pantalla */
-          .card.show {
-            opacity: 1;
-          }
+.card__front {
+  background-color: #f0f0f0;
+}
 
-          /* Icono debajo del título */
-          .card__front .icon {
-            margin-top: 10px;
-          }
+.card__back {
+  background-color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+}
 
-          /* Estilos para pantallas pequeñas */
-          @media (max-width: 768px) {
-            .card-container {
-              grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
-              gap: 20px; /* Menos espacio entre tarjetas */
-            }
+/* Ajuste para el texto en la parte trasera */
+.card__back p {
+  text-align: center;
+  margin: 0;
+}
 
-            .card {
-              width: 100%;
-              max-width: 350px; /* Tamaño más pequeño de las tarjetas */
-              height: 220px;
-            }
+/* Efecto de voltear la tarjeta */
+.card:hover .card__inner {
+  transform: rotateY(180deg);
+}
 
-            .card__back {
-              font-size: 1em; /* Ajustar tamaño de texto */
-            }
-          }
+/* Animaciones cuando las tarjetas entran en pantalla */
+.card.show {
+  opacity: 1;
+}
 
-          @media (max-width: 480px) {
-            .card-container {
-              grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-              gap: 10px;
-            }
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    gap: 20px;
+  }
+  .card {
+    width: 100%;
+    max-width: 350px;
+    height: 220px;
+  }
+  .card__back {
+    font-size: 1em;
+  }
+}
 
-            .card {
-              width: 100%;
-              max-width: 250px; /* Ajuste para pantallas muy pequeñas */
-              height: 200px;
-            }
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    gap: 10px;
+  }
+  .card {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+  }
+  .card__back {
+    font-size: 0.9em;
+  }
+}
 
-            .card__back {
-              font-size: 0.9em; /* Ajustar aún más el tamaño del texto */
-            }
-          }
         `}</style>
       </div>
     </section>
