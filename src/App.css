@@ -21,6 +21,8 @@ html, :host {
   font-feature-settings: normal;
   font-variation-settings: normal;
   -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
