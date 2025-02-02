@@ -21,6 +21,7 @@ const Footer = () => {
       copyright: '© 2024 ProtoNature. Todos los derechos reservados.',
       phone: '54 114545 9037',
       address: 'Machain 4639, Capital Federal',
+      email: 'proyectos@protonature.com', // Nuevo correo electrónico
     },
     en: {
       newsletterTitle: 'Subscribe to our newsletter',
@@ -35,6 +36,7 @@ const Footer = () => {
       copyright: '© 2024 ProtoNature. All rights reserved.',
       phone: '+54 114545 9037',
       address: 'Machain 4639, Capital Federal',
+      email: 'proyectos@protonature.com', // Nuevo correo electrónico
     },
   };
 
@@ -47,7 +49,7 @@ const Footer = () => {
             <div className="col-span-2">
               <div>
                 <h2 className="text-2xl font-bold text-white">{texts[language].newsletterTitle}</h2>
-                <h4 className="mt-4 text-gray-300 text-sm whitespace-nowrap">
+                <h4 className="mt-4 text-gray-300 text-sm whitespace-normal break-words sm:text-sm">
                   {texts[language].newsletterDesc}
                 </h4>
               </div>
@@ -114,6 +116,14 @@ const Footer = () => {
                   rel="noopener noreferrer"
                 >
                   {texts[language].address}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${texts[language].email}`}
+                  className="text-white transition hover:opacity-75"
+                >
+                  {texts[language].email}
                 </a>
               </li>
             </ul>
