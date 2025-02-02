@@ -2,6 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 
+// Importación de los estilos de react-slick
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 // Estilo personalizado para el carrusel
 const CarouselWrapper = styled.div`
   width: 100%;
@@ -69,11 +73,14 @@ const Logo = () => {
   return (
     <CarouselWrapper>
       <Slider {...settings}>
-        {logos.map((logo) => (
-          <div key={logo.id}>
-            <img src={logo.src} alt={logo.alt} />
-          </div>
-        ))}
+        {logos.map((logo) => {
+          console.log(logo); // Verifica si los logos están siendo iterados
+          return (
+            <div key={logo.id} style={{ textAlign: "center" }}>
+              <img src={logo.src} alt={logo.alt} />
+            </div>
+          );
+        })}
       </Slider>
     </CarouselWrapper>
   );

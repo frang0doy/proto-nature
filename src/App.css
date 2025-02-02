@@ -21,22 +21,14 @@ html, :host {
   font-feature-settings: normal;
   font-variation-settings: normal;
   -webkit-tap-highlight-color: transparent;
-  
-  /* Asegurar que ocupe todo el ancho */
-  width: 100%;
-  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   line-height: inherit;
-
-  /* Asegurar que ocupe todo el ancho */
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-
-  /* Aplicar fondo gradiente a toda la página */
   @apply bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500;
 }
 
@@ -194,24 +186,21 @@ img, video {
   height: auto;
 }
 
-/* Asegurar que todo el contenido se ajuste correctamente */
-* {
-  max-width: 100%;
-  overflow-x: hidden;
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
 }
 
 /* Exclusión del fondo gradiente para HeroSection */
 .hero-section {
   background: none !important;
 }
-
-/* Ajustes para los contenedores principales */
 .container {
   width: 100%;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 /* Importación de los estilos de Tailwind CSS */
 @tailwind base;
