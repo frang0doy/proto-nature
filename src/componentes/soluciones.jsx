@@ -118,154 +118,118 @@ const Soluciones = () => {
 
         {/* Estilos internos */}
         <style jsx>{`
-          /* Contenedor principal */
-.soluciones-container {
-  text-align: center;
-  padding: 20px;
-  padding-bottom: 60px; /* Espacio adicional en la parte inferior */
-}
+  /* Contenedor principal */
+  .soluciones-container {
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 60px; /* Espacio adicional en la parte inferior */
+  }
 
-/* Estilos del título */
-.titulo {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
+  /* Estilos del título */
+  .titulo {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
 
-/* Estilos del subtítulo */
-.subtitulo {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-}
+  /* Estilos del subtítulo */
+  .subtitulo {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
 
-/* Contenedor de las tarjetas */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 400px); /* Primera fila con 3 columnas */
-  gap: 40px; /* Espacio entre tarjetas */
-  justify-content: center; /* Centra las tarjetas en el contenedor */
-  margin-top: 40px;
-}
-
-/* Segunda fila con 2 tarjetas centradas */
-.card-container > :nth-child(4),
-.card-container > :nth-child(5) {
-  grid-column: span 1;
-}
-
-.card-container > :nth-child(4) {
-  grid-column: 2 / 3;
-}
-
-.card-container > :nth-child(5) {
-  grid-column: 3 / 4;
-}
-
-@media (min-width: 769px) {
+  /* Contenedor de las tarjetas */
   .card-container {
-    grid-template-columns: repeat(3, 400px);
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* 3 columnas en la primera fila */
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
   }
-  .card-container > :nth-child(4) {
-    grid-column: 2 / 3;
-  }
+
+  /* Segunda fila con 2 tarjetas centradas */
+  .card-container > :nth-child(4),
   .card-container > :nth-child(5) {
-    grid-column: 3 / 4;
+    grid-column: span 1;
   }
-}
 
-/* Estilos individuales para las tarjetas */
-.card {
-  width: 400px;
-  height: 250px;
-  perspective: 1500px; /* Perspectiva para el efecto 3D */
-}
-
-.card__inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d; /* Mantener las caras en 3D */
-  transition: transform 1s ease; /* Aumentamos la duración de la rotación */
-}
-
-/* Estilo de la parte frontal y trasera de la tarjeta */
-.card__front,
-.card__back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2em;
-  backface-visibility: hidden; /* Esconde la parte de atrás cuando está volteada */
-  flex-direction: column;
-}
-
-.card__front {
-  background-color: #f0f0f0;
-}
-
-.card__back {
-  background-color: white;
-  transform: rotateY(180deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  font-size: 1.2em;
-}
-
-/* Ajuste para el texto en la parte trasera */
-.card__back p {
-  text-align: center;
-  margin: 0;
-}
-
-/* Efecto de voltear la tarjeta */
-.card:hover .card__inner {
-  transform: rotateY(180deg);
-}
-
-/* Animaciones cuando las tarjetas entran en pantalla */
-.card.show {
-  opacity: 1;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
-    gap: 20px;
+  .card-container > :nth-child(4) {
+    grid-column: 2 / 3; /* Debajo de la primera */
   }
+
+  .card-container > :nth-child(5) {
+    grid-column: 3 / 4; /* Debajo de la segunda */
+  }
+
+  /* Estilos individuales para las tarjetas */
   .card {
-    width: 100%;
-    max-width: 350px;
-    height: 220px;
+    width: 400px; /* Mantiene su tamaño original */
+    height: 250px;
+    perspective: 1500px; /* Efecto 3D */
   }
-  .card__back {
-    font-size: 1em;
-  }
-}
 
-@media (max-width: 480px) {
-  .card-container {
-    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-    gap: 10px;
-  }
-  .card {
+  .card__inner {
     width: 100%;
-    max-width: 250px;
-    height: 200px;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
   }
-  .card__back {
-    font-size: 0.9em;
-  }
-}
 
-        `}</style>
+  /* Estilos de la parte frontal y trasera de la tarjeta */
+  .card__front,
+  .card__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    backface-visibility: hidden;
+    flex-direction: column;
+  }
+
+  .card__front {
+    background-color: #f0f0f0;
+  }
+
+  .card__back {
+    background-color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+  }
+
+  .card__back p {
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Efecto de voltear la tarjeta */
+  .card:hover .card__inner {
+    transform: rotateY(180deg);
+  }
+
+  /* RESPONSIVE: Todas las tarjetas en una sola columna */
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr; /* 1 tarjeta por fila */
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card-container > * {
+      grid-column: auto; /* Cada tarjeta ocupa una fila entera */
+    }
+  }
+`}</style>
+
       </div>
     </section>
   );
