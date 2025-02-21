@@ -23,7 +23,7 @@ const translations = {
 };
 
 const products = [
-  { name: 'Paneles Solares', href: '#productos', icon: SunIcon },
+  { name: 'Paneles Solares', href: '#dlight', icon: SunIcon },
   { name: 'Hidroponia', href: '#productos', icon: ShoppingBagIcon },
   { name: 'Baterías', href: '#productos', icon: Battery50Icon },
   { name: 'Energía Eólica', href: '#productos', icon: CloudIcon },
