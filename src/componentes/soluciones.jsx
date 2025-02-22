@@ -140,29 +140,16 @@ const Soluciones = () => {
   /* Contenedor de las tarjetas */
   .card-container {
     display: grid;
-    grid-template-columns: repeat(3, auto); /* 3 columnas en la primera fila */
+    grid-template-columns: repeat(5, 1fr); /* 5 tarjetas en una sola fila */
     gap: 40px;
     justify-content: center;
     margin-top: 40px;
   }
 
-  /* Segunda fila con 2 tarjetas centradas */
-  .card-container > :nth-child(4),
-  .card-container > :nth-child(5) {
-    grid-column: span 1;
-  }
-
-  .card-container > :nth-child(4) {
-    grid-column: 2 / 3; /* Debajo de la primera */
-  }
-
-  .card-container > :nth-child(5) {
-    grid-column: 3 / 4; /* Debajo de la segunda */
-  }
-
   /* Estilos individuales para las tarjetas */
   .card {
-    width: 400px; /* Mantiene su tamaño original */
+    width: 100%; /* Las tarjetas ocupan todo el espacio disponible dentro de la grilla */
+    max-width: 400px; /* Limitar el ancho máximo de cada tarjeta */
     height: 250px;
     perspective: 1500px; /* Efecto 3D */
   }
@@ -216,7 +203,7 @@ const Soluciones = () => {
     transform: rotateY(180deg);
   }
 
-  /* RESPONSIVE: Todas las tarjetas en una sola columna */
+  /* RESPONSIVE: Ajustar a 1 tarjeta por fila en pantallas pequeñas */
   @media (max-width: 768px) {
     .card-container {
       grid-template-columns: 1fr; /* 1 tarjeta por fila */
@@ -229,6 +216,7 @@ const Soluciones = () => {
     }
   }
 `}</style>
+
 
       </div>
     </section>

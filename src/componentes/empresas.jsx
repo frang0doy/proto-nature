@@ -15,7 +15,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
     autoplaySpeed: 3000,
     arrows: true,
     dotsClass: "slick-dots slick-thumb",
-    prevArrow: <div className="slick-prev slick-arrow text-white text-3xl bg-black bg-opacity-50 p-3 rounded-full absolute left-4 z-10 hover:bg-opacity-80">‹</div>,
+    prevArrow: <div className="slick-prev slick-arrow text-white text-3xl bg-black bg-opacity-50 p-3 rounded-full absolute left-4 z-100 hover:bg-opacity-80">‹</div>,
     nextArrow: <div className="slick-next slick-arrow text-white text-3xl bg-black bg-opacity-50 p-3 rounded-full absolute right-4 z-10 hover:bg-opacity-80">›</div>,
   };
 
@@ -34,7 +34,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           <div className="space-x-4">
           <Link to="/dlight">
   <button className="bg-white text-black px-8 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
-    Learn More
+    Ver mas 
   </button>
 </Link>
             <button className="bg-gray-400 text-black px-8 py-3 rounded-md shadow-md hover:bg-white transition">
@@ -70,13 +70,13 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       <div className="w-full mt-12 relative">
         <Slider {...sliderSettings}>
           <div>
-            <img src="https://source.co/cdn/shop/files/Roxi_Hydropanel_xray_1.jpg?v=1729116590&width=1920" alt="Slide 1" className="w-full h-[400px] object-cover" />
+            <img src="https://images.pexels.com/photos/388415/pexels-photo-388415.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1" className="w-full h-[400px] object-cover" />
           </div>
           <div>
-            <img src="https://source.unsplash.com/1600x900/?design" alt="Slide 2" className="w-full h-[400px] object-cover" />
+            <img src="https://images.pexels.com/photos/18516133/pexels-photo-18516133/free-photo-of-paisaje-campo-campos-rural.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 2" className="w-full h-[400px] object-cover" />
           </div>
           <div>
-            <img src="https://source.unsplash.com/1600x900/?business" alt="Slide 3" className="w-full h-[400px] object-cover" />
+            <img src="https://images.pexels.com/photos/371917/pexels-photo-371917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 3" className="w-full h-[400px] object-cover" />
           </div>
         </Slider>
       </div>
