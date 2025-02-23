@@ -50,7 +50,7 @@ const Source = () => {
       </header>
 
       {/* Breadcrumb */}
-      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-16">
+      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-4">
         <div className="max-w-6xl mx-auto">
           <button onClick={handleGoHome} className="text-black hover:underline">
             {language === 'es' ? 'Inicio' : 'Home'}
@@ -95,21 +95,21 @@ const Source = () => {
           <h2 className="text-3xl font-bold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Producto 1 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              <img src="https://source.co/cdn/shop/files/Roxi_Hydropanel_xray_1.jpg?v=1729116590&width=1920" alt="Hydropanel" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Hydropanel®' : 'Hydropanel®'}</h3>
+            <div className="relative bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+              <img src="https://source.co/cdn/shop/files/Roxi_Hydropanel_xray_1.jpg?v=1729116590&width=1920" alt="Hydropanel" className="w-64 h-64 object-cover rounded-md mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"/>
+              <h3 className="text-2xl font-semibold text-gray-800">{language === 'es' ? 'Hydropanel®' : 'Hydropanel®'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Genera agua potable a partir del aire utilizando energía solar.' : 'Generates drinking water from the air using solar energy.'}</p>
             </div>
             {/* Producto 2 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              <img src="https://source.co/cdn/shop/files/SOURCE_Residential_Panel.jpg?v=1719538523&width=1000" alt="Hydropanel" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Hydropanel® Solar' : 'Hydropanel® Solar'}</h3>
+            <div className="relative bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+              <img src="https://source.co/cdn/shop/files/SOURCE_Residential_Panel.jpg?v=1719538523&width=1000" alt="Hydropanel" className="w-64 h-64 object-cover rounded-md mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"/>
+              <h3 className="text-2xl font-semibold text-gray-800">{language === 'es' ? 'Hydropanel® Solar' : 'Hydropanel® Solar'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Integración con soluciones solares para optimizar el uso de energía.' : 'Integrated with solar solutions to optimize energy usage.'}</p>
             </div>
             {/* Producto 3 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              <img src="https://www.businessnews.com.lb/cms/Portals/2/Business/2015/source-roundup-photo.jpg" alt="Hydropanel" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Hydropanel® para Comunidades' : 'Hydropanel® for Communities'}</h3>
+            <div className="relative bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105">
+              <img src="https://www.businessnews.com.lb/cms/Portals/2/Business/2015/source-roundup-photo.jpg" alt="Hydropanel" className="w-64 h-64 object-cover rounded-md mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:opacity-80"/>
+              <h3 className="text-2xl font-semibold text-gray-800">{language === 'es' ? 'Hydropanel® para Comunidades' : 'Hydropanel® for Communities'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones personalizadas para comunidades y organizaciones.' : 'Custom solutions for communities and organizations.'}</p>
             </div>
           </div>

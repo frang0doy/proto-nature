@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from './footer'; 
@@ -40,8 +39,6 @@ const Hoppecke = () => {
           </Link>
           <nav className="flex space-x-4">
             <a href="#productos" className="relative text-sm font-semibold text-white group">{navLinks.productos}</a>
-            <a href="#nosotros" className="relative text-sm font-semibold text-white group">{navLinks.nosotros}</a>
-            <a href="#soluciones" className="relative text-sm font-semibold text-white group">{navLinks.soluciones}</a>
             <a href="#contacto" className="relative text-sm font-semibold text-white group">{navLinks.contacto}</a>
           </nav>
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
@@ -51,7 +48,7 @@ const Hoppecke = () => {
       </header>
 
       {/* Breadcrumb */}
-      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-16">
+      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-4">
         <div className="max-w-6xl mx-auto">
           <button onClick={handleGoHome} className="text-black hover:underline">
             {language === 'es' ? 'Inicio' : 'Home'}
@@ -93,22 +90,22 @@ const Hoppecke = () => {
       {/* Products Section */}
       <section className="py-12 bg-white" id="productos">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
+          <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Producto 1 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/trak_uplift_save-_image_2_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
               <h3 className="text-2xl font-semibold">{language === 'es' ? 'Batería de Plomo Ácido' : 'Lead-Acid Battery'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones avanzadas para almacenamiento de energía industrial.' : 'Advanced solutions for industrial energy storage.'}</p>
             </div>
             {/* Producto 2 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid_power_vm_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
               <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Energía Solar' : 'Solar Energy System'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Integración de energía solar con almacenamiento eficiente.' : 'Solar energy integration with efficient storage.'}</p>
             </div>
             {/* Producto 3 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid-xtreme-vr-green-series_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
               <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Almacenamiento de Energía' : 'Energy Storage System'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones completas de almacenamiento para optimizar el uso de la energía renovable.' : 'Complete storage solutions to optimize the use of renewable energy.'}</p>

@@ -140,7 +140,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           </div>
           <div>
             <img
-              src="https://panelessolaresenperu.com/wp-content/uploads/2023/04/Longi-Cabecera-1-1024x402.webp"
+              src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
               alt="Slide 3"
               className="w-full h-[400px] object-cover"
             />

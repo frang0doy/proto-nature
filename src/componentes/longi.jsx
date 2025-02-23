@@ -1,101 +1,117 @@
 import React, { useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Agregamos useNavigate
-import Footer from './footer';  // Solo importamos el footer
-import { useLanguage } from './LenguajeContext'; // El mismo Language Context que en Dlight
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Footer from './footer'; 
+import { useLanguage } from './LenguajeContext'; 
 
-const Longi = () => {  // Asegúrate de que el nombre del componente sea Longi si ese es el propósito
+const Longi = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Usamos el hook useNavigate
+  const navigate = useNavigate();
   const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // Asegura que el contenido no se solape debajo del header fijo
     const headerHeight = document.querySelector("header")?.offsetHeight;
     document.body.style.paddingTop = `${headerHeight}px`;
 
-    // Forzamos una actualización de los estilos del header al cambiar de ruta
     document.documentElement.classList.add('force-update-header');
     setTimeout(() => {
       document.documentElement.classList.remove('force-update-header');
-    }, 50); // Remueve la clase tras 50ms para que el navegador la recalcule
+    }, 50);
   }, [location]);
 
-  const navLinks = {
-    productos: language === 'es' ? 'PRODUCTOS' : 'PRODUCTS',
-    nosotros: language === 'es' ? 'NOSOTROS' : 'ABOUT US',
-    soluciones: language === 'es' ? 'SOLUCIONES' : 'SOLUTIONS',
-    contacto: language === 'es' ? 'CONTACTO' : 'CONTACT',
-  };
-
-  // Función para manejar la navegación y recarga de la página
   const handleGoHome = () => {
-    navigate("/");  // Redirige a la página principal
-    window.location.reload();  // Recarga la página después de la navegación
+    navigate("/");  
+    window.location.reload();  
   };
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header personalizado dentro del componente Longi */}
+      {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 ${location.pathname === '/' ? 'bg-transparent' : 'bg-black'} shadow-md`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center p-6 px-6">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 ml-0">
+          <Link to="" className="flex-shrink-0 ml-0">
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
-
-          {/* Enlaces de navegación */}
           <nav className="flex space-x-4">
-            <a href="#productos" className="relative text-sm font-semibold text-white group">
-              {navLinks.productos}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#nosotros" className="relative text-sm font-semibold text-white group">
-              {navLinks.nosotros}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#soluciones" className="relative text-sm font-semibold text-white group">
-              {navLinks.soluciones}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#contacto" className="relative text-sm font-semibold text-white group">
-              {navLinks.contacto}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </a>
+            {/* El encabezado ya solo contiene el logo y el cambio de idioma */}
           </nav>
-
-          {/* Icono de cambio de idioma */}
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
             {language === 'es' ? 'ES' : 'EN'}
           </button>
         </div>
       </header>
 
-      {/* Breadcrumb debajo del Header con fondo gradiente */}
-      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-16">
+      {/* Breadcrumb */}
+      <nav className="py-2 pb-0 mt-4">
         <div className="max-w-6xl mx-auto">
-          {/* Usamos un botón que dispara handleGoHome para hacer recarga de página */}
-          <button
-            onClick={handleGoHome} // Llamamos a handleGoHome cuando se hace clic en "Inicio"
-            className="text-black hover:underline"
-          >
+          <button onClick={handleGoHome} className="text-black hover:underline">
             {language === 'es' ? 'Inicio' : 'Home'}
           </button>
           <span className="mx-2">/</span>
-          <span className="text-gray-700">Longi</span>
+          <span className="text-gray-700">LONGi Solar</span>
         </div>
       </nav>
 
-      {/* Aquí va el contenido específico de Longi */}
-      <main className="flex-grow p-6">
-        <h1 className="text-4xl font-bold text-center my-12">{language === 'es' ? 'Longi' : 'Longi'}</h1>
-        {/* Agrega el contenido o los componentes que desees mostrar en esta página */}
-        {/* Puedes agregar aquí las imágenes, descripciones o cualquier otra cosa relacionada con Longi */}
-      </main>
+      {/* Parallax Section */}
+      <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://static.longi.com/industry_solution_748d38c4ea.jpg')" }}>
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+          <h1 className="text-white text-4xl font-extrabold text-center">
+            Energía Solar para un Futuro Sostenible
+          </h1>
+          <div className="absolute bottom-8 flex space-x-4">
+            <a href="https://www.longi-solar.com" target="_blank" rel="noopener noreferrer">
+              <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
+                Conoce más
+              </button>
+            </a>
+            <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
+              <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
+                Compra ahora
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About LONGi Section */}
+      <section className="p-12 bg-gray-50" id="nosotros">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold">{language === 'es' ? 'Sobre LONGi' : 'About LONGi'}</h2>
+          <p className="mt-4 text-lg text-gray-700">
+            {language === 'es' ? 'LONGi Solar es una de las empresas líderes en energía solar, especializada en la fabricación de módulos fotovoltaicos de alto rendimiento.' : 'LONGi Solar is one of the leading companies in solar energy, specializing in the manufacturing of high-performance photovoltaic modules.'}
+          </p>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-12 bg-white" id="productos">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Productos Destacados' : 'Featured Products'}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {/* Producto 1 */}
+            <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
+              <img src="https://static.longi.com/X10_12e3b6df8d_5c1487f002.jpg" alt="Solar Panel" className="w-64 h-64 object-cover rounded-md mb-4" />
+              <h3 className="text-2xl font-bold">{language === 'es' ? 'Módulo Solar de Alta Eficiencia' : 'High Efficiency Solar Module'}</h3>
+              <p className="text-gray-600 mt-2">{language === 'es' ? 'Con un diseño optimizado, nuestros módulos solares son perfectos para proyectos residenciales y comerciales.' : 'With optimized design, our solar modules are perfect for residential and commercial projects.'}</p>
+            </div>
+            {/* Producto 2 */}
+            <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
+              <img src="https://static.longi.com/Explorer_06_2c0e9cf07e.png" alt="Energy Storage" className="w-64 h-64 object-cover rounded-md mb-4" />
+              <h3 className="text-2xl font-bold">{language === 'es' ? 'Sistema de Almacenamiento Solar' : 'Solar Storage System'}</h3>
+              <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones avanzadas para almacenar y gestionar la energía solar de manera eficiente.' : 'Advanced solutions for storing and managing solar energy efficiently.'}</p>
+            </div>
+            {/* Producto 3 */}
+            <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
+              <img src="https://static.longi.com/ALK_G_226362_43182c8008.jpg" alt="Inverter" className="w-64 h-64 object-cover rounded-md mb-4" />
+              <h3 className="text-2xl font-bold">{language === 'es' ? 'Inversor Solar de Alta Tecnología' : 'High-Tech Solar Inverter'}</h3>
+              <p className="text-gray-600 mt-2">{language === 'es' ? 'Inversores de última generación que garantizan máxima eficiencia y rendimiento.' : 'Next-generation inverters that ensure maximum efficiency and performance.'}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <Footer />
+      <Footer id="contacto" />
     </div>
   );
 };

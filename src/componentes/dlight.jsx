@@ -76,7 +76,7 @@ const Dlight = () => {
       </header>
 
       {/* Breadcrumb debajo del Header con fondo gradiente */}
-      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-16">
+      <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-4">
         <div className="max-w-6xl mx-auto">
           {/* Usamos un botón que dispara handleGoHome para hacer recarga de página */}
           <button
