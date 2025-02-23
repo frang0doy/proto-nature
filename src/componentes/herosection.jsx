@@ -100,7 +100,7 @@ export default function HeroSection() {
   {/* Botón 1 */}
   <a
     className="block sm:w-auto rounded bg-white px-6 py-2 text-sm font-medium text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:text-base"
-    href="#nosotros"
+    href="#empresas"
     style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
   >
     {language === 'es' ? texts.button1.es : texts.button1.en}

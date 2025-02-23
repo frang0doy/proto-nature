@@ -20,7 +20,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 w-full">
+    <div id="empresas" className="flex flex-col items-center p-6 w-full">
       {/* Main Image Section */}
       <div className="relative w-full text-center">
         <img

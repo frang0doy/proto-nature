@@ -1,33 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDownIcon, ShoppingCartIcon, SunIcon, ShoppingBagIcon, Battery50Icon, CloudIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/react';
+import { ShoppingCartIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from './LenguajeContext';
 
 const translations = {
   es: {
     products: 'PRODUCTOS',
-    aboutUs: 'NOSOTROS',
-    solutions: 'SOLUCIONES',
     team: 'EQUIPO',
     contact: 'CONTACTO',
-    viewAll: 'Ver Todo',
   },
   en: {
     products: 'PRODUCTS',
-    aboutUs: 'ABOUT US',
-    solutions: 'SOLUTIONS',
     team: 'TEAM',
     contact: 'CONTACT',
-    viewAll: 'View All',
   },
 };
-
-const products = [
-  { name: 'Paneles Solares', href: '#dlight', icon: SunIcon },
-  { name: 'Hidroponia', href: '#productos', icon: ShoppingBagIcon },
-  { name: 'Baterías', href: '#productos', icon: Battery50Icon },
-  { name: 'Energía Eólica', href: '#productos', icon: CloudIcon },
-];
 
 export default function Header() {
   const [scrolling, setScrolling] = useState(0);
@@ -42,7 +28,7 @@ export default function Header() {
       const opacity = Math.min(scrollPosition / 300, 1);
       setScrolling(opacity);
 
-      if (scrollPosition > window.innerHeight * 0.6) {  
+      if (scrollPosition > window.innerHeight * 0.6) {
         setBgColor('bg-black');
       } else {
         setBgColor('transparent');
@@ -76,46 +62,20 @@ export default function Header() {
 
           {/* Menú de navegación en pantallas grandes */}
           <div className="hidden lg:flex lg:gap-x-12 flex-1 justify-center">
-            <PopoverGroup className="flex items-center space-x-12">
-              <Popover className="relative">
-                <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-white relative group">
-                  {t.products}
-                  <ChevronDownIcon
-                    className="h-5 w-5 text-white transition-transform duration-200"
-                    aria-hidden="true"
-                  />
-                </PopoverButton>
-
-                <Popover.Panel className="absolute -left-2 top-full z-10 mt-3 inline-block overflow-hidden rounded-4xl bg-white shadow-lg ring-1 ring-gray-900/5 min-w-[280px]">
-                  <div className="p-4">
-                    {products.map((item) => (
-                      <div
-                        key={item.name}
-                        className="group relative flex items-center gap-x-6 rounded-lg p-2 text-sm hover:bg-gray-50"
-                      >
-                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                          <item.icon
-                            aria-hidden="true"
-                            className="h-6 w-6 text-black group-hover:text-indigo-600"
-                          />
-                        </div>
-                        <div className="flex-auto">
-                          <a
-                            href={item.href}
-                            className="block font-semibold text-gray-900 whitespace-nowrap"
-                          >
-                            {item.name}
-                            <span className="absolute inset-0" />
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </Popover.Panel>
-              </Popover>
+            <div className="flex items-center space-x-12">
+              {/* Enlace "Productos" sin menú desplegable con el mismo hover que los otros enlaces */}
+              <a
+                href="https://shop-nature.vercel.app"
+                className="relative text-sm font-semibold text-white group"
+                target="_blank" // Abre el enlace en una nueva pestaña
+                rel="noopener noreferrer"
+              >
+                {t.products}
+                <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
+              </a>
 
               {/* Otros enlaces de navegación */}
-              {[{ id: "about-us", label: t.aboutUs }, { id: "solutions", label: t.solutions }, { id: "team", label: t.team }, { id: "contact", label: t.contact }].map(
+              {[{ id: "team", label: t.team }, { id: "contact", label: t.contact }].map(
                 (item, index) => (
                   <a
                     key={index}
@@ -127,7 +87,7 @@ export default function Header() {
                   </a>
                 )
               )}
-            </PopoverGroup>
+            </div>
           </div>
 
           {/* Íconos en pantallas grandes */}
@@ -171,7 +131,7 @@ export default function Header() {
 
                   {/* Enlaces de navegación */}
                   <div className="flex flex-col space-y-4 mb-6">
-                    {[t.aboutUs, t.solutions, t.team, t.contact].map((item, index) => (
+                    {[t.team, t.contact].map((item, index) => (
                       <div key={index}>
                         <a
                           href="#"
