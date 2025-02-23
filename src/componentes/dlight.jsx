@@ -42,30 +42,30 @@ const Dlight = () => {
     <div className="flex flex-col min-h-screen">
       {/* Header personalizado dentro del componente Dlight */}
       <header className={`fixed top-0 left-0 right-0 z-50 ${location.pathname === '/' ? 'bg-transparent' : 'bg-black'} shadow-md`}>
-        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center p-4 px-8">
           {/* Logo */}
-          <Link to="/">
-            <img src="/logo512.png" alt="Logo" className="w-28 h-auto" />
+          <Link to="" className="flex-shrink-0 ml-0">
+            <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
 
           {/* Enlaces de navegación */}
-          <nav className="flex space-x-6">
-            <Link to="/productos" className="text-white relative group">
+          <nav className="flex space-x-8">
+            <a href="#productos" className="text-white relative group">
               {navLinks.productos}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link to="/nosotros" className="text-white relative group">
+            </a>
+            <a href="#nosotros" className="text-white relative group">
               {navLinks.nosotros}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link to="/soluciones" className="text-white relative group">
+            </a>
+            <a href="#soluciones" className="text-white relative group">
               {navLinks.soluciones}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link to="/contacto" className="text-white relative group">
+            </a>
+            <a href="#contacto" className="text-white relative group">
               {navLinks.contacto}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
+            </a>
           </nav>
 
           {/* Icono de cambio de idioma */}
@@ -78,9 +78,9 @@ const Dlight = () => {
       {/* Breadcrumb debajo del Header con fondo gradiente */}
       <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-16">
         <div className="max-w-6xl mx-auto">
-          {/* Usamos un botón que dispara handleGoHome para hacer redirección y recarga */}
+          {/* Usamos un botón que dispara handleGoHome para hacer recarga de página */}
           <button
-            onClick={handleGoHome}
+            onClick={handleGoHome} // Llamamos a handleGoHome cuando se hace clic en "Inicio"
             className="text-black hover:underline"
           >
             {language === 'es' ? 'Inicio' : 'Home'}
@@ -91,6 +91,7 @@ const Dlight = () => {
       </nav>
 
       <main className="flex-grow">
+        {/* Definimos las secciones que se corresponden con los componentes */}
         <section id="nosotros">
           <Nosotros />
         </section>
@@ -100,9 +101,10 @@ const Dlight = () => {
         <section id="productos">
           <Productos />
         </section>
+        <section id="contacto">
+          <Footer />
+        </section>
       </main>
-
-      <Footer />
     </div>
   );
 };
