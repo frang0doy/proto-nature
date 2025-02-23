@@ -26,10 +26,10 @@ const Dlight = () => {
   }, [location]);
 
   const navLinks = {
-    productos: language === 'es' ? 'Productos' : 'Products',
-    nosotros: language === 'es' ? 'Nosotros' : 'About Us',
-    soluciones: language === 'es' ? 'Soluciones' : 'Solutions',
-    contacto: language === 'es' ? 'Contacto' : 'Contact',
+    productos: language === 'es' ? 'PRODUCTOS' : 'PRODUCTS',
+    nosotros: language === 'es' ? 'NOSOTROS' : 'ABOUT US',
+    soluciones: language === 'es' ? 'SOLUCIONES' : 'SOLUTIONS',
+    contacto: language === 'es' ? 'CONTACTO' : 'CONTACT',
   };
 
   // Función para manejar la navegación y recarga de la página
@@ -42,27 +42,27 @@ const Dlight = () => {
     <div className="flex flex-col min-h-screen">
       {/* Header personalizado dentro del componente Dlight */}
       <header className={`fixed top-0 left-0 right-0 z-50 ${location.pathname === '/' ? 'bg-transparent' : 'bg-black'} shadow-md`}>
-        <div className="max-w-7xl mx-auto flex justify-between items-center p-4 px-8">
+        <div className="max-w-7xl mx-auto flex justify-between items-center p-6 px-6">
           {/* Logo */}
           <Link to="" className="flex-shrink-0 ml-0">
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
 
           {/* Enlaces de navegación */}
-          <nav className="flex space-x-8">
-            <a href="#productos" className="text-white relative group">
+          <nav className="flex space-x-4">
+            <a href="#productos" className="relative text-sm font-semibold text-white group">
               {navLinks.productos}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#nosotros" className="text-white relative group">
+            <a href="#nosotros" className="relative text-sm font-semibold text-white group">
               {navLinks.nosotros}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#soluciones" className="text-white relative group">
+            <a href="#soluciones" className="relative text-sm font-semibold text-white group">
               {navLinks.soluciones}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#contacto" className="text-white relative group">
+            <a href="#contacto" className="relative text-sm font-semibold text-white group">
               {navLinks.contacto}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>

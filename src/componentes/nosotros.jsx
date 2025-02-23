@@ -43,9 +43,9 @@ const Nosotros = () => {
   }, []);
 
   return (
-    <section id="about-us"className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
+    <section id="about-us" className="overflow-hidden bg-gradient-to-r from-gray-300 via-gray-400 to-white py-16 pb-62">
       {/* Contenedor centralizado con flexbox */}
-      <div className="flex flex-col sm:flex-row items-center justify-between w-full px-12 sm:px-60 gap-12 mx-auto">
+      <div className="flex flex-col sm:flex-row items-start justify-between w-full px-12 sm:px-60 gap-12 mx-auto">
         {/* Contenido de texto */}
         <div className="text-center sm:text-left sm:w-2/3 md:w-1/2">
           <h2
@@ -70,23 +70,22 @@ const Nosotros = () => {
           </p>
 
           <div className="mt-6">
-  <a
-    href="https://www.dlight.com/"
-    target="_blank"  // Este atributo abre el enlace en una nueva pestaña
-    rel="noopener noreferrer"  // Seguridad adicional para abrir en una nueva pestaña
-    className="inline-block rounded bg-white px-8 py-3 text-sm font-medium text-black transition hover:bg-gray-400 focus:outline-none focus:ring focus:ring-yellow-400"
-    data-aos="fade-up"
-    data-aos-delay="400"
-  >
-    {texts[language].moreInfo}
-  </a>
-</div>
-
+            <a
+              href="https://www.dlight.com/"
+              target="_blank"  // Este atributo abre el enlace en una nueva pestaña
+              rel="noopener noreferrer"  // Seguridad adicional para abrir en una nueva pestaña
+              className="inline-block rounded bg-white px-8 py-3 text-sm font-medium text-black transition hover:bg-gray-400 focus:outline-none focus:ring focus:ring-yellow-400"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              {texts[language].moreInfo}
+            </a>
+          </div>
         </div>
 
         {/* Imagen ajustada */}
         <div
-          className="relative flex justify-center items-center sm:w-2/3 md:w-1/2 sm:mt-8"
+          className="relative flex justify-center items-start sm:w-2/3 md:w-1/2 sm:mt-0"  // Cambié sm:mt-8 por sm:mt-0
           data-aos="zoom-in"
           data-aos-delay="500"
         >

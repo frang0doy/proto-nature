@@ -61,7 +61,7 @@ export default function Header() {
           </div>
 
           {/* Menú de navegación en pantallas grandes */}
-          <div className="hidden lg:flex lg:gap-x-12 flex-1 justify-center">
+          <div className="flex-1 hidden lg:flex justify-center"> {/* Cambié esta línea */}
             <div className="flex items-center space-x-12">
               {/* Enlace "Productos" sin menú desplegable con el mismo hover que los otros enlaces */}
               <a
