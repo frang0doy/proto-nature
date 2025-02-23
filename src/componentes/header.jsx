@@ -111,30 +111,27 @@ export default function Header() {
                       </div>
                     ))}
                   </div>
-                  
                 </Popover.Panel>
               </Popover>
 
               {/* Otros enlaces de navegación */}
               {[{ id: "about-us", label: t.aboutUs }, { id: "solutions", label: t.solutions }, { id: "team", label: t.team }, { id: "contact", label: t.contact }].map(
-  (item, index) => (
-    <a
-  key={index}
-  href={`#${item.id}`}
-  className="relative text-sm font-semibold text-white group"
->
-  {item.label}
-  <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
-</a>
-
-  )
-)}
+                (item, index) => (
+                  <a
+                    key={index}
+                    href={`#${item.id}`}
+                    className="relative text-sm font-semibold text-white group"
+                  >
+                    {item.label}
+                    <span className="absolute inset-x-0 bottom-0 h-[2px] scale-x-0 bg-indigo-600 transition-transform duration-300 group-hover:scale-x-100"></span>
+                  </a>
+                )
+              )}
             </PopoverGroup>
           </div>
 
           {/* Íconos en pantallas grandes */}
           <div className="hidden lg:flex items-center space-x-4">
-            
             <button
               onClick={toggleLanguage}
               className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
@@ -156,7 +153,7 @@ export default function Header() {
               <>
                 {/* Fondo borroso cuando el menú se abre */}
                 <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40"></div>
-                
+
                 {/* Menú deslizante */}
                 <div className={`fixed top-0 right-0 w-[300px] h-full bg-black text-white p-6 z-50 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                   <div className="flex items-center justify-between mb-6">

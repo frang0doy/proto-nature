@@ -1,25 +1,30 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Agregamos useNavigate
 import Nosotros from './nosotros';
 import Soluciones from './soluciones';
 import Productos from './productos';
 import Footer from './footer';
 import { useLanguage } from './LenguajeContext';
+
 const Dlight = () => {
   const location = useLocation();
-  const { language, toggleLanguage } = useLanguage(); // Obtén el idioma y la función para cambiarlo
+  const navigate = useNavigate(); // Usamos el hook useNavigate
+  const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
-    // Asegura que la página se desplace hacia la parte superior al abrirse
     window.scrollTo(0, 0);
 
-    // Esto asegura que el contenido no se solape debajo del header fijo
+    // Asegura que el contenido no se solape debajo del header fijo
     const headerHeight = document.querySelector("header")?.offsetHeight;
-    document.body.style.paddingTop = `${headerHeight}px`; // Ajustamos el padding para evitar el solapamiento
-  }, []);
+    document.body.style.paddingTop = `${headerHeight}px`;
 
-  // Textos del header según el idioma
+    // Forzamos una actualización de los estilos del header al cambiar de ruta
+    document.documentElement.classList.add('force-update-header');
+    setTimeout(() => {
+      document.documentElement.classList.remove('force-update-header');
+    }, 50); // Remueve la clase tras 50ms para que el navegador la recalcule
+  }, [location]);
+
   const navLinks = {
     productos: language === 'es' ? 'Productos' : 'Products',
     nosotros: language === 'es' ? 'Nosotros' : 'About Us',
@@ -27,10 +32,16 @@ const Dlight = () => {
     contacto: language === 'es' ? 'Contacto' : 'Contact',
   };
 
+  // Función para manejar la navegación y recarga de la página
+  const handleGoHome = () => {
+    navigate("/");  // Redirige a la página principal
+    window.location.reload();  // Recarga la página después de la navegación
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header personalizado dentro del componente Dlight */}
-      <header className="bg-black shadow-md fixed top-0 left-0 right-0 z-50">
+      <header className={`fixed top-0 left-0 right-0 z-50 ${location.pathname === '/' ? 'bg-transparent' : 'bg-black'} shadow-md`}>
         <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
           {/* Logo */}
           <Link to="/">
@@ -67,7 +78,13 @@ const Dlight = () => {
       {/* Breadcrumb debajo del Header con fondo gradiente */}
       <nav className="bg-gradient-to-r from-gray-300 via-gray-400 to-white py-2 pb-0 overflow-hidden mt-16">
         <div className="max-w-6xl mx-auto">
-          <Link to="/" className="text-black hover:underline">{language === 'es' ? 'Inicio' : 'Home'}</Link>
+          {/* Usamos un botón que dispara handleGoHome para hacer redirección y recarga */}
+          <button
+            onClick={handleGoHome}
+            className="text-black hover:underline"
+          >
+            {language === 'es' ? 'Inicio' : 'Home'}
+          </button>
           <span className="mx-2">/</span>
           <span className="text-gray-700">Dlight</span>
         </div>
