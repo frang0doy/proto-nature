@@ -37,12 +37,15 @@ const Source = () => {
           <Link to="" className="flex-shrink-0 ml-0">
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
-          <nav className="flex space-x-4">
+          
+          {/* Navegación oculta en móviles */}
+          <nav className="hidden md:flex space-x-4">
             <a href="#productos" className="relative text-sm font-semibold text-white group">{navLinks.productos}</a>
             <a href="#nosotros" className="relative text-sm font-semibold text-white group">{navLinks.nosotros}</a>
             <a href="#soluciones" className="relative text-sm font-semibold text-white group">{navLinks.soluciones}</a>
             <a href="#contacto" className="relative text-sm font-semibold text-white group">{navLinks.contacto}</a>
           </nav>
+
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
             {language === 'es' ? 'ES' : 'EN'}
           </button>

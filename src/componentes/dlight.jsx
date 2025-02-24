@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Agregamos useNavigate
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Nosotros from './nosotros';
 import Soluciones from './soluciones';
 import Productos from './productos';
@@ -8,7 +8,7 @@ import { useLanguage } from './LenguajeContext';
 
 const Dlight = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Usamos el hook useNavigate
+  const navigate = useNavigate();
   const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
@@ -48,8 +48,8 @@ const Dlight = () => {
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
 
-          {/* Enlaces de navegación */}
-          <nav className="flex space-x-4">
+          {/* Enlaces de navegación - Siempre visibles en dispositivos grandes */}
+          <nav className="hidden lg:flex space-x-4">
             <a href="#productos" className="relative text-sm font-semibold text-white group">
               {navLinks.productos}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
