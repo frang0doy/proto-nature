@@ -45,7 +45,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
-          <h1 className="text-5xl font-semibold mb-4">{mainTitle}</h1>
+          <h1 className="text-5xl font-bold mb-4">{mainTitle}</h1>
           <p className="text-2xl mb-6">{mainSubtitle}</p>
           <div className="space-x-4">
             <Link to="/dlight">
@@ -75,7 +75,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
                 className="w-full h-[300px] object-cover rounded-md shadow-md"
               />
               {/* Titulo centrado en la parte superior de la imagen */}
-              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-semibold text-black">
+              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-bold text-white">
                 {title}
               </h2>
               {/* Botones centrados en la parte inferior de la imagen */}

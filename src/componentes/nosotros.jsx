@@ -57,17 +57,18 @@ const Nosotros = () => {
           </h2>
 
           <p
-            className="mt-2 text-lg text-gray-900 sm:text-xl sm:text-left leading-relaxed text-justify"
-            style={{
-              wordBreak: 'keep-all',
-              textAlignLast: 'justify',
-              whiteSpace: 'pre-line',
-            }}
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            {texts[language].description}
-          </p>
+  className="mt-2 text-lg text-gray-900 sm:text-xl sm:text-left leading-relaxed text-justify"
+  style={{
+    wordBreak: 'keep-all',
+    textAlignLast: 'left', // Cambié de justify a left
+    whiteSpace: 'normal', // Mantuvimos 'normal' para evitar saltos de línea innecesarios
+  }}
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  {texts[language].description}
+</p>
+
 
           <div className="mt-6">
             <a
