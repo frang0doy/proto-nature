@@ -14,6 +14,7 @@ import Hoppecke from './componentes/hoppecke';
 import Source from './componentes/source';
 import Longi from './componentes/longi';
 import Sma from './componentes/sma';
+import Halcium from './componentes/halcium';
 import { LanguageProvider } from './componentes/LenguajeContext'; 
 
 function App() {
@@ -30,13 +31,14 @@ function App() {
                 
                 <Empresas 
                   mainImage="https://earthshotprize.org/wp-content/uploads/2024/09/DLight-Support-Hero-1920x1080_0000_IMG_3773.jpg-1024x576.jpg"
-                  mainTitle="Dligt"
-                  mainSubtitle="Descubre nuestras soluciones"
+                  mainTitle="Dlight"
+                  mainSubtitle=""
                   smallImages={[
-                    { img: "https://static.wixstatic.com/media/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg/v1/fill/w_1903,h_695,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg", title: "HOPPECKE", subtitle: "" },
-                    { img: "https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840", title: "SOURCE", subtitle: "" },
+                    { img: "https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/applications/kacheln/sun.webp", title: "HOPPECKE", subtitle: "" },
                     { img: "https://static.longi.com/_97b7953f47.jpg", title: "LONGI", subtitle: "" },
                     { img: "https://cdn.sma.de/fileadmin/_processed_/f/b/csm_PM-SMA-US-Success_7b5dd1c45d.jpg", title: "SMA", subtitle: "" },
+                    { img: "https://static.wixstatic.com/media/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg/v1/fill/w_1903,h_695,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg", title: "HALCIUM", subtitle: "" },
+                   
                   ]}
                 />
                 <Logo />
@@ -51,6 +53,7 @@ function App() {
             <Route path="/Source" element={<Source />} />
             <Route path="/Longi" element={<Longi />} />
             <Route path="/Sma" element={<Sma />} />
+            <Route path="/Halcium" element={<Halcium />} />
           </Routes>
         </div>
       </Router>

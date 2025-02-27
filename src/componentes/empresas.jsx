@@ -63,6 +63,31 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
         </div>
       </div>
 
+      {/* Source Image Section */}
+      <div className="relative w-full text-center mt-12">
+        <img
+          src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
+          alt="Source"
+          className="w-full h-[500px] object-cover rounded-none shadow-lg"
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
+          <h1 className="text-5xl font-bold mb-4">Source</h1>
+          <div className="space-x-4">
+            <Link to="/source">
+              <button className="bg-white text-black px-8 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
+                Ver más
+              </button>
+            </Link>
+            <button
+              onClick={handleComprar}  // Usamos la misma función de redirección para el botón "Comprar"
+              className="bg-gray-400 text-black px-8 py-3 rounded-md shadow-md hover:bg-white transition"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Small Images Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-12 w-full">
         {smallImages.map(({ img, title, subtitle }, index) => (
@@ -79,39 +104,39 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
                 {title}
               </h2>
               {/* Botones centrados en la parte inferior de la imagen */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center space-x-4 w-full items-center">
                 {/* Enlaces redirigiendo a sus componentes correspondientes */}
                 {index === 0 && (
                   <Link to="/hoppecke">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
+                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
                       Ver más
                     </button>
                   </Link>
                 )}
                 {index === 1 && (
-                  <Link to="/source">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
+                  <Link to="/longi">
+                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
                       Ver más
                     </button>
                   </Link>
                 )}
                 {index === 2 && (
-                  <Link to="/longi">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
+                  <Link to="/sma">
+                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
                       Ver más
                     </button>
                   </Link>
                 )}
                 {index === 3 && (
-                  <Link to="/sma">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition">
+                  <Link to="/halcium">
+                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
                       Ver más
                     </button>
                   </Link>
                 )}
                 <button
                   onClick={handleComprar}  // Usamos la misma función de redirección para el botón "Comprar"
-                  className="bg-gray-400 text-black px-6 py-3 rounded-md shadow-md hover:bg-white transition"
+                  className="bg-gray-400 text-black px-6 py-3 rounded-md shadow-md hover:bg-white transition whitespace-nowrap"
                 >
                   Comprar
                 </button>
