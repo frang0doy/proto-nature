@@ -19,10 +19,7 @@ const Hoppecke = () => {
     }, 50);
   }, [location]);
 
-  const navLinks = {
-    productos: language === 'es' ? 'PRODUCTOS' : 'PRODUCTS',
-    contacto: language === 'es' ? 'CONTACTO' : 'CONTACT',
-  };
+ 
 
   const handleGoHome = () => {
     navigate("/");  
@@ -38,10 +35,7 @@ const Hoppecke = () => {
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
           {/* Solo mostrar la navegación en pantallas grandes */}
-          <nav className="hidden md:flex space-x-4">
-            <a href="#productos" className="relative text-sm font-semibold text-white group">{navLinks.productos}</a>
-            <a href="#contacto" className="relative text-sm font-semibold text-white group">{navLinks.contacto}</a>
-          </nav>
+          
           {/* Mostrar el botón de cambio de idioma siempre */}
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
             {language === 'es' ? 'ES' : 'EN'}

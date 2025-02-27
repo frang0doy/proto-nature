@@ -8,20 +8,20 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     arrows: true,
-    dotsClass: "slick-dots slick-thumb",
+    dotsClass: "slick-dots custom-dots",  // Custom dots styling
     prevArrow: (
-      <div className="slick-prev slick-arrow text-white text-3xl bg-black p-3 rounded-full absolute left-4 z-100">
+      <div className="slick-prev slick-arrow text-white text-3xl bg-black p-4 rounded-full absolute left-6 z-100 hover:bg-gray-800 transition-all">
         ‹
       </div>
     ),
     nextArrow: (
-      <div className="slick-next slick-arrow text-white text-3xl bg-black p-3 rounded-full absolute right-4 z-10">
+      <div className="slick-next slick-arrow text-white text-3xl bg-black p-4 rounded-full absolute right-6 z-100 hover:bg-gray-800 transition-all">
         ›
       </div>
     ),
@@ -151,29 +151,45 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       {/* Slider Section */}
       <div className="w-full mt-12 relative">
         <Slider {...sliderSettings}>
-          <div>
+          <div className="relative">
             <img
               src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
               alt="Slide 1"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[500px] object-cover rounded-md"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+            <div className="absolute bottom-16 left-8 text-white space-y-4">
+              <h2 className="text-4xl font-bold">Innovación en Energía</h2>
+              <p className="text-xl">Soluciones energéticas que marcan la diferencia</p>
+            </div>
           </div>
-          <div>
+          <div className="relative">
             <img
               src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg"
               alt="Slide 2"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[500px] object-cover rounded-md"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+            <div className="absolute bottom-16 left-8 text-white space-y-4">
+              <h2 className="text-4xl font-bold">Soluciones Globales</h2>
+              <p className="text-xl">Para industrias más sostenibles</p>
+            </div>
           </div>
-          <div>
+          <div className="relative">
             <img
               src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
               alt="Slide 3"
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[500px] object-cover rounded-md"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+            <div className="absolute bottom-16 left-8 text-white space-y-4">
+              <h2 className="text-4xl font-bold">Energía Solar de Alta Eficiencia</h2>
+              <p className="text-xl">Potencia tu futuro con energía limpia</p>
+            </div>
           </div>
         </Slider>
       </div>
+
     </div>
   );
 };
