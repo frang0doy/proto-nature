@@ -4,27 +4,27 @@ import { useLanguage } from './LenguajeContext'; // Importar el hook de idioma
 const teamMembers = [
   {
     name: "Tomás Wentzel",
-    title: "Web Designer",
+    title: "Director",
     imgSrc: "./tomas.jpg",
   },
   {
     name: "Marco Emmanuel Ortiz",
-    title: "UI Designer",
+    title: "Costos & plannig",
     imgSrc: "./marco.jpg",
   },
   {
     name: "Michelle Gauweloose",
-    title: "Web Developer",
+    title: "Comercio exterior",
     imgSrc: "./michelle.jpg",
   },
   {
     name: "Roberto Fazzito",
-    title: "Mobile Designer",
+    title: "Tecnico",
     imgSrc: "./roberto.jpg",
   },
   {
     name: "Marcelo Fazzito",
-    title: "Mobile Designer",
+    title: "Tecnico",
     imgSrc: "./marcelo.jpg",
   },
 ];

@@ -91,52 +91,54 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       {/* Small Images Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-12 w-full">
         {smallImages.map(({ img, title, subtitle }, index) => (
-          <div key={index} className="text-center relative">
+          <div key={index} className="text-center relative group">
             <div className="relative">
-              {/* Imagen sin filtro, mostrando calidad sin zoom */}
+              {/* Imagen con opacidad gris */}
               <img
                 src={img}
                 alt={`Thumbnail ${index + 1}`}
                 className="w-full h-[300px] object-cover rounded-md shadow-md"
               />
+              {/* Capa gris con opacidad para resaltar el texto */}
+              <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
               {/* Titulo centrado en la parte superior de la imagen */}
-              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-bold text-white">
+              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-bold text-black">
                 {title}
               </h2>
               {/* Botones centrados en la parte inferior de la imagen */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center space-x-4 w-full items-center">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center space-x-4 w-full items-center opacity-100 transition-all">
                 {/* Enlaces redirigiendo a sus componentes correspondientes */}
                 {index === 0 && (
                   <Link to="/hoppecke">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
+                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
                       Ver más
                     </button>
                   </Link>
                 )}
                 {index === 1 && (
                   <Link to="/longi">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
+                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
                       Ver más
                     </button>
                   </Link>
                 )}
                 {index === 2 && (
                   <Link to="/sma">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
+                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
                       Ver más
                     </button>
                   </Link>
                 )}
                 {index === 3 && (
                   <Link to="/halcium">
-                    <button className="bg-white text-black px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition whitespace-nowrap">
+                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
                       Ver más
                     </button>
                   </Link>
                 )}
                 <button
                   onClick={handleComprar}  // Usamos la misma función de redirección para el botón "Comprar"
-                  className="bg-gray-400 text-black px-6 py-3 rounded-md shadow-md hover:bg-white transition whitespace-nowrap"
+                  className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all"
                 >
                   Comprar
                 </button>
