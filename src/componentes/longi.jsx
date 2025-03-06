@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from './footer'; 
-import { useLanguage } from './LenguajeContext'; 
+import { useLanguage } from './LenguajeContext';
+import AOS from 'aos'; // Importamos AOS
+import 'aos/dist/aos.css'; // Importamos los estilos de AOS
 
 const Longi = () => {
   const location = useLocation();
@@ -17,6 +19,13 @@ const Longi = () => {
     setTimeout(() => {
       document.documentElement.classList.remove('force-update-header');
     }, 50);
+
+    // Inicializamos AOS
+    AOS.init({
+      duration: 1000, // Duración de la animación
+      easing: 'ease-in-out', // Efecto de transición suave
+      once: true, // La animación solo se ejecuta una vez
+    });
   }, [location]);
 
   const handleGoHome = () => {
@@ -53,20 +62,24 @@ const Longi = () => {
       </nav>
 
       {/* Parallax Section */}
-      <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://static.longi.com/industry_solution_748d38c4ea.jpg')" }}>
+      <section
+        className="relative w-full h-[500px] bg-cover bg-center"
+        style={{ backgroundImage: "url('https://static.longi.com/industry_solution_748d38c4ea.jpg')" }}
+        data-aos="fade-up"
+      >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl font-extrabold text-center">
+          <h1 className="text-white text-4xl font-bold text-center">
             Energía Solar para un Futuro Sostenible
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
             <a href="https://www.longi-solar.com" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                Conoce más
+                Ver más
               </button>
             </a>
             <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                Compra ahora
+                Comprar
               </button>
             </a>
           </div>
@@ -74,7 +87,7 @@ const Longi = () => {
       </section>
 
       {/* About LONGi Section */}
-      <section className="p-12 bg-gray-50" id="nosotros">
+      <section className="p-12 bg-gray-50" id="nosotros" data-aos="fade-up">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-semibold">{language === 'es' ? 'Sobre LONGi' : 'About LONGi'}</h2>
           <p className="mt-4 text-lg text-gray-700">
@@ -86,25 +99,57 @@ const Longi = () => {
       {/* Products Section */}
       <section className="py-12 bg-white" id="productos">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Productos Destacados' : 'Featured Products'}</h2>
+          <h2 className="text-3xl font-semibold mb-8" data-aos="fade-up">
+            {language === 'es' ? 'Productos Destacados' : 'Featured Products'}
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Producto 1 */}
-            <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
-              <img src="https://static.longi.com/X10_12e3b6df8d_5c1487f002.jpg" alt="Solar Panel" className="w-64 h-64 object-cover rounded-md mb-4" />
+            <div
+              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="https://static.longi.com/X10_12e3b6df8d_5c1487f002.jpg"
+                alt="Solar Panel"
+                className="w-64 h-64 object-cover rounded-md mb-4"
+              />
               <h3 className="text-2xl font-bold">{language === 'es' ? 'Módulo Solar de Alta Eficiencia' : 'High Efficiency Solar Module'}</h3>
-              <p className="text-gray-600 mt-2">{language === 'es' ? 'Con un diseño optimizado, nuestros módulos solares son perfectos para proyectos residenciales y comerciales.' : 'With optimized design, our solar modules are perfect for residential and commercial projects.'}</p>
+              <p className="text-gray-600 mt-2">
+                {language === 'es' ? 'Con un diseño optimizado, nuestros módulos solares son perfectos para proyectos residenciales y comerciales.' : 'With optimized design, our solar modules are perfect for residential and commercial projects.'}
+              </p>
             </div>
             {/* Producto 2 */}
-            <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
-              <img src="https://static.longi.com/Explorer_06_2c0e9cf07e.png" alt="Energy Storage" className="w-64 h-64 object-cover rounded-md mb-4" />
+            <div
+              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src="https://static.longi.com/Explorer_06_2c0e9cf07e.png"
+                alt="Energy Storage"
+                className="w-64 h-64 object-cover rounded-md mb-4"
+              />
               <h3 className="text-2xl font-bold">{language === 'es' ? 'Sistema de Almacenamiento Solar' : 'Solar Storage System'}</h3>
-              <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones avanzadas para almacenar y gestionar la energía solar de manera eficiente.' : 'Advanced solutions for storing and managing solar energy efficiently.'}</p>
+              <p className="text-gray-600 mt-2">
+                {language === 'es' ? 'Soluciones avanzadas para almacenar y gestionar la energía solar de manera eficiente.' : 'Advanced solutions for storing and managing solar energy efficiently.'}
+              </p>
             </div>
             {/* Producto 3 */}
-            <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
-              <img src="https://static.longi.com/ALK_G_226362_43182c8008.jpg" alt="Inverter" className="w-64 h-64 object-cover rounded-md mb-4" />
+            <div
+              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <img
+                src="https://static.longi.com/ALK_G_226362_43182c8008.jpg"
+                alt="Inverter"
+                className="w-64 h-64 object-cover rounded-md mb-4"
+              />
               <h3 className="text-2xl font-bold">{language === 'es' ? 'Inversor Solar de Alta Tecnología' : 'High-Tech Solar Inverter'}</h3>
-              <p className="text-gray-600 mt-2">{language === 'es' ? 'Inversores de última generación que garantizan máxima eficiencia y rendimiento.' : 'Next-generation inverters that ensure maximum efficiency and performance.'}</p>
+              <p className="text-gray-600 mt-2">
+                {language === 'es' ? 'Inversores de última generación que garantizan máxima eficiencia y rendimiento.' : 'Next-generation inverters that ensure maximum efficiency and performance.'}
+              </p>
             </div>
           </div>
         </div>

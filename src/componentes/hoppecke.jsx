@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from './footer'; 
 import { useLanguage } from './LenguajeContext'; 
+import AOS from 'aos'; // Importamos AOS
+import 'aos/dist/aos.css'; // Importamos los estilos de AOS
 
 const Hoppecke = () => {
   const location = useLocation();
@@ -9,6 +11,13 @@ const Hoppecke = () => {
   const { language, toggleLanguage } = useLanguage();
 
   useEffect(() => {
+    // Inicializar AOS
+    AOS.init({
+      duration: 1000, // Duración de la animación (en milisegundos)
+      easing: 'ease-in-out', // Efecto de aceleración de la animación
+      once: true, // Si se debe ejecutar solo una vez
+    });
+
     window.scrollTo(0, 0);
     const headerHeight = document.querySelector("header")?.offsetHeight;
     document.body.style.paddingTop = `${headerHeight}px`;
@@ -18,8 +27,6 @@ const Hoppecke = () => {
       document.documentElement.classList.remove('force-update-header');
     }, 50);
   }, [location]);
-
- 
 
   const handleGoHome = () => {
     navigate("/");  
@@ -34,9 +41,6 @@ const Hoppecke = () => {
           <Link to="" className="flex-shrink-0 ml-0">
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
-          {/* Solo mostrar la navegación en pantallas grandes */}
-          
-          {/* Mostrar el botón de cambio de idioma siempre */}
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
             {language === 'es' ? 'ES' : 'EN'}
           </button>
@@ -55,7 +59,11 @@ const Hoppecke = () => {
       </nav>
 
       {/* Parallax Section */}
-      <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg')" }}>
+      <section 
+        className="relative w-full h-[500px] bg-cover bg-center"
+        style={{ backgroundImage: "url('https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg')" }} 
+        data-aos="fade-up" // Efecto AOS cuando se desplaza
+      >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           <h1 className="text-white text-4xl font-bold text-center">Innovación y Tecnología de Energía Sostenible</h1>
           <div className="absolute bottom-8 flex space-x-4">
@@ -74,7 +82,7 @@ const Hoppecke = () => {
       </section>
 
       {/* About Hoppecke Section */}
-      <section className="p-12 bg-gray-100" id="nosotros">
+      <section className="p-12 bg-gray-100" id="nosotros" data-aos="fade-up">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
           <p className="mt-4 text-lg text-gray-700">
@@ -84,24 +92,24 @@ const Hoppecke = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-12 bg-white" id="productos">
+      <section className="py-12 bg-white" id="productos" data-aos="fade-up">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Producto 1 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/trak_uplift_save-_image_2_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
               <h3 className="text-2xl font-semibold">{language === 'es' ? 'Batería de Plomo Ácido' : 'Lead-Acid Battery'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones avanzadas para almacenamiento de energía industrial.' : 'Advanced solutions for industrial energy storage.'}</p>
             </div>
             {/* Producto 2 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid_power_vm_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
               <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Energía Solar' : 'Solar Energy System'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Integración de energía solar con almacenamiento eficiente.' : 'Solar energy integration with efficient storage.'}</p>
             </div>
             {/* Producto 3 */}
-            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+            <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid-xtreme-vr-green-series_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
               <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Almacenamiento de Energía' : 'Energy Storage System'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones completas de almacenamiento para optimizar el uso de la energía renovable.' : 'Complete storage solutions to optimize the use of renewable energy.'}</p>

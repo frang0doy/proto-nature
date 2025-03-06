@@ -8,11 +8,11 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 8000,
     arrows: true,
     dotsClass: "slick-dots custom-dots",  // Custom dots styling
     prevArrow: (
@@ -64,7 +64,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
 </div>
 
       {/* Source Image Section */}
-      <div className="relative w-full text-center mt-12">
+      <div className="relative w-full text-center mt-6">
   <img
     src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
     alt="Source"
@@ -89,67 +89,68 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
 </div>
 
       {/* Small Images Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-12 w-full">
-        {smallImages.map(({ img, title, subtitle }, index) => (
-          <div key={index} className="text-center relative group">
-            <div className="relative">
-              {/* Imagen con opacidad gris */}
-              <img
-                src={img}
-                alt={`Thumbnail ${index + 1}`}
-                className="w-full h-[300px] object-cover rounded-md shadow-md"
-              />
-              {/* Capa gris con opacidad para resaltar el texto */}
-              <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
-              {/* Titulo centrado en la parte superior de la imagen */}
-              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-bold text-white">
-                {title}
-              </h2>
-              {/* Botones centrados en la parte inferior de la imagen */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center space-x-4 w-full items-center opacity-100 transition-all">
-                {/* Enlaces redirigiendo a sus componentes correspondientes */}
-                {index === 0 && (
-                  <Link to="/hoppecke">
-                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
-                      Ver más
-                    </button>
-                  </Link>
-                )}
-                {index === 1 && (
-                  <Link to="/longi">
-                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
-                      Ver más
-                    </button>
-                  </Link>
-                )}
-                {index === 2 && (
-                  <Link to="/sma">
-                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
-                      Ver más
-                    </button>
-                  </Link>
-                )}
-                {index === 3 && (
-                  <Link to="/halcium">
-                    <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
-                      Ver más
-                    </button>
-                  </Link>
-                )}
-                <button
-                  onClick={handleComprar}  // Usamos la misma función de redirección para el botón "Comprar"
-                  className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all"
-                >
-                  Comprar
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 mt-6 w-full">
+  {smallImages.map(({ img, title, subtitle }, index) => (
+    <div key={index} className="text-center relative group">
+      <div className="relative">
+        {/* Imagen con opacidad gris */}
+        <img
+          src={img}
+          alt={`Thumbnail ${index + 1}`}
+          className="w-full h-[300px] object-cover rounded-md shadow-md transition-transform duration-500 transform hover:scale-110 hover:shadow-2xl"
+        />
+        {/* Capa gris con opacidad para resaltar el texto */}
+        <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
+        {/* Titulo centrado en la parte superior de la imagen */}
+        <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-bold text-white">
+          {title}
+        </h2>
+        {/* Botones centrados en la parte inferior de la imagen */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center space-x-4 w-full items-center opacity-100 transition-all">
+          {/* Enlaces redirigiendo a sus componentes correspondientes */}
+          {index === 0 && (
+            <Link to="/hoppecke">
+              <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
+                Ver más
+              </button>
+            </Link>
+          )}
+          {index === 1 && (
+            <Link to="/longi">
+              <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
+                Ver más
+              </button>
+            </Link>
+          )}
+          {index === 2 && (
+            <Link to="/sma">
+              <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
+                Ver más
+              </button>
+            </Link>
+          )}
+          {index === 3 && (
+            <Link to="/halcium">
+              <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
+                Ver más
+              </button>
+            </Link>
+          )}
+          <button
+            onClick={handleComprar}  // Usamos la misma función de redirección para el botón "Comprar"
+            className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all"
+          >
+            Comprar
+          </button>
+        </div>
       </div>
+    </div>
+  ))}
+</div>
+
 
       {/* Slider Section */}
-      <div className="w-full mt-12 relative">
+      <div className="w-full mt-6 relative">
         <Slider {...sliderSettings}>
           <div className="relative">
             <img

@@ -52,18 +52,18 @@ const Sma = () => {
       {/* Parallax Section */}
       <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://cdn.sma.de/fileadmin/_processed_/2/3/csm_sma-header-company_ef0d339093.jpg')" }}>
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl font-extrabold text-center">
+          <h1 className="text-white text-4xl font-bold text-center">
             Energía Solar para un Futuro Sostenible
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
             <a href="https://www.sma.de/es/" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                Conoce más
+                Ver más
               </button>
             </a>
             <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                Compra ahora
+                Comprar
               </button>
             </a>
           </div>
