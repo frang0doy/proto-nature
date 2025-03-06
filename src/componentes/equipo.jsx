@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useLanguage } from './LenguajeContext'; // Importar el hook de idioma
 
 const teamMembers = [
@@ -47,29 +47,27 @@ const Equipo = () => {
     },
   };
 
-  // Función para desplazar el slider hacia la derecha
+  // Función para mover el slider hacia la derecha
   const slideRight = () => {
-    if (sliderRef.current && currentSlide < teamMembers.length - 1) {
-      sliderRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    if (currentSlide < teamMembers.length - 1) {
       setCurrentSlide(currentSlide + 1);
     }
   };
 
-  // Función para desplazar el slider hacia la izquierda
+  // Función para mover el slider hacia la izquierda
   const slideLeft = () => {
-    if (sliderRef.current && currentSlide > 0) {
-      sliderRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    if (currentSlide > 0) {
       setCurrentSlide(currentSlide - 1);
     }
   };
 
-  // Para cambiar los puntos de navegación
-  const handleDotClick = (index) => {
+  // Desplazamiento del slider cada vez que cambia el slide
+  useEffect(() => {
     if (sliderRef.current) {
-      sliderRef.current.scrollTo({ left: 300 * index, behavior: 'smooth' });
-      setCurrentSlide(index);
+      const cardWidth = sliderRef.current.children[0].offsetWidth; // Obtener el ancho de la tarjeta
+      sliderRef.current.scrollTo({ left: currentSlide * cardWidth, behavior: "smooth" });
     }
-  };
+  }, [currentSlide]); // Se ejecuta cada vez que currentSlide cambia
 
   return (
     <section id="team" className="py-16 px-4 bg-gradient-to-r from-gray-100 to-white">
@@ -82,12 +80,12 @@ const Equipo = () => {
       <div className="relative flex justify-center items-center">
         <div
           ref={sliderRef}
-          className="overflow-hidden flex gap-6 pb-6 scroll-smooth no-scrollbar justify-center items-center"
+          className="overflow-x-hidden flex gap-6 pb-6 justify-start items-center"
         >
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-xl p-6 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl min-w-[250px] sm:min-w-[300px] flex-shrink-0"
+              className="bg-white rounded-xl shadow-xl p-6 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl min-w-[250px] sm:min-w-[250px] md:min-w-[300px] flex-shrink-0"
             >
               <div className="flex justify-center mb-4">
                 {/* Imagen más grande */}
@@ -104,17 +102,23 @@ const Equipo = () => {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Puntos de navegación (solo en responsive) */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 pb-4 sm:hidden">
-          {teamMembers.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`w-2.5 h-2.5 rounded-full ${index === currentSlide ? 'bg-gray-800' : 'bg-gray-400'}`}
-            />
-          ))}
-        </div>
+      {/* Botones de navegación fuera de las cards (debajo del contenedor) */}
+      <div className="flex justify-center gap-4 mt-2 sm:hidden">
+        <button
+          onClick={slideLeft}
+          className="p-2 bg-transparent text-black border-2 border-black rounded-md hover:bg-gray-100 focus:outline-none transition duration-300"
+        >
+          {"<"} {/* Icono o texto para izquierda */}
+        </button>
+
+        <button
+          onClick={slideRight}
+          className="p-2 bg-transparent text-black border-2 border-black rounded-md hover:bg-gray-100 focus:outline-none transition duration-300"
+        >
+          {">"} {/* Icono o texto para derecha */}
+        </button>
       </div>
     </section>
   );
