@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
 
             {/* Formulario de suscripción */}
-            <div className="col-span-2 lg:col-span-3 mt-10 lg:mt-0 flex justify-end">
+            <div className="col-span-2 lg:col-span-3 mt-2 lg:mt-0 flex justify-end">
               <form className="w-full lg:w-96" action="https://formspree.io/f/mknkoyjq" method="POST">
                 <label htmlFor="UserEmail" className="sr-only">Email</label>
                 <div className="flex w-full">
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
 
         {/* Línea divisora completa con separación */}
-        <div className="mt-16 border-t border-gray-700 w-full"></div>
+        <div className="mt-6 border-t border-gray-700 w-full"></div>
 
         {/* Resto de las secciones de productos, compañía y legal */}
         <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-8 lg:grid-cols-5 lg:gap-y-8">
@@ -141,7 +141,7 @@ const Footer = () => {
       </div>
 
       {/* Línea divisora inferior con más separación */}
-      <div className="mt-8 border-t border-gray-700 py-4">
+      <div className="mt-6 border-t border-gray-700 py-4">
         <div className="mx-auto max-w-screen-xl px-4 text-center">
           <p className="text-sm text-gray-300">
             {texts[language].copyright}
