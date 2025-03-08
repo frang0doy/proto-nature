@@ -62,19 +62,23 @@ const Hoppecke = () => {
       <section 
         className="relative w-full h-[500px] bg-cover bg-center"
         style={{ backgroundImage: "url('https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg')" }} 
-        data-aos="fade-up" // Efecto AOS cuando se desplaza
+        data-aos="fade-up"
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl font-bold text-center">Innovación y Tecnología de Energía Sostenible</h1>
+          {/* Título traducido */}
+          <h1 className="text-white text-4xl font-bold text-center">
+            {language === 'es' ? 'Innovación y Tecnología de Energía Sostenible' : 'Innovation and Sustainable Energy Technology'}
+          </h1>
           <div className="absolute bottom-8 flex space-x-4">
+            {/* Botones traducidos */}
             <a href="https://www.hoppecke.com" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                Ver más
+                {language === 'es' ? 'Ver más' : 'Learn More'}
               </button>
             </a>
             <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                Comprar
+                {language === 'es' ? 'Comprar' : 'Buy'}
               </button>
             </a>
           </div>

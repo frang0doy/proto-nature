@@ -29,7 +29,7 @@ const Halcium = () => {
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 ${location.pathname === '/' ? 'bg-transparent' : 'bg-black'} shadow-md`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center p-6 px-6">
-          <Link to="/" className="flex-shrink-0 ml-0">
+          <Link to="" className="flex-shrink-0 ml-0">
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
@@ -53,17 +53,17 @@ const Halcium = () => {
       <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://static.wixstatic.com/media/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg/v1/fill/w_1903,h_695,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg')" }}>
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           <h1 className="text-white text-4xl font-bold text-center">
-            Soluciones Energéticas Innovadoras para el Futuro
+            {language === 'es' ? 'Soluciones Energéticas Innovadoras para el Futuro' : 'Innovative Energy Solutions for the Future'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
             <a href="https://www.halcium.com/" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                Ver más
+                {language === 'es' ? 'Ver más' : 'See more'}
               </button>
             </a>
             <a href="https://shop-halcium.com" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                Comprar
+                {language === 'es' ? 'Comprar' : 'Shop'}
               </button>
             </a>
           </div>

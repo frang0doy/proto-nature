@@ -69,17 +69,17 @@ const Longi = () => {
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           <h1 className="text-white text-4xl font-bold text-center">
-            Energía Solar para un Futuro Sostenible
+            {language === 'es' ? 'Energía Solar para un Futuro Sostenible' : 'Solar Energy for a Sustainable Future'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
             <a href="https://www.longi-solar.com" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                Ver más
+                {language === 'es' ? 'Ver más' : 'Learn More'}
               </button>
             </a>
             <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                Comprar
+                {language === 'es' ? 'Comprar' : 'Buy'}
               </button>
             </a>
           </div>
