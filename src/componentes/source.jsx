@@ -8,7 +8,7 @@ import 'aos/dist/aos.css'; // Importamos los estilos de AOS
 const Source = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { language, toggleLanguage } = useLanguage();
+  const { language, toggleLanguage, translate } = useLanguage();  // Usamos el hook de traducción
 
   useEffect(() => {
     // Inicializar AOS con duración más suave
@@ -72,16 +72,20 @@ const Source = () => {
       {/* Parallax Section */}
       <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://source.co/cdn/shop/files/SOURCE_commercial_field.png?v=1717197556&width=1000')" }} data-aos="zoom-in" data-aos-delay="900">
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl font-bold text-center">Tecnología de Agua Sostenible</h1>
+          {/* Título traducido */}
+          <h1 className="text-white text-4xl font-bold text-center">
+            {language === 'es' ? 'Tecnología de Agua Sostenible' : 'Sustainable Water Technology'}
+          </h1>
           <div className="absolute bottom-8 flex space-x-4">
+            {/* Botones traducidos */}
             <a href="https://source.co" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                Ver más
+                {language === 'es' ? 'Ver más' : 'Learn More'}
               </button>
             </a>
             <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
               <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                Comprar
+                {language === 'es' ? 'Comprar' : 'Buy'}
               </button>
             </a>
           </div>

@@ -47,6 +47,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           alt="Main"
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
+        <div className="absolute inset-0 bg-gray-800 opacity-60"></div> {/* Capa gris con opacidad */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
           <h1 className="text-5xl font-bold mb-4">{mainTitle}</h1>
           <p className="text-2xl mb-6">{mainSubtitle}</p>
@@ -73,6 +74,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           alt="Source"
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
+        <div className="absolute inset-0 bg-gray-800 opacity-60"></div> {/* Capa gris con opacidad */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
           <h1 className="text-5xl font-bold mb-4">{translate("Source")}</h1>
           <div className="space-x-4">
