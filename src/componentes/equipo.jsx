@@ -6,26 +6,46 @@ const teamMembers = [
     name: "Tomás Wentzel",
     title: "Director",
     imgSrc: "./tomas.jpg",
+    titleTranslations: {
+      es: "Director",
+      en: "Director",
+    },
   },
   {
     name: "Marco Emmanuel Ortiz",
     title: "Costos & plannig",
     imgSrc: "./marco.jpg",
+    titleTranslations: {
+      es: "Costos & planificación",
+      en: "Costs & Planning",
+    },
   },
   {
     name: "Michelle Gauweloose",
     title: "Comercio exterior",
     imgSrc: "./michelle.jpg",
+    titleTranslations: {
+      es: "Comercio exterior",
+      en: "Foreign Trade",
+    },
   },
   {
     name: "Roberto Fazzito",
     title: "Tecnico",
     imgSrc: "./roberto.jpg",
+    titleTranslations: {
+      es: "Técnico",
+      en: "Technician",
+    },
   },
   {
     name: "Marcelo Fazzito",
     title: "Tecnico",
     imgSrc: "./marcelo.jpg",
+    titleTranslations: {
+      es: "Técnico",
+      en: "Technician",
+    },
   },
 ];
 
@@ -97,7 +117,9 @@ const Equipo = () => {
               </div>
               <div className="text-center">
                 <span className="text-xl font-semibold text-gray-800 block mb-2">{member.name}</span>
-                <span className="text-md text-gray-500">{member.title}</span>
+                <span className="text-md text-gray-500">
+                  {member.titleTranslations[language]} {/* Usar traducción para el título de la tarjeta */}
+                </span>
               </div>
             </div>
           ))}

@@ -27,6 +27,7 @@ const Footer = () => {
       newsletterTitle: 'Subscribe to our newsletter',
       newsletterDesc: 'Get the latest updates and insights delivered to your inbox',
       products: 'Products',
+      
       company: 'Company',
       contact: 'Contact',
       facebook: 'Facebook',
