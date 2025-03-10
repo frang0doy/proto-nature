@@ -155,45 +155,59 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
 
       {/* Slider Section */}
       <div className="w-full mt-6 relative">
-        <Slider {...sliderSettings}>
-          <div className="relative">
-            <img
-              src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
-              alt="Slide 1"
-              className="w-full h-[500px] object-cover rounded-md"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
-            <div className="absolute bottom-16 left-8 text-white space-y-4">
-              <h2 className="text-4xl font-bold">{translate("Innovación en Energía")}</h2>
-              <p className="text-xl">{translate("Soluciones energéticas que marcan la diferencia")}</p>
-            </div>
-          </div>
-          <div className="relative">
-            <img
-              src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg"
-              alt="Slide 2"
-              className="w-full h-[500px] object-cover rounded-md"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
-            <div className="absolute bottom-16 left-8 text-white space-y-4">
-              <h2 className="text-4xl font-bold">{translate("Soluciones Globales")}</h2>
-              <p className="text-xl">{translate("Para industrias más sostenibles")}</p>
-            </div>
-          </div>
-          <div className="relative">
-            <img
-              src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
-              alt="Slide 3"
-              className="w-full h-[500px] object-cover rounded-md"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
-            <div className="absolute bottom-16 left-8 text-white space-y-4">
-              <h2 className="text-4xl font-bold">{translate("Energía Solar de Alta Eficiencia")}</h2>
-              <p className="text-xl">{translate("Potencia tu futuro con energía limpia")}</p>
-            </div>
-          </div>
-        </Slider>
+  <Slider {...sliderSettings}>
+    {/* Nuevo Slide con la imagen estadistica.png */}
+    <div className="relative bg-white">
+      <div className="flex justify-center">
+        <img
+          src="/estadistica.png"  // Ruta de la imagen dentro de la carpeta public
+          alt="Estadísticas"
+          className="h-[500px] object-contain"  // Usamos object-contain para mostrar la imagen completa
+        />
       </div>
+    </div>
+
+    {/* Resto de los slides */}
+    <div className="relative">
+      <img
+        src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
+        alt="Slide 1"
+        className="w-full h-[500px] object-cover rounded-md"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+      <div className="absolute bottom-16 left-8 text-white space-y-4">
+        <h2 className="text-4xl font-bold">{translate("Innovación en Energía")}</h2>
+        <p className="text-xl">{translate("Soluciones energéticas que marcan la diferencia")}</p>
+      </div>
+    </div>
+    <div className="relative">
+      <img
+        src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg"
+        alt="Slide 2"
+        className="w-full h-[500px] object-cover rounded-md"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+      <div className="absolute bottom-16 left-8 text-white space-y-4">
+        <h2 className="text-4xl font-bold">{translate("Soluciones Globales")}</h2>
+        <p className="text-xl">{translate("Para industrias más sostenibles")}</p>
+      </div>
+    </div>
+    <div className="relative">
+      <img
+        src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
+        alt="Slide 3"
+        className="w-full h-[500px] object-cover rounded-md"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+      <div className="absolute bottom-16 left-8 text-white space-y-4">
+        <h2 className="text-4xl font-bold">{translate("Energía Solar de Alta Eficiencia")}</h2>
+        <p className="text-xl">{translate("Potencia tu futuro con energía limpia")}</p>
+      </div>
+    </div>
+  </Slider>
+</div>
+
+
     </div>
   );
 };
