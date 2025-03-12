@@ -11,6 +11,7 @@ const Footer = () => {
     es: {
       newsletterTitle: 'Suscríbete a nuestro boletín de noticias',
       newsletterDesc: 'Obtenga las últimas actualizaciones y percepciones entregadas en su bandeja de entrada',
+      newsletterButton: 'Enviar',
       products: 'Productos',
       company: 'Compañía',
       contact: 'Contacto',
@@ -21,13 +22,20 @@ const Footer = () => {
       copyright: '© 2024 ProtoNature. Todos los derechos reservados.',
       phone: '54 114545 9037',
       address: 'Machain 4639, Capital Federal',
-      email: 'proyectos@protonature.com', // Nuevo correo electrónico
+      email: 'proyectos@protonature.com',
+      panelesSolares: 'Paneles Solares',
+      hidroponia: 'Hidroponia',
+      baterias: 'Baterias',
+      energiaEolica: 'Energia Eolica',
+      nosotros: 'Nosotros',
+      soluciones: 'Soluciones',
+      equipo: 'Equipo',
     },
     en: {
       newsletterTitle: 'Subscribe to our newsletter',
       newsletterDesc: 'Get the latest updates and insights delivered to your inbox',
+      newsletterButton: 'Submit',
       products: 'Products',
-      
       company: 'Company',
       contact: 'Contact',
       facebook: 'Facebook',
@@ -37,7 +45,14 @@ const Footer = () => {
       copyright: '© 2024 ProtoNature. All rights reserved.',
       phone: '+54 114545 9037',
       address: 'Machain 4639, Capital Federal',
-      email: 'proyectos@protonature.com', // Nuevo correo electrónico
+      email: 'proyectos@protonature.com',
+      panelesSolares: 'Solar Panels',
+      hidroponia: 'Hydroponics',
+      baterias: 'Batteries',
+      energiaEolica: 'Wind Energy',
+      nosotros: 'About Us',
+      soluciones: 'Solutions',
+      equipo: 'Team',
     },
   };
 
@@ -72,7 +87,7 @@ const Footer = () => {
                     type="submit"
                     className="w-1/4 bg-gray-900 px-6 py-2 text-sm font-semibold text-white transition-none hover:bg-teal-600 border-2 border-white border-l-0 rounded-r-full"  // Botón más corto
                   >
-                    {texts[language].newsletterButton || 'Enviar'}
+                    {texts[language].newsletterButton}
                   </button>
                 </div>
               </form>
@@ -88,19 +103,19 @@ const Footer = () => {
           <div className="col-span-2 sm:col-span-1">
             <p className="font-medium text-white">{texts[language].products}</p>
             <ul className="mt-6 space-y-4 text-sm text-gray-300">
-              <li><a href="#products" className="text-white transition hover:opacity-75"> Paneles Solares </a></li>
-              <li><a href="#products" className="text-white transition hover:opacity-75"> Hidroponia </a></li>
-              <li><a href="#products" className="text-white transition hover:opacity-75"> Baterias </a></li>
-              <li><a href="#products" className="text-white transition hover:opacity-75"> Energia Eolica </a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].panelesSolares}</a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].hidroponia}</a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].baterias}</a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].energiaEolica}</a></li>
             </ul>
           </div>
 
           <div className="col-span-2 sm:col-span-1">
             <p className="font-medium text-white">{texts[language].company}</p>
             <ul className="mt-6 space-y-4 text-sm text-gray-300">
-              <li><a href="#nosotros" className="text-white transition hover:opacity-75"> Nosotros </a></li>
-              <li><a href="#solutions" className="text-white transition hover:opacity-75"> Soluciones </a></li>
-              <li><a href="#team" className="text-white transition hover:opacity-75"> Equipo </a></li>
+              <li><a href="#nosotros" className="text-white transition hover:opacity-75">{texts[language].nosotros}</a></li>
+              <li><a href="#solutions" className="text-white transition hover:opacity-75">{texts[language].soluciones}</a></li>
+              <li><a href="#team" className="text-white transition hover:opacity-75">{texts[language].equipo}</a></li>
             </ul>
           </div>
 

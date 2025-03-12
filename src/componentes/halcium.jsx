@@ -83,12 +83,12 @@ const Halcium = () => {
       {/* Cards Section */}
       <section className="py-12 bg-white" id="cards">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Nuestros Servicios' : 'Our Services'}</h2>
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Card 1 */}
             <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
               <img src="https://static.wixstatic.com/media/8a6f9d_070d07515bcc445aabc5c7139cfdf1a6~mv2.jpg/v1/crop/x_24,y_0,w_3276,h_1500/fill/w_755,h_346,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color-Lineup.jpg" alt="Energía Solar" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-bold">{language === 'es' ? 'Energía Solar' : 'Solar Energy'}</h3>
+              <h3 className="text-2xl font-bold">{language === 'es' ? 'Energía ' : 'Energy'}</h3>
               <p className="text-gray-600 mt-2">
                 {language === 'es' ? 'Implementación de soluciones solares para hogares y empresas.' : 'Implementing solar solutions for homes and businesses.'}
               </p>

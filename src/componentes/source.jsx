@@ -97,7 +97,7 @@ const Source = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
           <p className="mt-4 text-lg text-gray-700">
-            {language === 'es' ? 'SOURCE Global es una empresa líder en soluciones de agua sostenible, utilizando energía solar para producir agua potable a partir del aire.' : 'SOURCE Global is a leading company in sustainable water solutions, using solar energy to produce drinking water from air.'}
+            {language === 'es' ? 'SOURCE desarrolo la unica tegnologia, que utilizando energia solar puede producir agua potable a partir del aire.' : 'SOURCE developed the only technology that uses solar energy to produce drinking water from the air.'}
           </p>
         </div>
       </section>

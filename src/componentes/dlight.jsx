@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Nosotros from './nosotros';
-import Soluciones from './soluciones';
+
 import Productos from './productos';
 import Footer from './footer';
 import { useLanguage } from './LenguajeContext';
@@ -26,9 +26,10 @@ const Dlight = () => {
   }, [location]);
 
   const navLinks = {
-    productos: language === 'es' ? 'PRODUCTOS' : 'PRODUCTS',
+
     nosotros: language === 'es' ? 'NOSOTROS' : 'ABOUT US',
-    soluciones: language === 'es' ? 'SOLUCIONES' : 'SOLUTIONS',
+    productos: language === 'es' ? 'PRODUCTOS' : 'PRODUCTS',
+    
     contacto: language === 'es' ? 'CONTACTO' : 'CONTACT',
   };
 
@@ -50,18 +51,16 @@ const Dlight = () => {
 
           {/* Enlaces de navegación - Siempre visibles en dispositivos grandes */}
           <nav className="hidden lg:flex space-x-4">
-            <a href="#productos" className="relative text-sm font-semibold text-white group">
-              {navLinks.productos}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-            </a>
+            
             <a href="#nosotros" className="relative text-sm font-semibold text-white group">
               {navLinks.nosotros}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#soluciones" className="relative text-sm font-semibold text-white group">
-              {navLinks.soluciones}
+            <a href="#productos" className="relative text-sm font-semibold text-white group">
+              {navLinks.productos}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
+            
             <a href="#contacto" className="relative text-sm font-semibold text-white group">
               {navLinks.contacto}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
@@ -95,9 +94,7 @@ const Dlight = () => {
         <section id="nosotros">
           <Nosotros />
         </section>
-        <section id="soluciones">
-          <Soluciones />
-        </section>
+        
         <section id="productos">
           <Productos />
         </section>
