@@ -196,7 +196,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       <img
         src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
         alt="Slide 3"
-        className="w-full h-[500px] object-cover rounded-md"
+       className="w-full h-[500px] object-cover rounded-md"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
       <div className="absolute bottom-16 left-8 text-white space-y-4">
