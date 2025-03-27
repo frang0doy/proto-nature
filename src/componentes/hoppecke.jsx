@@ -90,7 +90,7 @@ const Hoppecke = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
           <p className="mt-4 text-lg text-gray-700">
-            {language === 'es' ? 'Hoppecke es un líder global en soluciones de energía sostenible, especializado en sistemas de almacenamiento de energía y baterías avanzadas.' : 'Hoppecke is a global leader in sustainable energy solutions, specializing in advanced battery and energy storage systems.'}
+            {language === 'es' ? 'Hoppecke es un líder global especializado en sistemas de almacenamiento de energia y baterías avanzadas.' : 'Hoppecke is a global leader specializing in energy storage systems and advanced batteries..'}
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ const Hoppecke = () => {
             {/* Producto 2 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid_power_vm_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Energía Solar' : 'Solar Energy System'}</h3>
+              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Bateria para energia solar ' : 'Battery for solar energy'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Integración de energía solar con almacenamiento eficiente.' : 'Solar energy integration with efficient storage.'}</p>
             </div>
             {/* Producto 3 */}

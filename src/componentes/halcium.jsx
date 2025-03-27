@@ -75,7 +75,7 @@ const Halcium = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-semibold">{language === 'es' ? 'Sobre Halcium' : 'About Halcium'}</h2>
           <p className="mt-4 text-lg text-gray-700">
-            {language === 'es' ? 'Halcium es una empresa líder en soluciones energéticas sostenibles y sistemas de almacenamiento de energía.' : 'Halcium is a leading company in sustainable energy solutions and energy storage systems.'}
+            {language === 'es' ? 'Halcium desarrollo la primer turbina eolica fija para generar energia.' : 'Halcium developed the first fixed wind turbine to generate energy'}
           </p>
         </div>
       </section>

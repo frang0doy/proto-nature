@@ -91,7 +91,7 @@ const Longi = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-semibold">{language === 'es' ? 'Sobre LONGi' : 'About LONGi'}</h2>
           <p className="mt-4 text-lg text-gray-700">
-            {language === 'es' ? 'LONGi Solar es una de las empresas líderes en energía solar, especializada en la fabricación de módulos fotovoltaicos de alto rendimiento.' : 'LONGi Solar is one of the leading companies in solar energy, specializing in the manufacturing of high-performance photovoltaic modules.'}
+            {language === 'es' ? 'LONGi Solar es una de las empresas líder especializada en la fabricacion de modulos fotoboltaicos de alto rendimiento.' : 'LONGi Solar is one of the leading companies specializing in the manufacture of high-performance photovoltaic modules.'}
           </p>
         </div>
       </section>

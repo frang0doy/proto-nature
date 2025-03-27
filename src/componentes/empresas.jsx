@@ -192,6 +192,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
         <p className="text-xl">{translate("Para industrias más sostenibles")}</p>
       </div>
     </div>
+    
     <div className="relative">
       <img
         src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
@@ -202,6 +203,17 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       <div className="absolute bottom-16 left-8 text-white space-y-4">
         <h2 className="text-4xl font-bold">{translate("Energía Solar de Alta Eficiencia")}</h2>
         <p className="text-xl">{translate("Potencia tu futuro con energía limpia")}</p>
+      </div>
+    </div>
+    <div className="relative">
+      <img
+        src="https://smartflower.com/wp-content/themes/smartflower/_content/residential/header.jpg"
+        alt="Slide 4"
+        className="w-full h-[500px] object-cover rounded-md"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+      <div className="absolute bottom-16 left-8 text-white space-y-4">
+       
       </div>
     </div>
   </Slider>
