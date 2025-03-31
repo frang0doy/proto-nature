@@ -102,7 +102,7 @@ const Longi = () => {
           <h2 className="text-3xl font-semibold mb-8" data-aos="fade-up">
             {language === 'es' ? 'Productos Destacados' : 'Featured Products'}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6">
             {/* Producto 1 */}
             <div
               className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
@@ -136,21 +136,7 @@ const Longi = () => {
               </p>
             </div>
             {/* Producto 3 */}
-            <div
-              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <img
-                src="https://static.longi.com/ALK_G_226362_43182c8008.jpg"
-                alt="Inverter"
-                className="w-64 h-64 object-cover rounded-md mb-4"
-              />
-              <h3 className="text-2xl font-bold">{language === 'es' ? 'Inversor Solar de Alta Tecnología' : 'High-Tech Solar Inverter'}</h3>
-              <p className="text-gray-600 mt-2">
-                {language === 'es' ? 'Inversores de última generación que garantizan máxima eficiencia y rendimiento.' : 'Next-generation inverters that ensure maximum efficiency and performance.'}
-              </p>
-            </div>
+            
           </div>
         </div>
       </section>

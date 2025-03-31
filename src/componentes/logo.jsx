@@ -11,10 +11,8 @@ const CarouselWrapper = styled.div`
   width: 100%;
   margin: auto;
   background-color: white; /* Fondo blanco para el carrusel */
-  padding:  20px 20px; /* Padding en la parte inferior de 40px */
-  
-  /* Si prefieres más espacio en los lados también, puedes modificar el padding superior o lateral */
-  
+  padding: 20px 20px; /* Padding en la parte inferior de 40px */
+
   .slick-slide {
     display: flex;
     justify-content: center;
@@ -28,6 +26,12 @@ const CarouselWrapper = styled.div`
     object-fit: contain; /* Ajusta la imagen sin deformarla */
     display: block;
     margin: 0 auto; /* Asegura que los logos estén centrados dentro del contenedor */
+  }
+
+  /* Estilo especial para el logo 3 */
+  .logo3 {
+    width: 600px; /* Hacemos el logo 3 más grande */
+    height: 200px; /* Ajustamos la altura */
   }
 
   /* Seleccionamos el logo 5 (usando nth-child) */
@@ -73,11 +77,14 @@ const Logo = () => {
   return (
     <CarouselWrapper>
       <Slider {...settings}>
-        {logos.map((logo) => {
-          console.log(logo); // Verifica si los logos están siendo iterados
+        {logos.map((logo, index) => {
           return (
             <div key={logo.id} style={{ textAlign: "center" }}>
-              <img src={logo.src} alt={logo.alt} />
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className={index === 2 ? "logo3" : ""} // Aplica la clase "logo3" al logo 3
+              />
             </div>
           );
         })}

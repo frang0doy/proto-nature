@@ -70,17 +70,17 @@ const Productos = () => {
 
   const products = [
     {
-      title: language === 'es' ? 'Sistemas solares casero' : 'Home Solar Systems',
+      title: language === 'es' ? 'Sistema solar casero' : 'Home Solar Systems',
       description: language === 'es' ? 'Potencia solar flexible para un mañana más brillante' : 'Flexible solar power for a brighter tomorrow',
       image: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fx2000%2Fx2000-1.png&w=640&q=75',
     },
     {
-      title: language === 'es' ? 'Inversores solares' : 'Solar Inverters',
+      title: language === 'es' ? 'Inversor solar' : 'Solar Inverters',
       description: language === 'es' ? 'Poder sin esfuerzo para una vida interrumpida' : 'Effortless power for uninterrupted life',
       image: 'https://www.dlight.com/_next/image?url=%2Fimages%2Fproduct-3.png&w=640&q=75',
     },
     {
-      title: language === 'es' ? 'Áticos' : 'Attics',
+      title: language === 'es' ? 'Equipos solares' : 'Solar equipment',
       description: language === 'es' ? 'Versátil, electrodomésticos Pay-As-You-Go' : 'Versatile, Pay-As-You-Go Appliances',
       image: 'https://www.dlight.com/_next/image?url=%2Fimages%2Fproduct-4.png&w=640&q=75',
     },

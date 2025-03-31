@@ -15,7 +15,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 5000,
     arrows: true,
     dotsClass: "slick-dots custom-dots",  // Custom dots styling
     prevArrow: (
