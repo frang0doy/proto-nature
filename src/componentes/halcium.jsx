@@ -50,25 +50,39 @@ const Halcium = () => {
       </nav>
 
       {/* Parallax Section */}
-      <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://static.wixstatic.com/media/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg/v1/fill/w_1903,h_695,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg')" }}>
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl font-bold text-center">
-            {language === 'es' ? 'Soluciones Energéticas Innovadoras para el Futuro' : 'Innovative Energy Solutions for the Future'}
-          </h1>
-          <div className="absolute bottom-8 flex space-x-4">
-            <a href="https://www.halcium.com/" target="_blank" rel="noopener noreferrer">
-              <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                {language === 'es' ? 'Ver más' : 'See more'}
-              </button>
-            </a>
-            <a href="https://shop-halcium.com" target="_blank" rel="noopener noreferrer">
-              <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                {language === 'es' ? 'Comprar' : 'Shop'}
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
+      <section
+  className="relative w-full h-[500px] bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('https://static.wixstatic.com/media/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg/v1/fill/w_1903,h_695,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg')",
+  }}
+>
+  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40">
+    <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-bold text-center">
+      {language === "es" ? "Energia eolica" : "Wind energy"}
+    </h1>
+    <div className="absolute bottom-8 flex space-x-4">
+      <a
+        href="https://www.halcium.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
+          {language === "es" ? "Ver más" : "See more"}
+        </button>
+      </a>
+      <a
+        href="https://shop-halcium.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
+          {language === "es" ? "Comprar" : "Shop"}
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* About Halcium Section */}
       <section className="p-12 bg-gray-50" id="nosotros">
