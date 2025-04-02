@@ -74,7 +74,7 @@ const Source = () => {
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           {/* Título traducido */}
           <h1 className="text-white text-4xl font-bold text-center">
-            {language === 'es' ? 'Tecnología de Agua Sostenible' : 'Sustainable Water Technology'}
+            {language === 'es' ? 'Generacion de agua potable' : 'Generation of drinking water'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
             {/* Botones traducidos */}

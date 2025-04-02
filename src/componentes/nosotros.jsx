@@ -19,14 +19,14 @@ const Nosotros = () => {
   // Textos según el idioma
   const texts = {
     es: {
-      title: 'Haz tu vida mas brillante con d.light',
+      title: 'Inclucion social a travez de la energia solar',
       description:
         'En d.light, nos dedicamos a transformar vidas a través de soluciones de energía solar asequibles y sostenibles, empoderando a más de 175 millones de personas en todo el mundo. Nuestro objetivo es proporcionar acceso a energía limpia que fomente la educación, mejore la salud y cree oportunidades económicas. Nuestra visión es transformar mil millones de vidas para 2030, allanando el camino hacia un futuro más brillante y sostenible.',
       moreInfo: 'Más información',
     },
     en: {
-      title: 'Make Your Life Brighter',
-      subtitle: 'with d.light',
+      title: 'Social inclusion through ',
+      subtitle: ' solar energy',
       description:
         'At d.light, we are dedicated to transforming lives through affordable and sustainable solar energy solutions, empowering over 175 million people around the world. Our goal is to provide access to clean energy that fosters education, improves health, and creates economic opportunities. Our vision is to transform one billion lives by 2030, paving the way for a brighter and more sustainable future.',
       moreInfo: 'More Information',

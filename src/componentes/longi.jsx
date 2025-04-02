@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from './footer'; 
 import { useLanguage } from './LenguajeContext';
-import AOS from 'aos'; // Importamos AOS
-import 'aos/dist/aos.css'; // Importamos los estilos de AOS
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 const Longi = () => {
   const location = useLocation();
@@ -20,11 +20,10 @@ const Longi = () => {
       document.documentElement.classList.remove('force-update-header');
     }, 50);
 
-    // Inicializamos AOS
     AOS.init({
-      duration: 1000, // Duración de la animación
-      easing: 'ease-in-out', // Efecto de transición suave
-      once: true, // La animación solo se ejecuta una vez
+      duration: 1000, 
+      easing: 'ease-in-out', 
+      once: true, 
     });
   }, [location]);
 
@@ -41,9 +40,6 @@ const Longi = () => {
           <Link to="" className="flex-shrink-0 ml-0">
             <img src="/logo512.png" alt="Logo" className="w-32 h-auto" />
           </Link>
-          <nav className="flex space-x-4">
-            {/* El encabezado ya solo contiene el logo y el cambio de idioma */}
-          </nav>
           <button onClick={toggleLanguage} className="text-white hover:text-purple-500">
             {language === 'es' ? 'ES' : 'EN'}
           </button>
@@ -63,13 +59,13 @@ const Longi = () => {
 
       {/* Parallax Section */}
       <section
-        className="relative w-full h-[500px] bg-cover bg-center"
+        className="relative w-full h-[400px] md:h-[500px] bg-cover bg-center"
         style={{ backgroundImage: "url('https://static.longi.com/industry_solution_748d38c4ea.jpg')" }}
         data-aos="fade-up"
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl font-bold text-center">
-            {language === 'es' ? 'Energía Solar para un Futuro Sostenible' : 'Solar Energy for a Sustainable Future'}
+          <h1 className="text-white text-2xl md:text-4xl font-bold text-center">
+            {language === 'es' ? 'Paneles de alta eficiencia solar' : 'high-efficiency solar panels'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
             <a href="https://www.longi-solar.com" target="_blank" rel="noopener noreferrer">
@@ -91,7 +87,7 @@ const Longi = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-semibold">{language === 'es' ? 'Sobre LONGi' : 'About LONGi'}</h2>
           <p className="mt-4 text-lg text-gray-700">
-            {language === 'es' ? 'LONGi Solar es una de las empresas líder especializada en la fabricacion de modulos fotoboltaicos de alto rendimiento.' : 'LONGi Solar is one of the leading companies specializing in the manufacture of high-performance photovoltaic modules.'}
+            {language === 'es' ? 'LONGi Solar es una de las empresas líder especializada en la fabricación de módulos fotovoltaicos de alto rendimiento.' : 'LONGi Solar is one of the leading companies specializing in the manufacture of high-performance photovoltaic modules.'}
           </p>
         </div>
       </section>
@@ -102,10 +98,10 @@ const Longi = () => {
           <h2 className="text-3xl font-semibold mb-8" data-aos="fade-up">
             {language === 'es' ? 'Productos Destacados' : 'Featured Products'}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {/* Producto 1 */}
             <div
-              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center max-w-sm"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -119,9 +115,10 @@ const Longi = () => {
                 {language === 'es' ? 'Con un diseño optimizado, nuestros módulos solares son perfectos para proyectos residenciales y comerciales.' : 'With optimized design, our solar modules are perfect for residential and commercial projects.'}
               </p>
             </div>
+
             {/* Producto 2 */}
             <div
-              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center"
+              className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center max-w-sm"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -135,8 +132,6 @@ const Longi = () => {
                 {language === 'es' ? 'Soluciones avanzadas para almacenar y gestionar la energía solar de manera eficiente.' : 'Advanced solutions for storing and managing solar energy efficiently.'}
               </p>
             </div>
-            {/* Producto 3 */}
-            
           </div>
         </div>
       </section>
