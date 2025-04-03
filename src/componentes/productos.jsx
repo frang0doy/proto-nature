@@ -96,7 +96,7 @@ const Productos = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center w-full flex flex-col items-center justify-center">
-            <h2 className="text-3xl font-bold text-black" data-aos="fade-up">
+            <h2 className="text-3xl font-semibold text-black" data-aos="fade-up">
               {language === 'es' ? 'PRODUCTOS' : 'PRODUCTS'}
             </h2>
             <p className="mt-4 text-xl text-black" data-aos="fade-up" data-aos-delay="100">
@@ -122,7 +122,7 @@ const Productos = () => {
                   />
                 </div>
                 <div className="flex items-center flex-col flex-grow">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 text-[#020202] whitespace-nowrap overflow-hidden text-ellipsis">
+                  <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#020202] whitespace-nowrap overflow-hidden text-ellipsis">
                     {product.title}
                   </h3>
                   <p className="text-lg md:text-xl mb-4 text-center text-black/80">

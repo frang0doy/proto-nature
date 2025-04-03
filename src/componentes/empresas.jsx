@@ -166,64 +166,31 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       </div>
     </div>
 
-    {/* Resto de los slides */}
-    <div className="relative w-screen">
-      <img
-        src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
-        alt="Slide 1"
-        className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0"></div>
-      <div className="absolute bottom-16 left-8 text-white space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold md:text-3xl lg:text-2xl xl:text-3xl">
-          {translate("Innovación en generacion de agua")}
-        </h2>
+    {/* Resto de los slides con opacidad gris */}
+    {[ 
+      { src: "https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840", title: "Innovación en generación de agua" },
+      { src: "https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg", title: "Baterías de respaldo para servidores" },
+      { src: "https://static.longi.com/industry_solution_748d38c4ea.jpg", title: "Paneles solares de alta eficiencia" },
+      { src: "https://smartflower.com/wp-content/themes/smartflower/_content/residential/header.jpg", title: "Soluciones para consumidor final" }
+    ].map((slide, index) => (
+      <div key={index} className="relative w-screen">
+        <img
+          src={slide.src}
+          alt={`Slide ${index + 1}`}
+          className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
+        />
+        {/* Capa de opacidad gris */}
+        <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
+        <div className="absolute bottom-16 left-8 text-white space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-bold md:text-3xl lg:text-2xl xl:text-3xl">
+            {translate(slide.title)}
+          </h2>
+        </div>
       </div>
-    </div>
-
-    <div className="relative w-screen">
-      <img
-        src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg"
-        alt="Slide 2"
-        className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0"></div>
-      <div className="absolute bottom-16 left-8 text-white space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold md:text-3xl lg:text-2xl xl:text-3xl">
-          {translate("Baterias de respaldo para servidores")}
-        </h2>
-      </div>
-    </div>
-
-    <div className="relative w-screen">
-      <img
-        src="https://static.longi.com/industry_solution_748d38c4ea.jpg"
-        alt="Slide 3"
-        className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0"></div>
-      <div className="absolute bottom-16 left-8 text-white space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold md:text-3xl lg:text-2xl xl:text-3xl">
-          {translate("Paneles solares de alta eficiencia")}
-        </h2>
-      </div>
-    </div>
-
-    <div className="relative w-screen">
-      <img
-        src="https://smartflower.com/wp-content/themes/smartflower/_content/residential/header.jpg"
-        alt="Slide 4"
-        className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0"></div>
-      <div className="absolute bottom-16 left-8 text-white space-y-4">
-        <h2 className="text-2xl sm:text-3xl font-bold md:text-3xl lg:text-2xl xl:text-3xl">
-          {translate("Soluciones para consumidor final")}
-        </h2>
-      </div>
-    </div>
+    ))}
   </Slider>
 </div>
+
 
 
 

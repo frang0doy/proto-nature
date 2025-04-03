@@ -65,7 +65,7 @@ const Sma = () => {
         data-aos="fade-up"
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-semibold text-center">
+          <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
             {language === 'es' ? 'Energía Solar para un Futuro Sostenible' : 'Solar Energy for a Sustainable Future'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
@@ -113,7 +113,7 @@ const Sma = () => {
                 alt="Inversor SMA"
                 className="w-64 h-64 object-cover rounded-md mb-4"
               />
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font-semibold">
                 {language === 'es' ? 'Inversores Fotovoltaicos' : 'Photovoltaic Inverters'}
               </h3>
               <p className="text-gray-600 mt-2">
@@ -131,7 +131,7 @@ const Sma = () => {
                 alt="Almacenamiento de Energía"
                 className="w-64 h-64 object-cover rounded-md mb-4"
               />
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font-semibold">
                 {language === 'es' ? 'Almacenamiento de Energía' : 'Energy Storage'}
               </h3>
               <p className="text-gray-600 mt-2">
@@ -149,7 +149,7 @@ const Sma = () => {
                 alt="Cargador Solar EV"
                 className="w-64 h-64 object-cover rounded-md mb-4"
               />
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font-semibold">
                 {language === 'es' ? 'Cargador Solar EV' : 'Solar EV Charger'}
               </h3>
               <p className="text-gray-600 mt-2">

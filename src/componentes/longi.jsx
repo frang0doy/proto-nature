@@ -64,7 +64,7 @@ const Longi = () => {
         data-aos="fade-up"
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-semibold text-center">
+          <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
             {language === 'es' ? 'Paneles de alta eficiencia solar' : 'high-efficiency solar panels'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
@@ -110,7 +110,7 @@ const Longi = () => {
                 alt="Solar Panel"
                 className="w-64 h-64 object-cover rounded-md mb-4"
               />
-              <h3 className="text-2xl font-bold">{language === 'es' ? 'Módulo Solar de Alta Eficiencia' : 'High Efficiency Solar Module'}</h3>
+              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Módulo Solar de Alta Eficiencia' : 'High Efficiency Solar Module'}</h3>
               <p className="text-gray-600 mt-2">
                 {language === 'es' ? 'Con un diseño optimizado, nuestros módulos solares son perfectos para proyectos residenciales y comerciales.' : 'With optimized design, our solar modules are perfect for residential and commercial projects.'}
               </p>
@@ -127,7 +127,7 @@ const Longi = () => {
                 alt="Energy Storage"
                 className="w-64 h-64 object-cover rounded-md mb-4"
               />
-              <h3 className="text-2xl font-bold">{language === 'es' ? 'Sistema de Almacenamiento Solar' : 'Solar Storage System'}</h3>
+              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Almacenamiento Solar' : 'Solar Storage System'}</h3>
               <p className="text-gray-600 mt-2">
                 {language === 'es' ? 'Soluciones avanzadas para almacenar y gestionar la energía solar de manera eficiente.' : 'Advanced solutions for storing and managing solar energy efficiently.'}
               </p>

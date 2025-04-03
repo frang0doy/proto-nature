@@ -49,7 +49,7 @@ const Nosotros = () => {
         {/* Contenido de texto */}
         <div className="text-center sm:text-left sm:w-2/3 md:w-1/2">
           <h2
-            className="text-2xl font-bold text-black md:text-3xl mb-4"
+            className="text-2xl font-semibold text-black md:text-3xl mb-4"
             data-aos="fade-up"
           >
             <span className="block">{texts[language].title}</span>

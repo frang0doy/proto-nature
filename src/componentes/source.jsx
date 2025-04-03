@@ -73,7 +73,7 @@ const Source = () => {
       <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://source.co/cdn/shop/files/SOURCE_commercial_field.png?v=1717197556&width=1000')" }} data-aos="zoom-in" data-aos-delay="900">
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           {/* Título traducido */}
-          <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-semibold text-center">
+          <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
             {language === 'es' ? 'Generacion de agua potable' : 'Generation of drinking water'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
@@ -95,7 +95,7 @@ const Source = () => {
       {/* About SOURCE Section */}
       <section className="p-12 bg-gray-100" id="nosotros" data-aos="fade-up" data-aos-delay="1000">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
+          <h2 className="text-3xl font-semibold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
           <p className="mt-4 text-lg text-gray-700">
             {language === 'es' ? 'SOURCE desarrolo la unica tegnologia, que utilizando energia solar puede producir agua potable a partir del aire.' : 'SOURCE developed the only technology that uses solar energy to produce drinking water from the air.'}
           </p>
@@ -105,7 +105,7 @@ const Source = () => {
       {/* Products Section */}
       <section className="py-12 bg-white" id="productos" data-aos="fade-up" data-aos-delay="1100">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
+          <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Producto 1 */}
             <div className="relative bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="1200">

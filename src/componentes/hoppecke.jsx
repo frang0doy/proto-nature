@@ -65,8 +65,8 @@ const Hoppecke = () => {
         data-aos="fade-up"
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          {/* Título traducido */}
-          <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-semibold text-center">
+          {/* Título traducido con mayor tamaño en pantalla completa y menor interlineado en responsive */}
+          <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
             {language === 'es' ? 'Baterias de alta eficiencia para respaldo energetico' : 'High-efficiency batteries for energy backup'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
@@ -85,10 +85,12 @@ const Hoppecke = () => {
         </div>
       </section>
 
+
+
       {/* About Hoppecke Section */}
       <section className="p-12 bg-gray-100" id="nosotros" data-aos="fade-up">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
+          <h2 className="text-3xl font-semibold">{language === 'es' ? '¿Quiénes somos?' : 'About Us'}</h2>
           <p className="mt-4 text-lg text-gray-700">
             {language === 'es' ? 'Hoppecke es un líder global especializado en sistemas de almacenamiento de energia y baterías avanzadas.' : 'Hoppecke is a global leader specializing in energy storage systems and advanced batteries..'}
           </p>
