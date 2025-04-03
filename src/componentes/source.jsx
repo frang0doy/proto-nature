@@ -73,7 +73,7 @@ const Source = () => {
       <section className="relative w-full h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('https://source.co/cdn/shop/files/SOURCE_commercial_field.png?v=1717197556&width=1000')" }} data-aos="zoom-in" data-aos-delay="900">
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           {/* Título traducido */}
-          <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
+          <h1 className="text-white text-3xl sm:text-lg md:text-3xl lg:text-4xl xl:text-5xl text-center leading-tight">
             {language === 'es' ? 'Generacion de agua potable' : 'Generation of drinking water'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">

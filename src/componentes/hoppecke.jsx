@@ -60,31 +60,36 @@ const Hoppecke = () => {
 
       {/* Parallax Section */}
       <section 
-        className="relative w-full h-[500px] bg-cover bg-center"
-        style={{ backgroundImage: "url('https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg')" }} 
-        data-aos="fade-up"
-      >
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          {/* Título traducido con mayor tamaño en pantalla completa y menor interlineado en responsive */}
-          <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
-            {language === 'es' ? 'Baterias de alta eficiencia para respaldo energetico' : 'High-efficiency batteries for energy backup'}
-          </h1>
-          <div className="absolute bottom-8 flex space-x-4">
-            {/* Botones traducidos */}
-            <a href="https://www.hoppecke.com" target="_blank" rel="noopener noreferrer">
-              <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-                {language === 'es' ? 'Ver más' : 'Learn More'}
-              </button>
-            </a>
-            <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
-              <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
-                {language === 'es' ? 'Comprar' : 'Buy'}
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
-
+  className="relative w-full h-[500px] bg-cover bg-center"
+  style={{ backgroundImage: "url('https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg')" }} 
+  data-aos="fade-up"
+>
+  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40 px-4">
+    {/* Texto dividido en dos líneas */}
+    <h1 className="text-white text-3xl sm:text-lg md:text-3xl lg:text-4xl xl:text-5xl text-center leading-tight">
+      <span className="block">  
+        {language === 'es' ? 'Baterías de alta eficiencia' : 'High-efficiency batteries'}
+      </span>
+      <span className="block">
+        {language === 'es' ? 'para respaldo energético' : 'for energy backup'}
+      </span>
+    </h1>
+    
+    <div className="absolute bottom-8 flex space-x-4">
+      {/* Botones traducidos */}
+      <a href="https://www.hoppecke.com" target="_blank" rel="noopener noreferrer">
+        <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
+          {language === 'es' ? 'Ver más' : 'Learn More'}
+        </button>
+      </a>
+      <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer">
+        <button className="bg-gray-400 text-black px-6 py-3 rounded-md hover:bg-white">
+          {language === 'es' ? 'Comprar' : 'Buy'}
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
 
 
       {/* About Hoppecke Section */}

@@ -58,7 +58,7 @@ const Halcium = () => {
   }}
 >
   <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-40">
-    <h1 className="text-white text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold text-center leading-tight sm:leading-snug">
+    <h1 className="text-white text-3xl sm:text-lg md:text-3xl lg:text-4xl xl:text-5xl text-center leading-tight">
       {language === "es" ? "Energia eolica" : "Wind energy"}
     </h1>
     <div className="absolute bottom-8 flex space-x-4">
