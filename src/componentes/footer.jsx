@@ -64,7 +64,7 @@ const Footer = () => {
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <div className="col-span-2">
               <div>
-                <h2 className="text-2xl font-bold text-white">{texts[language].newsletterTitle}</h2>
+                <h2 className="text-2xl font-semibold text-white">{texts[language].newsletterTitle}</h2>
                 <h4 className="mt-4 text-gray-300 text-sm whitespace-normal break-words sm:text-sm">
                   {texts[language].newsletterDesc}
                 </h4>

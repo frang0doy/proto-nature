@@ -49,7 +49,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
         />
         <div className="absolute inset-0 bg-gray-800 opacity-60"></div> {/* Capa gris con opacidad */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
-          <h1 className="text-5xl font-bold mb-4">{mainTitle}</h1>
+          <h1 className="text-5xl font-semibold mb-4">{mainTitle}</h1>
           <p className="text-2xl mb-6">{mainSubtitle}</p>
           <div className="space-x-4">
             <Link to="/dlight">
@@ -76,7 +76,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
         />
         <div className="absolute inset-0 bg-gray-800 opacity-70"></div> {/* Capa gris con opacidad */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
-          <h1 className="text-5xl font-bold mb-4">{translate("Source")}</h1>
+          <h1 className="text-5xl font-semibold mb-4">{translate("Source")}</h1>
           <div className="space-x-4">
             <Link to="/source">
               <button className="bg-transparent text-white border border-white px-8 py-3 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
@@ -107,7 +107,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
               {/* Capa gris con opacidad para resaltar el texto */}
               <div className="absolute inset-0 bg-gray-800 opacity-70"></div>
               {/* Titulo centrado en la parte superior de la imagen */}
-              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-bold text-white">
+              <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-semibold text-white">
                 {translate(title)}
               </h2>
               {/* Botones centrados en la parte inferior de la imagen */}
@@ -182,7 +182,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
         {/* Capa de opacidad gris */}
         <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
         <div className="absolute bottom-16 left-8 text-white space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-bold md:text-3xl lg:text-2xl xl:text-3xl">
+          <h2 className="text-2xl sm:text-3xl font-semibold md:text-3xl lg:text-2xl xl:text-3xl">
             {translate(slide.title)}
           </h2>
         </div>

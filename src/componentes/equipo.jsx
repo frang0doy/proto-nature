@@ -92,7 +92,7 @@ const Equipo = () => {
   return (
     <section id="team" className="py-16 px-4 bg-gradient-to-r from-gray-100 to-white">
       <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold text-gray-800">{texts[language].title}</h1>
+        <h1 className="text-3xl font-semibold text-gray-800">{texts[language].title}</h1>
         <p className="text-lg text-gray-600 mt-4">{texts[language].description}</p>
       </div>
 
