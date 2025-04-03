@@ -19,7 +19,7 @@ const Nosotros = () => {
   // Textos según el idioma
   const texts = {
     es: {
-      title: 'Inclucion social a travez de la energia solar',
+      title: 'Inclucion social a traves de la energia solar',
       description:
         'En d.light, nos dedicamos a transformar vidas a través de soluciones de energía solar asequibles y sostenibles, empoderando a más de 175 millones de personas en todo el mundo. Nuestro objetivo es proporcionar acceso a energía limpia que fomente la educación, mejore la salud y cree oportunidades económicas. Nuestra visión es transformar mil millones de vidas para 2030, allanando el camino hacia un futuro más brillante y sostenible.',
       moreInfo: 'Más información',

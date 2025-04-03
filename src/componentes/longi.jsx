@@ -64,7 +64,7 @@ const Longi = () => {
         data-aos="fade-up"
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-bold text-center">
+          <h1 className="text-white text-4xl md:text-3xl sm:text-2xl font-semibold text-center">
             {language === 'es' ? 'Paneles de alta eficiencia solar' : 'high-efficiency solar panels'}
           </h1>
           <div className="absolute bottom-8 flex space-x-4">
