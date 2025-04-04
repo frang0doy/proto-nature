@@ -65,13 +65,13 @@ const Hidroponia = () => {
               : 'Automated hydroponics is revolutionizing the way food is grown, allowing fresh herbs and vegetables to be produced in small spaces and without the need for advanced agricultural knowledge. Thanks to intelligent, remotely managed growing systems, it is possible to optimize the use of water and nutrients, reducing food waste and environmental impact. This technology offers a sustainable alternative for restaurants, hospitals, and supermarkets, ensuring fresh ingredients year-round and promoting more responsible consumption.'
             }
           </p>
-          <div className="mt-6 flex items-center gap-4">
+          <div className="mt-6 items-center gap-2">
   <a href="https://babylonmicrofarms.com/" target="_blank" rel="noopener noreferrer">
-    <button className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition-all">
+    <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
       {language === 'es' ? 'Ver más' : 'Learn More'}
     </button>
   </a>
-  <img src="/firma.png" alt="Firma" className="w-24 h-auto" />
+ 
 </div>
         </div>
       </section>

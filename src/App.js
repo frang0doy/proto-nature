@@ -39,7 +39,7 @@ function App() {
                     { img: "https://eauxwell.com/wp-content/uploads/2024/04/hoppecke.jpeg", title: "HOPPECKE", subtitle: "" },
                     { img: "https://www.pv-magazine.com/wp-content/uploads/2021/04/Pic-3-1200x800.jpg", title: "LONGI", subtitle: "" },
                     { img: "https://cdn.sma.de/fileadmin/_processed_/f/b/csm_PM-SMA-US-Success_7b5dd1c45d.jpg", title: "SMA", subtitle: "" },
-                    { img: "https://static.wixstatic.com/media/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg/v1/fill/w_1903,h_695,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_36c9fcdc9f3b4db39438d514c7a095e6~mv2.jpg", title: "HALCIUM", subtitle: "" },
+                    { img: "https://static.wixstatic.com/media/8a6f9d_0115a12fa644422bb31d9da08d7072ce~mv2.png/v1/fill/w_1901,h_869,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a6f9d_0115a12fa644422bb31d9da08d7072ce~mv2.png", title: "HALCIUM", subtitle: "" },
                    
                   ]}
                 />
