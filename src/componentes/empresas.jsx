@@ -152,6 +152,37 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           </div>
         ))}
       </div>
+      <div className="relative w-full text-center mt-6">
+  <img
+    src="https://agfundernews.com/wp-content/uploads/2023/04/IMG_0060-e1680537292232.jpg"
+    alt="Hidroponia"
+    className="w-full h-[500px] object-cover rounded-none shadow-lg"
+  />
+  <div className="absolute inset-0 bg-gray-800 opacity-60"></div> {/* Capa gris con opacidad */}
+  <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-20 text-white p-1">
+    
+    {/* Título con menor interlineado */}
+    <h1 className="text-5xl font-semibold leading-none">{translate("Hidroponía")}</h1>
+    
+    {/* "By" más grande + Imagen alineada */}
+    <div className="flex items-center justify-center gap-[0px] text-2xl font-semibold mt-0">
+      <span>By</span>
+      <img src="/firma.png" alt="Firma" className="h-28 relative -translate-y-3" />
+    </div>
+
+    {/* Botón pegado aún más arriba */}
+    <div className="mt-0">
+      <Link to="/Hidroponia">
+        <button className="bg-transparent text-white border border-white px-4 py-2 rounded-md shadow-md hover:bg-white hover:text-black transition-all">
+          {translate("Ver más")}
+        </button>
+      </Link>
+    </div>
+  </div>
+</div>
+
+
+
 
       <div className="w-screen mt-6 relative">
   <Slider {...sliderSettings}>
@@ -190,6 +221,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
     ))}
   </Slider>
 </div>
+
 
 
 

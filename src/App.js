@@ -15,7 +15,9 @@ import Source from './componentes/source';
 import Longi from './componentes/longi';
 import Sma from './componentes/sma';
 import Halcium from './componentes/halcium';
+import hidroponia from './componentes/hidroponia';
 import { LanguageProvider } from './componentes/LenguajeContext'; 
+import Hidroponia from './componentes/hidroponia';
 
 function App() {
   return (
@@ -54,6 +56,7 @@ function App() {
             <Route path="/Longi" element={<Longi />} />
             <Route path="/Sma" element={<Sma />} />
             <Route path="/Halcium" element={<Halcium />} />
+            <Route path="/Hidroponia" element={<Hidroponia />} />
           </Routes>
         </div>
       </Router>
