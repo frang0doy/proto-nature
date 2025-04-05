@@ -56,7 +56,7 @@ const Hidroponia = () => {
 
         {/* Texto - Ocupa la otra mitad en pantallas grandes */}
         <div className="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0 md:pl-12">
-          <h2 className="text-3xl font-semibold text-gray-800">
+          <h2 className="text-3xl font-semibold text-gray-800 ">
             {language === 'es' ? '¿Quiénes somos?' : 'About Us'}
           </h2>
           <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto md:mx-0">
@@ -66,15 +66,29 @@ const Hidroponia = () => {
             }
           </p>
           <div className="mt-6 items-center gap-2">
-  <a href="https://babylonmicrofarms.com/" target="_blank" rel="noopener noreferrer">
-    <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-400">
-      {language === 'es' ? 'Ver más' : 'Learn More'}
-    </button>
-  </a>
  
 </div>
         </div>
       </section>
+      {/* Sección de Video Promocional */}
+<section className="w-full bg-gray-200 py-12 px-4" data-aos="fade-up">
+  <div className="max-w-7xl mx-auto">
+    <h3 className="text-black text-2xl md:text-3xl font-semibold text-center mb-6">
+      {language === 'es' ? 'Conocé nuestra tecnología en acción' : 'See our technology in action'}
+    </h3>
+    <div className="w-full aspect-video shadow-lg rounded-2xl ">
+      <video 
+        src="/babylonvideo.mp4" 
+        controls 
+        autoPlay 
+        muted 
+        loop 
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</section>
+
 
       <Footer id="contacto" />
     </div>

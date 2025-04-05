@@ -106,25 +106,43 @@ const Hoppecke = () => {
       <section className="py-12 bg-white" id="productos" data-aos="fade-up">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-8">{language === 'es' ? 'Productos' : 'Products'}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
             {/* Producto 1 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/trak_uplift_save-_image_2_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Batería de Plomo Ácido' : 'Lead-Acid Battery'}</h3>
+              <h3 className="text-2xl font-semibold leading-tight">{language === 'es' ? 'Batería de Plomo Ácido' : 'Lead-Acid Battery'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones avanzadas para almacenamiento de energía industrial.' : 'Advanced solutions for industrial energy storage.'}</p>
             </div>
             {/* Producto 2 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid_power_vm_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Bateria para energia solar ' : 'Battery for solar energy'}</h3>
+              <h3 className="text-2xl font-semibold leading-tight">{language === 'es' ? 'Bateria para energia solar ' : 'Battery for solar energy'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Integración de energía solar con almacenamiento eficiente.' : 'Solar energy integration with efficient storage.'}</p>
             </div>
             {/* Producto 3 */}
             <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
               <img src="https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/Products-Import/grid-xtreme-vr-green-series_group_image_1_home.png" alt="Battery" className="w-64 h-64 object-cover rounded-md mb-4" />
-              <h3 className="text-2xl font-semibold">{language === 'es' ? 'Sistema de Almacenamiento de Energía' : 'Energy Storage System'}</h3>
+              <h3 className="text-2xl font-semibold leading-tight">{language === 'es' ? 'Sistema de Almacenamiento de Energía' : 'Energy Storage System'}</h3>
               <p className="text-gray-600 mt-2">{language === 'es' ? 'Soluciones completas de almacenamiento para optimizar el uso de la energía renovable.' : 'Complete storage solutions to optimize the use of renewable energy.'}</p>
             </div>
+            {/* Producto 4 */}
+<div className="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl" data-aos="zoom-in">
+  <img 
+    src="/grid.jpg" 
+    alt="Sistema Off the Grid" 
+    className="w-64 h-64 object-cover rounded-md mb-4"
+  />
+  <h3 className="text-2xl font-semibold leading-tight">
+    {language === 'es' ? 'Sistema Autónomo para el Campo' : 'Off-Grid System for Rural Use'}
+  </h3>
+  <p className="text-gray-600 mt-2">
+    {language === 'es'
+      ? 'Energía confiable en zonas rurales sin conexión eléctrica.'
+      : 'Reliable energy in rural areas without grid connection.'}
+  </p>
+</div>
+
           </div>
         </div>
       </section>
