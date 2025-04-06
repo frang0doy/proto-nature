@@ -6,8 +6,13 @@ import { Link } from "react-router-dom";
 import { useLanguage } from './LenguajeContext';  // Importa el hook de idioma
 
 const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
-  const { translate } = useLanguage();  // Usamos el hook para obtener la función de traducción
+  const { translate, language } = useLanguage();  // Usamos el hook para obtener traducción e idioma
 
+
+  
+
+
+  
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -183,26 +188,36 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
 
 
 
-
-      <div className="w-screen mt-6 relative">
+<div className="w-screen mt-6 relative">
   <Slider {...sliderSettings}>
-    {/* Primer Slide con la imagen estadistica.png con margen superior */}
+    {/* Primer Slide con imagen fija y título traducible */}
     <div className="relative bg-white w-screen mt-8">
       <div className="flex justify-center">
         <img
           src="/estadistica.png"
-          alt="Estadísticas"
+          alt={language === "es" ? "Estadísticas" : "Statistics"}
           className="h-[700px] w-full object-contain"
         />
       </div>
     </div>
-
-    {/* Resto de los slides con opacidad gris */}
-    {[ 
-      { src: "https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840", title: "Innovación en generación de agua" },
-      { src: "https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg", title: "Baterías de respaldo para servidores" },
-      { src: "https://static.longi.com/industry_solution_748d38c4ea.jpg", title: "Paneles solares de alta eficiencia" },
-      { src: "https://smartflower.com/wp-content/themes/smartflower/_content/residential/header.jpg", title: "Soluciones para consumidor final" }
+    {/* Slides dinámicos con traducción manual */}
+    {[
+      {
+        src: "https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840",
+        title: "Innovación en generación de agua",
+      },
+      {
+        src: "https://www.hoppecke.com/fileadmin/Redakteur/Hoppecke-Main/slider/New_Slider_Standard/HOPPECKE_Datacenter.jpg",
+        title: "Baterías de respaldo para servidores",
+      },
+      {
+        src: "https://static.longi.com/industry_solution_748d38c4ea.jpg",
+        title: "Paneles solares de alta eficiencia",
+      },
+      {
+        src: "https://smartflower.com/wp-content/themes/smartflower/_content/residential/header.jpg",
+        title: "Soluciones para consumidor final",
+      },
     ].map((slide, index) => (
       <div key={index} className="relative w-screen">
         <img
@@ -210,18 +225,24 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           alt={`Slide ${index + 1}`}
           className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
         />
-        {/* Capa de opacidad gris */}
         <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
         <div className="absolute bottom-16 left-8 text-white space-y-4">
           <h2 className="text-2xl sm:text-3xl font-semibold md:text-3xl lg:text-2xl xl:text-3xl">
-            {translate(slide.title)}
+            {language === "es"
+              ? slide.title
+              : slide.title === "Innovación en generación de agua"
+              ? "Innovation in water generation"
+              : slide.title === "Baterías de respaldo para servidores"
+              ? "Backup batteries for servers"
+              : slide.title === "Paneles solares de alta eficiencia"
+              ? "High-efficiency solar panels"
+              : "Solutions for end consumers"}
           </h2>
         </div>
       </div>
     ))}
   </Slider>
 </div>
-
 
 
 
