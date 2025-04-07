@@ -55,20 +55,8 @@ const Hidroponia = () => {
         </div>
 
         {/* Texto - Ocupa la otra mitad en pantallas grandes */}
-        <div className="w-full md:w-1/2 text-center md:text-left mt-6 md:mt-0 md:pl-12">
-          <h2 className="text-3xl font-semibold text-gray-800 ">
-            {language === 'es' ? '¿Quiénes somos?' : 'About Us'}
-          </h2>
-          <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto md:mx-0">
-            {language === 'es' 
-              ? 'La hidroponía automatizada está revolucionando la forma en que se cultivan los alimentos, permitiendo producir hierbas y vegetales frescos en espacios reducidos y sin necesidad de conocimientos avanzados en agricultura. Gracias a sistemas inteligentes de cultivo gestionados de forma remota, es posible optimizar el uso de agua y nutrientes, reduciendo el desperdicio de alimentos y el impacto ambiental. Esta tecnología ofrece una alternativa sostenible para restaurantes, hospitales y supermercados, garantizando ingredientes frescos durante todo el año y promoviendo un consumo más responsable.'
-              : 'Automated hydroponics is revolutionizing the way food is grown, allowing fresh herbs and vegetables to be produced in small spaces and without the need for advanced agricultural knowledge. Thanks to intelligent, remotely managed growing systems, it is possible to optimize the use of water and nutrients, reducing food waste and environmental impact. This technology offers a sustainable alternative for restaurants, hospitals, and supermarkets, ensuring fresh ingredients year-round and promoting more responsible consumption.'
-            }
-          </p>
-          <div className="mt-6 items-center gap-2">
- 
-</div>
-        </div>
+        
+
       </section>
       {/* Sección de Video Promocional */}
 <section className="w-full bg-gray-200 py-12 px-4" data-aos="fade-up">
