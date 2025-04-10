@@ -104,7 +104,8 @@ const Halcium = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {/* Card 1 */}
       <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
-        <img src="https://static.wixstatic.com/media/8a6f9d_070d07515bcc445aabc5c7139cfdf1a6~mv2.jpg/v1/crop/x_24,y_0,w_3276,h_1500/fill/w_755,h_346,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color-Lineup.jpg" alt="Energy" className="w-64 h-64 object-cover rounded-md mb-4" />
+      <img src="https://static.wixstatic.com/media/8a6f9d_070d07515bcc445aabc5c7139cfdf1a6~mv2.jpg/v1/crop/x_24,y_0,w_3276,h_1500/fill/w_755,h_346,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Color-Lineup.jpg" alt="Energy" className="w-64 h-64 object-contain rounded-md mb-4 bg-white" />
+
         <h3 className="text-2xl font-semibold">{language === 'es' ? 'Energía' : 'Energy'}</h3>
         <p className="text-gray-600 mt-2">
           {language === 'es' ? 'Implementación de soluciones solares para hogares y empresas.' : 'Implementing solar solutions for homes and businesses.'}
@@ -122,7 +123,7 @@ const Halcium = () => {
 
       {/* Card 3 */}
       <div className="bg-gray-200 p-6 rounded-xl shadow-xl transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center text-center">
-        <img src="https://static.wixstatic.com/media/8a6f9d_88ce7d63d27645cda67430745af466dc~mv2.png/v1/crop/x_255,y_0,w_1363,h_1274/fill/w_436,h_408,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Air-Inflow-1.png" alt="Energy Solutions" className="w-64 h-64 object-cover rounded-md mb-4" />
+        <img src="https://static.wixstatic.com/media/8a6f9d_88ce7d63d27645cda67430745af466dc~mv2.png/v1/crop/x_255,y_0,w_1363,h_1274/fill/w_436,h_408,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Air-Inflow-1.png" alt="Energy Solutions" className="w-64 h-64 object-contain rounded-md mb-4 bg-white" />
         <h3 className="text-2xl font-semibold">{language === 'es' ? 'Soluciones Energéticas' : 'Energy Solutions'}</h3>
         <p className="text-gray-600 mt-2">
           {language === 'es' ? 'Soluciones energéticas personalizadas para diversos sectores.' : 'Customized energy solutions for various sectors.'}

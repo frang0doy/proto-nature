@@ -43,10 +43,9 @@ const Hidroponia = () => {
         </div>
       </nav>
 
-      {/* Sección Principal con Imagen y Texto */}
-      <section className="flex flex-col md:flex-row items-center justify-center bg-gray-200 py-12 px-6 md:px-12">
-        {/* Imagen - Ocupa la mitad en pantallas grandes */}
-        <div className="w-full md:w-1/2" data-aos="fade-right">
+      {/* Contenido principal */}
+      <section className="flex flex-col items-center justify-center bg-gray-200 py-12 px-6">
+        <div className="w-full max-w-5xl" data-aos="fade-right">
           <img 
             src="https://infonegocios.info/content/images/2022/07/21/189303/conversions/pablo-buzzo-menu-creativo-4-nqn-medium-size.jpg" 
             alt="Hidroponía" 
@@ -54,29 +53,31 @@ const Hidroponia = () => {
           />
         </div>
 
-        {/* Texto - Ocupa la otra mitad en pantallas grandes */}
-        
+        <div className="w-full max-w-5xl mt-8 px-2" data-aos="fade-up">
+        <div className="w-full max-w-5xl mt-8 px-2" data-aos="fade-up">
+  <h2 className="text-black text-justify text-xl font-semibold leading-relaxed">
+    {language === 'es'
+      ? 'La hidroponía es una técnica innovadora de cultivo que permite el crecimiento de plantas sin necesidad de suelo, utilizando soluciones minerales en agua. Esta práctica no solo optimiza el uso del espacio y el agua, sino que también reduce el uso de pesticidas, ofreciendo alimentos más limpios y saludables. Es ideal para ambientes urbanos o lugares con suelos poco fértiles, promoviendo una agricultura sostenible y eficiente.'
+      : 'Hydroponics is an innovative cultivation method that allows plants to grow without soil, using nutrient-rich water solutions. This technique optimizes space and water usage while reducing the need for pesticides, resulting in cleaner, healthier food. It is ideal for urban environments or areas with poor soil, promoting sustainable and efficient agriculture.'
+    }
+  </h2>
+</div>
 
+        </div>
+
+        <div className="w-full max-w-5xl mt-12" data-aos="fade-up">
+          <div className="w-full aspect-video shadow-lg overflow-hidden">
+            <video 
+              src="/babylonvideo.mp4" 
+              controls 
+              autoPlay 
+              muted 
+              loop 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </section>
-      {/* Sección de Video Promocional */}
-<section className="w-full bg-gray-200 py-12 px-4" data-aos="fade-up">
-  <div className="max-w-7xl mx-auto">
-    <h3 className="text-black text-2xl md:text-3xl font-semibold text-center mb-6">
-      {language === 'es' ? 'Conocé nuestra tecnología en acción' : 'See our technology in action'}
-    </h3>
-    <div className="w-full aspect-video shadow-lg rounded-2xl ">
-      <video 
-        src="/babylonvideo.mp4" 
-        controls 
-        autoPlay 
-        muted 
-        loop 
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
-</section>
-
 
       <Footer id="contacto" />
     </div>

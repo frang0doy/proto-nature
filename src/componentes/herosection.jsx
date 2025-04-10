@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from './LenguajeContext'; // Asegúrate de que este archivo existe y tiene el contexto de idioma
+import { useLanguage } from './LenguajeContext';
+import { ChevronDownIcon } from 'lucide-react'; // Asegurate de tener esta librería instalada
 
 export default function HeroSection() {
-  // Estado para manejar la posición del scroll
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { language } = useLanguage();
 
-  // Hook useEffect para escuchar el desplazamiento del scroll
   useEffect(() => {
     const handleScroll = () => {
-      // Usar requestAnimationFrame para mejorar el rendimiento
       window.requestAnimationFrame(() => {
         setScrollPosition(window.scrollY);
       });
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Obtener el idioma actual desde el contexto
-  const { language } = useLanguage();
+  // Función para hacer scroll hacia abajo
+  const handleScrollDown = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
 
-  // Contenido para español e inglés
   const texts = {
     heading: {
       es: "UNIDOS POR UNA NUEVA CONCIENCIA",
@@ -33,41 +33,20 @@ export default function HeroSection() {
     subheading: {
       es: "Soluciones energéticas innovadoras para un futuro más limpio y eficiente.",
       en: "Innovative energy solutions for a cleaner and more efficient future."
-    },
-    button1: {
-      es: "Conoce más",
-      en: "Learn More"
-    },
-    button2: {
-      es: "Contáctanos",
-      en: "Contact Us"
     }
   };
 
-  // Estilos para el texto con desplazamiento
   const textStyle = {
-    transform: `translateY(${scrollPosition * 0.3}px)`, // Los textos se mueven un 30% de la velocidad de desplazamiento
-    opacity: Math.min(1, 1 - scrollPosition / 400), // Desvanecer el texto a medida que se hace scroll
-    transition: 'transform 0.2s ease-out, opacity 0.2s ease-out', // Agregar una transición suave
+    transform: `translateY(${scrollPosition * 0.3}px)`,
+    opacity: Math.min(1, 1 - scrollPosition / 400),
+    transition: 'transform 0.2s ease-out, opacity 0.2s ease-out',
   };
 
-  // Estilos para los botones con desplazamiento
-  const buttonStyle = {
-    transform: `translateY(${scrollPosition * 0.5}px)`, // Los botones se mueven un 50% de la velocidad de desplazamiento
-    opacity: Math.min(1, 1 - scrollPosition / 300), // Desvanecer los botones a medida que se hace scroll
-    transition: 'transform 0.2s ease-out, opacity 0.2s ease-out', // Agregar una transición suave
-  };
-
-  // Estilos para móviles (desactivar parallax)
   const mobileTextStyle = {
     ...textStyle,
-    transform: 'translateY(0)', // Desactivar el parallax en móviles
+    transform: 'translateY(0)',
   };
 
-  const mobileButtonStyle = {
-    ...buttonStyle,
-    transform: 'translateY(0)', // Desactivar el parallax en móviles
-  };
   return (
     <section
       className="relative h-screen bg-cover bg-center"
@@ -76,11 +55,12 @@ export default function HeroSection() {
           'url(https://images.pexels.com/photos/977772/pexels-photo-977772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundAttachment: 'fixed', // La imagen de fondo se queda fija
+        backgroundAttachment: 'fixed',
       }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="absolute inset-0 flex justify-center items-center text-center text-white">
+
+      <div className="absolute inset-0 flex justify-center items-center text-center text-white px-4">
         <div>
           <h1
             className="text-3xl font-semibold sm:text-5xl lg:text-5xl"
@@ -88,38 +68,23 @@ export default function HeroSection() {
           >
             {language === 'es' ? texts.heading.es : texts.heading.en}
           </h1>
-  
+
           <p
             className="mt-4 text-sm sm:text-2xl lg:text-4xl xl:text-2xl text-white"
             style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
           >
             {language === 'es' ? texts.subheading.es : texts.subheading.en}
           </p>
-  
-          <div className="mt-16 flex sm:flex-row justify-center gap-4 sm:space-x-2">
-  {/* Botón 1 */}
-  <a
-    className="block sm:w-auto rounded bg-white px-6 py-2 text-sm font-semibond text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:text-base"
-    href="#empresas"
-    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-  >
-    {language === 'es' ? texts.button1.es : texts.button1.en}
-  </a>
-
-  {/* Botón 2 */}
-  <a
-    className="block sm:w-auto rounded bg-white px-6 py-2 text-sm font-semibond text-black shadow hover:bg-gray-400 focus:outline-none focus:ring sm:text-base"
-    href="#contact"
-    style={window.innerWidth < 640 ? mobileButtonStyle : buttonStyle}
-  >
-    {language === 'es' ? texts.button2.es : texts.button2.en}
-  </a>
-</div>
-
         </div>
+      </div>
+
+      {/* Flecha para hacer scroll hacia abajo */}
+      <div
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        onClick={handleScrollDown}
+      >
+        <ChevronDownIcon className="h-12 w-12 text-white animate-bounce" />
       </div>
     </section>
   );
-  
-  
 }
