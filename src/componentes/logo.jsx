@@ -54,7 +54,7 @@ const logos = [
   { id: 1, src: "https://logowik.com/content/uploads/images/source650.logowik.com.webp", alt: "Logo 1" },
   { id: 2, src: "https://www.sevensensor.com/files/2020/05/sma.jpg", alt: "Logo 2" },
   { id: 3, src: "https://cdn.worldvectorlogo.com/logos/hoppecke.svg", alt: "Logo 3" },
-  { id: 4, src: "https://www.conveyorsolutions.com/wp-content/uploads/2022/04/UniversalRobots-manufacturer.webp", alt: "Logo 4" },
+  { id: 4, src: "https://media.licdn.com/dms/image/v2/C560BAQFrLEf6l1peIQ/company-logo_200_200/company-logo_200_200/0/1630651652803/halcium_logo?e=2147483647&v=beta&t=_O2VA97oJ5wDjgt3aroOxj_zPnsFRktrZVth3vhFGUQ", alt: "Logo 4" },
   { id: 5, src: "https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Flogo-primary.png&w=128&q=75", alt: "Logo 5" },
   { id: 6, src: "https://flex-lineautomation.com/wp-content/uploads/2022/09/mir-Mobile-Industrial-Robots.jpeg", alt: "Logo 6" },
 ];
