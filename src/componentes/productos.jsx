@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import AOS from 'aos'; // Importa AOS
-import 'aos/dist/aos.css'; // Importa los estilos de AOS
-import { useLanguage } from './LenguajeContext'; // Importa el hook useLanguage
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useLanguage } from './LenguajeContext';
 
 const Productos = () => {
   const [showModal, setShowModal] = useState(false);  
@@ -11,22 +11,20 @@ const Productos = () => {
   const [miniCards, setMiniCards] = useState([]);  
   const carouselRef = useRef(null);
   
-  const { language, changeLanguage } = useLanguage(); // Obtén el lenguaje y la función para cambiarlo
+  const { language } = useLanguage();
 
   useEffect(() => {
-    // Inicializa AOS cuando el componente se monta
     AOS.init({
-      duration: 1200, // Duración de las animaciones en milisegundos
-      once: true, // La animación solo se ejecutará una vez
-      easing: 'ease-out', // Efecto de transición
+      duration: 1200,
+      once: true,
+      easing: 'ease-out',
     });
   }, []);
   
   const handleOpenModal = (product) => {
     setSelectedProduct(product);
 
-    // Dependiendo del producto seleccionado, definir qué productos mostrar en las mini cards
-    if (product.title === 'Sistemas solares casero') {
+    if (product.title === 'Sistemas solares casero' || product.title === 'Sistema solar casero') {
       setMiniCards([
         { title: 'D10', description: language === 'es' ? 'Aliando su hogar con solar' : 'Partnering your home with solar', imageLink: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fd10%2Fd10-1-1.png&w=256&q=75' },
         { title: 'D100', description: language === 'es' ? 'Actualización a una vida más brillante' : 'Upgrade to a brighter life', imageLink: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fd100%2Fd100-1.png&w=256&q=75' },
@@ -46,7 +44,7 @@ const Productos = () => {
         { title: 'SF40', description: language === 'es' ? 'Disfruta de un aire fresco y relajante en cualquier momento' : 'Enjoy a fresh, relaxing air anytime', imageLink: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fsf40%2Fsf40-1.png&w=1080&q=75' },
         { title: 'SF50', description: language === 'es' ? 'Confort alimentado por el sol' : 'Solar-powered comfort', imageLink: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fsf50%2Fsf50-1.png&w=1080&q=75' },
       ]);
-    } else {
+    } else if (product.title === 'Linteras Solares' || product.title === 'Linternas Solares') {
       setMiniCards([
         { title: 'A2', description: language === 'es' ? 'Linterna de todos los días' : 'Everyday flashlight', imageLink: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fa2%2Fa2-1.jpg&w=640&q=75' },
         { title: 'S3', description: language === 'es' ? 'Aprender la luz' : 'Learning light', imageLink: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fs3%2Fs3-1.jpg&w=640&q=75' },
@@ -75,18 +73,18 @@ const Productos = () => {
       image: 'https://www.dlight.com/_next/image?url=%2Fnew%2Fimages%2Fproducts%2Fx2000%2Fx2000-1.png&w=640&q=75',
     },
     {
-      title: language === 'es' ? 'Inversor solar' : 'Solar Inverters',
-      description: language === 'es' ? 'Poder sin esfuerzo para una vida interrumpida' : 'Effortless power for uninterrupted life',
+      title: 'Inversores solares',
+      description: language === 'es' ? 'Tecnología inteligente para energía confiable' : 'Smart technology for reliable energy',
       image: 'https://www.dlight.com/_next/image?url=%2Fimages%2Fproduct-3.png&w=640&q=75',
     },
     {
-      title: language === 'es' ? 'Equipos solares' : 'Solar equipment',
-      description: language === 'es' ? 'Versátil, electrodomésticos Pay-As-You-Go' : 'Versatile, Pay-As-You-Go Appliances',
+      title: 'Áticos',
+      description: language === 'es' ? 'Ventiladores solares de última generación' : 'Next-generation solar fans',
       image: 'https://www.dlight.com/_next/image?url=%2Fimages%2Fproduct-4.png&w=640&q=75',
     },
     {
-      title: language === 'es' ? 'Linternas solares' : 'Solar Lanterns',
-      description: language === 'es' ? 'Poder portátil pionero en marcha' : 'Pioneering portable power on the go',
+      title: language === 'es' ? 'Linternas Solares' : 'Solar Lanterns',
+      description: language === 'es' ? 'Ilumina cada rincón con energía limpia' : 'Light up every corner with clean energy',
       image: 'https://www.dlight.com/_next/image?url=%2Fimages%2Fproduct-1.png&w=640&q=75',
     },
   ];
@@ -208,3 +206,4 @@ const Productos = () => {
 };
 
 export default Productos;
+
