@@ -12,6 +12,15 @@ const teamMembers = [
     },
   },
   {
+    name: "Gisela Gonzalez  ",
+    title: "Ventas",
+    imgSrc: "./gisela.jpg",
+    titleTranslations: {
+      es: "Ventas",
+      en: "Sales",
+    },
+  },
+  {
     name: "Marco Emmanuel Ortiz",
     title: "Costos & plannig",
     imgSrc: "./marco.jpg",
@@ -47,15 +56,7 @@ const teamMembers = [
       en: "Technician",
     },
   },
-  {
-    name: "Gisela Gonzalez  ",
-    title: "Ventas",
-    imgSrc: "./gisela.jpg",
-    titleTranslations: {
-      es: "Ventas",
-      en: "Sales",
-    },
-  },
+  
 ];
 
 const Equipo = () => {
