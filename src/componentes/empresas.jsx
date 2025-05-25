@@ -52,7 +52,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           alt="Main"
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
-        <div className="absolute inset-0 bg-gray-800 opacity-60"></div> {/* Capa gris con opacidad */}
+        <div className="absolute inset-0 bg-gray-800 opacity-40"></div> {/* Capa gris con opacidad */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
           <h1 className="text-5xl font-semibold mb-4">{mainTitle}</h1>
           <p className="text-2xl mb-6">{mainSubtitle}</p>
@@ -79,7 +79,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           alt="Source"
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
-        <div className="absolute inset-0 bg-gray-800 opacity-70"></div> {/* Capa gris con opacidad */}
+        <div className="absolute inset-0 bg-gray-800 opacity-30"></div> {/* Capa gris con opacidad */}
         <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30 text-white p-6">
           <h1 className="text-5xl font-semibold mb-4">{translate("Source")}</h1>
           <div className="space-x-4">
@@ -110,7 +110,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
                 className="w-full h-[300px] object-cover rounded-md shadow-md transition-transform duration-500 transform hover:scale-110 hover:shadow-2xl"
               />
               {/* Capa gris con opacidad para resaltar el texto */}
-              <div className="absolute inset-0 bg-gray-800 opacity-70"></div>
+              <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
               {/* Titulo centrado en la parte superior de la imagen */}
               <h2 className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl font-semibold text-white">
                 {translate(title)}
@@ -163,7 +163,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
     alt="Hidroponia"
     className="w-full h-[500px] object-cover rounded-none shadow-lg"
   />
-  <div className="absolute inset-0 bg-gray-800 opacity-60"></div> {/* Capa gris con opacidad */}
+  <div className="absolute inset-0 bg-gray-800 opacity-40"></div> {/* Capa gris con opacidad */}
   <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-20 text-white p-1">
     
     {/* Título con menor interlineado */}
@@ -225,7 +225,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           alt={`Slide ${index + 1}`}
           className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
         />
-        <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
+        <div className="absolute inset-0 bg-gray-800 opacity-40"></div>
         <div className="absolute bottom-16 left-8 text-white space-y-4">
           <h2 className="text-2xl sm:text-3xl font-semibold md:text-3xl lg:text-2xl xl:text-3xl">
             {language === "es"
