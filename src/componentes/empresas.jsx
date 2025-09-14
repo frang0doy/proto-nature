@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import { useLanguage } from './LenguajeContext';  // Importa el hook de idioma
+import OptimizedImage from './OptimizedImage';
 
 const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
   const { translate, language } = useLanguage();  // Usamos el hook para obtener traducción e idioma
@@ -44,12 +45,12 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
     <div id="empresas" className="flex flex-col items-center p-6 w-full">
       {/* Main Image Section */}
       <div className="relative w-full text-center">
-        <img
+        <OptimizedImage
           src={
             mainImage ||
             "https://earthshotprize.org/wp-content/uploads/2024/09/DLight-Support-Hero-1920x1080_0000_IMG_3773.jpg-1024x576.jpg"
           }
-          alt="Main"
+          alt="DLight - Soluciones de energía solar"
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
         <div className="absolute inset-0 bg-gray-800 opacity-40"></div> {/* Capa gris con opacidad */}
@@ -74,9 +75,9 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
 
       {/* Source Image Section */}
       <div className="relative w-full text-center mt-6">
-        <img
+        <OptimizedImage
           src="https://source.co/cdn/shop/files/R3_Residential-Hydropanel_1I4A9984-sky_shopify.jpg?v=1717192505&width=3840"
-          alt="Source"
+          alt="Source - Paneles hidropónicos para generación de agua"
           className="w-full h-[500px] object-cover rounded-none shadow-lg"
         />
         <div className="absolute inset-0 bg-gray-800 opacity-30"></div> {/* Capa gris con opacidad */}
@@ -104,9 +105,9 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
           <div key={index} className="text-center relative group">
             <div className="relative">
               {/* Imagen con opacidad gris */}
-              <img
+              <OptimizedImage
                 src={img}
-                alt={`Thumbnail ${index + 1}`}
+                alt={`${title} - ${subtitle || 'Producto de energía'}`}
                 className="w-full h-[300px] object-cover rounded-md shadow-md transition-transform duration-500 transform hover:scale-110 hover:shadow-2xl"
               />
               {/* Capa gris con opacidad para resaltar el texto */}
@@ -158,9 +159,9 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
         ))}
       </div>
       <div className="relative w-full text-center mt-6">
-  <img
+  <OptimizedImage
     src="https://agfundernews.com/wp-content/uploads/2023/04/IMG_0060-e1680537292232.jpg"
-    alt="Hidroponia"
+    alt="Hidroponía - Cultivo sostenible sin suelo"
     className="w-full h-[500px] object-cover rounded-none shadow-lg"
   />
   <div className="absolute inset-0 bg-gray-800 opacity-40"></div> {/* Capa gris con opacidad */}
@@ -193,9 +194,9 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
     {/* Primer Slide con imagen fija y título traducible */}
     <div className="relative bg-white w-screen mt-8">
       <div className="flex justify-center">
-        <img
+        <OptimizedImage
           src="/estadistica.png"
-          alt={language === "es" ? "Estadísticas" : "Statistics"}
+          alt={language === "es" ? "Estadísticas de energía renovable" : "Renewable energy statistics"}
           className="h-[700px] w-full object-contain"
         />
       </div>
@@ -220,9 +221,9 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
       },
     ].map((slide, index) => (
       <div key={index} className="relative w-screen">
-        <img
+        <OptimizedImage
           src={slide.src}
-          alt={`Slide ${index + 1}`}
+          alt={language === "es" ? slide.title : slide.title}
           className="w-full h-[700px] object-contain md:h-[400px] sm:h-[350px] lg:h-[700px] lg:w-full lg:object-cover"
         />
         <div className="absolute inset-0 bg-gray-800 opacity-40"></div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingCartIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from './LenguajeContext';
+import OptimizedImage from './OptimizedImage';
 
 const translations = {
   es: {
@@ -50,13 +51,15 @@ export default function Header() {
         style={{
           boxShadow: scrolling > 0 ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
         }}
+        role="banner"
+        aria-label="Navegación principal"
       >
-        <nav className="mx-auto flex items-center justify-between p-6 lg:px-8">
+        <nav className="mx-auto flex items-center justify-between p-6 lg:px-8" role="navigation" aria-label="Menú principal">
           {/* Logo */}
           <div className="flex flex-shrink-0 ml-4 lg:ml-0 relative">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Logo</span>
-              <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
+              <OptimizedImage alt="ProtoNature Logo" src="/logo512.png" className="h-8 w-auto" loading="eager" />
             </a>
           </div>
 
@@ -95,6 +98,7 @@ export default function Header() {
             <button
               onClick={toggleLanguage}
               className="text-white text-sm font-semibold py-2 px-4 cursor-pointer hover:text-indigo-600 transition-all"
+              aria-label={`Cambiar idioma a ${language === 'es' ? 'inglés' : 'español'}`}
             >
               {language === 'es' ? 'IN' : 'ES'}
             </button>
@@ -105,6 +109,8 @@ export default function Header() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-white p-2"
+              aria-label="Abrir menú de navegación"
+              aria-expanded={mobileMenuOpen}
             >
               <Bars3Icon className="h-6 w-6" />
             </button>
@@ -119,7 +125,7 @@ export default function Header() {
                   <div className="flex items-center justify-between mb-6">
                     {/* Logo y Botón X */}
                     <a href="#" className="-m-1.5 p-1.5">
-                      <img alt="Logo" src="/logo512.png" className="h-8 w-auto" />
+                      <OptimizedImage alt="ProtoNature Logo" src="/logo512.png" className="h-8 w-auto" loading="eager" />
                     </a>
                     <button
                       onClick={() => setMobileMenuOpen(false)}

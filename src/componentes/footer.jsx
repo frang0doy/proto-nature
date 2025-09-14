@@ -52,17 +52,17 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900">
+    <footer id="contact" className="bg-gradient-to-r from-gray-600 via-gray-800 to-gray-900" role="contentinfo" aria-label="Información de contacto y enlaces">
       <div className="mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-2">
 
         <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-8 lg:grid-cols-5 lg:gap-y-8">
           <div className="col-span-2 sm:col-span-1">
             <p className="font-medium text-white">{texts[language].products}</p>
-            <ul className="mt-6 space-y-4 text-sm text-gray-300">
-              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].panelesSolares}</a></li>
-              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].hidroponia}</a></li>
-              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].baterias}</a></li>
-              <li><a href="#products" className="text-white transition hover:opacity-75">{texts[language].energiaEolica}</a></li>
+            <ul className="mt-6 space-y-4 text-sm text-gray-300" role="list">
+              <li><a href="#products" className="text-white transition hover:opacity-75" aria-label={`Ver ${texts[language].panelesSolares}`}>{texts[language].panelesSolares}</a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75" aria-label={`Ver ${texts[language].hidroponia}`}>{texts[language].hidroponia}</a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75" aria-label={`Ver ${texts[language].baterias}`}>{texts[language].baterias}</a></li>
+              <li><a href="#products" className="text-white transition hover:opacity-75" aria-label={`Ver ${texts[language].energiaEolica}`}>{texts[language].energiaEolica}</a></li>
             </ul>
           </div>
 

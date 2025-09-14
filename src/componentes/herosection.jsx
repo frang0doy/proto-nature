@@ -4,6 +4,7 @@ import { ChevronDownIcon } from 'lucide-react'; // Asegurate de tener esta libre
 
 export default function HeroSection() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const { language } = useLanguage();
 
   useEffect(() => {
@@ -13,8 +14,17 @@ export default function HeroSection() {
       });
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   // Función para hacer scroll hacia abajo
@@ -54,8 +64,9 @@ export default function HeroSection() {
         backgroundImage:
           'url(https://images.pexels.com/photos/977772/pexels-photo-977772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
+        backgroundSize: isMobile ? 'contain' : 'cover',
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed',
+        backgroundPosition: isMobile ? 'center top' : 'center',
       }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -64,14 +75,14 @@ export default function HeroSection() {
         <div>
           <h1
             className="text-3xl font-semibold sm:text-5xl lg:text-5xl"
-            style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
+            style={isMobile ? mobileTextStyle : textStyle}
           >
             {language === 'es' ? texts.heading.es : texts.heading.en}
           </h1>
 
           <p
             className="mt-4 text-sm sm:text-2xl lg:text-4xl xl:text-2xl text-white"
-            style={window.innerWidth < 640 ? mobileTextStyle : textStyle}
+            style={isMobile ? mobileTextStyle : textStyle}
           >
             {language === 'es' ? texts.subheading.es : texts.subheading.en}
           </p>

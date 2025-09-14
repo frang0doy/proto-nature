@@ -2,6 +2,7 @@ import './App.css';
 import HeroSection from './componentes/herosection'; 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './componentes/header';
 import Footer from './componentes/footer';
 import Equipo from './componentes/equipo';  
@@ -18,18 +19,23 @@ import Halcium from './componentes/halcium';
 import hidroponia from './componentes/hidroponia';
 import { LanguageProvider } from './componentes/LenguajeContext'; 
 import Hidroponia from './componentes/hidroponia';
+import SEOHead from './componentes/SEOHead';
+import ErrorBoundary from './componentes/ErrorBoundary';
 
 function App() {
   return (
-    <LanguageProvider> {/* Envuelve con el proveedor de idioma */}
-      <Router>
-        <div className="App flex flex-col min-h-screen">
-          <Routes>
-            {/* Página Principal */}
-            <Route path="/" element={
-              <>
-                <Header />
-                <HeroSection />
+    <ErrorBoundary>
+      <HelmetProvider>
+        <LanguageProvider> {/* Envuelve con el proveedor de idioma */}
+          <Router>
+            <div className="App flex flex-col min-h-screen">
+              <SEOHead />
+              <Routes>
+              {/* Página Principal */}
+              <Route path="/" element={
+                <>
+                  <Header />
+                  <HeroSection />
                 
                 <Empresas 
                   mainImage="https://earthshotprize.org/wp-content/uploads/2024/09/DLight-Support-Hero-1920x1080_0000_IMG_3773.jpg-1024x576.jpg"
@@ -58,9 +64,11 @@ function App() {
             <Route path="/Halcium" element={<Halcium />} />
             <Route path="/Hidroponia" element={<Hidroponia />} />
           </Routes>
-        </div>
-      </Router>
-    </LanguageProvider>
+            </div>
+          </Router>
+        </LanguageProvider>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 }
 

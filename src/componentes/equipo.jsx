@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage } from './LenguajeContext'; // Importar el hook de idioma
+import OptimizedImage from './OptimizedImage';
 
 const teamMembers = [
   {
@@ -119,9 +120,9 @@ const Equipo = () => {
             >
               <div className="flex justify-center mb-4">
                 {/* Imagen más grande */}
-                <img
+                <OptimizedImage
                   src={member.imgSrc}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.titleTranslations[language]}`}
                   className="w-40 h-40 rounded-full border-4 border-gray-300 object-cover"
                 />
               </div>

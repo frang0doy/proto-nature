@@ -1,3 +1,21 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://protonature.com/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1
+
+# Permitir acceso a recursos estáticos
+Allow: /static/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
