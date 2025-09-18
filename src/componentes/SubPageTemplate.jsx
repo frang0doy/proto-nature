@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Nosotros from './nosotros';
-import Productos from './productos';
-import Footer from './footer';
 import { useLanguage } from './LenguajeContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Dlight = () => {
+const SubPageTemplate = ({ 
+  companyName, 
+  heroImage, 
+  heroTitle, 
+  heroDescription, 
+  aboutTitle, 
+  aboutDescription, 
+  products = [], 
+  showFooter = true,
+  FooterComponent
+}) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { language, toggleLanguage } = useLanguage();
@@ -42,18 +49,9 @@ const Dlight = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location]);
 
-  const navLinks = {
-
-    nosotros: language === 'es' ? 'NOSOTROS' : 'ABOUT US',
-    productos: language === 'es' ? 'PRODUCTOS' : 'PRODUCTS',
-    
-    contacto: language === 'es' ? 'CONTACTO' : 'CONTACT',
-  };
-
-  // Función para manejar la navegación y recarga de la página
   const handleGoHome = () => {
-    navigate("/");  // Redirige a la página principal
-    window.location.reload();  // Recarga la página después de la navegación
+    navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -77,15 +75,15 @@ const Dlight = () => {
           {/* Enlaces de navegación mejorados */}
           <nav className="hidden lg:flex space-x-8">
             <a href="#nosotros" className="relative text-sm font-semibold text-white group transition-all duration-300 hover:text-purple-400">
-              {navLinks.nosotros}
+              {language === 'es' ? 'NOSOTROS' : 'ABOUT US'}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-500"></span>
             </a>
             <a href="#productos" className="relative text-sm font-semibold text-white group transition-all duration-300 hover:text-purple-400">
-              {navLinks.productos}
+              {language === 'es' ? 'PRODUCTOS' : 'PRODUCTS'}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-500"></span>
             </a>
             <a href="#contacto" className="relative text-sm font-semibold text-white group transition-all duration-300 hover:text-purple-400">
-              {navLinks.contacto}
+              {language === 'es' ? 'CONTACTO' : 'CONTACT'}
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-500"></span>
             </a>
           </nav>
@@ -111,7 +109,7 @@ const Dlight = () => {
               {language === 'es' ? 'Inicio' : 'Home'}
             </button>
             <span className="text-gray-400">/</span>
-            <span className="text-purple-600 font-semibold">Dlight</span>
+            <span className="text-purple-600 font-semibold">{companyName}</span>
           </div>
         </div>
       </nav>
@@ -121,7 +119,7 @@ const Dlight = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://earthshotprize.org/wp-content/uploads/2024/09/DLight-Support-Hero-1920x1080_0000_IMG_3773.jpg-1024x576.jpg')"
+            backgroundImage: `url('${heroImage}')`
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
@@ -129,13 +127,10 @@ const Dlight = () => {
         
         <div className="relative z-10 text-center text-white px-6 max-w-6xl mx-auto" data-aos="fade-up">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-            DLight
+            {heroTitle}
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            {language === 'es' 
-              ? 'Revolucionando el acceso a la energía solar con soluciones innovadoras y sostenibles para comunidades de todo el mundo.'
-              : 'Revolutionizing solar energy access with innovative and sustainable solutions for communities worldwide.'
-            }
+            {heroDescription}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#nosotros" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
@@ -161,34 +156,52 @@ const Dlight = () => {
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                {language === 'es' ? 'Sobre DLight' : 'About DLight'}
+                {aboutTitle}
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
             </div>
-            <Nosotros />
+            <div className="text-center" data-aos="fade-up">
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                {aboutDescription}
+              </p>
+            </div>
           </div>
         </section>
         
         {/* Sección Productos mejorada */}
-        <section id="productos" className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16" data-aos="fade-up">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                {language === 'es' ? 'Nuestros Productos' : 'Our Products'}
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
+        {products.length > 0 && (
+          <section id="productos" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="text-center mb-16" data-aos="fade-up">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  {language === 'es' ? 'Nuestros Productos' : 'Our Products'}
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+                {products.map((product, index) => (
+                  <div key={index} className="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl border border-gray-100 w-full max-w-sm" data-aos="zoom-in">
+                    <div className={`w-32 h-32 mb-6 rounded-full bg-gradient-to-br ${product.colorGradient} flex items-center justify-center`}>
+                      <img src={product.image} alt={product.title} className="w-20 h-20 object-contain" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{product.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <Productos />
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Sección de contacto */}
-        <section id="contacto">
-          <Footer />
-        </section>
+        {showFooter && FooterComponent && (
+          <section id="contacto">
+            <FooterComponent />
+          </section>
+        )}
       </main>
     </div>
   );
 };
 
-export default Dlight;
+export default SubPageTemplate;

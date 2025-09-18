@@ -209,6 +209,9 @@ img, video {
 @tailwind components;
 @tailwind utilities;
 
+/* Importar estilos personalizados para subpáginas */
+@import './subpage-styles.css';
+
 
 /* Estilos responsive */
 @media (max-width: 1024px) {
