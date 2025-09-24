@@ -136,7 +136,7 @@ const SubPageTemplate = ({
             <a href="#nosotros" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
               {language === 'es' ? 'Conoce más' : 'Learn More'}
             </a>
-            <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+            <a href="https://shop-ecomerse-lfen.vercel.app/" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
               {language === 'es' ? 'Comprar ahora' : 'Buy Now'}
             </a>
           </div>
@@ -178,14 +178,16 @@ const SubPageTemplate = ({
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 justify-items-center px-4">
                 {products.map((product, index) => (
-                  <div key={index} className="bg-white p-8 rounded-2xl shadow-xl flex flex-col items-center text-center transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl border border-gray-100 w-full max-w-sm" data-aos="zoom-in">
-                    <div className={`w-32 h-32 mb-6 rounded-full bg-gradient-to-br ${product.colorGradient} flex items-center justify-center`}>
-                      <img src={product.image} alt={product.title} className="w-20 h-20 object-contain" />
+                  <div key={index} className="bg-white p-10 rounded-3xl shadow-2xl flex flex-col items-center text-center transform transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-3xl border border-gray-100 w-full max-w-md min-h-[400px] justify-between" data-aos="zoom-in">
+                    <div className={`w-40 h-40 mb-8 rounded-full bg-gradient-to-br ${product.colorGradient} flex items-center justify-center shadow-lg`}>
+                      <img src={product.image} alt={product.title} className="w-24 h-24 object-contain" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{product.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">{product.title}</h3>
+                      <p className="text-gray-600 text-base leading-relaxed">{product.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>

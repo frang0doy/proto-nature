@@ -38,7 +38,7 @@ const Empresas = ({ mainImage, mainTitle, mainSubtitle, smallImages }) => {
 
   // Función para redirigir al sitio de compra
   const handleComprar = () => {
-    window.location.href = "https://shop-nature.vercel.app";  // Redirige a la URL
+    window.location.href = "https://shop-ecomerse-lfen.vercel.app/";  // Redirige a la URL
   };
 
   return (

@@ -103,47 +103,45 @@ const Productos = () => {
           </div>
         </div>
 
-        <div className="mt-8 relative">
-          <div ref={carouselRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-4 justify-items-center">
+        <div className="mt-16 relative">
+          <div ref={carouselRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-4 justify-items-center px-4 max-w-7xl mx-auto">
             {products.map((product, index) => (
               <div
                 key={index}
-                className="cursor-pointer rounded-md overflow-hidden flex flex-col h-[440px] w-[320px] transition-all duration-500 hover:bg-white hover:shadow-lg bg-white shadow-lg p-4 px-6 transform hover:scale-105 hover:translate-y-[-4px]"
+                className="cursor-pointer rounded-3xl overflow-hidden flex flex-col h-[480px] w-full max-w-[300px] transition-all duration-500 hover:bg-white hover:shadow-2xl bg-white shadow-2xl p-6 transform hover:scale-105 hover:translate-y-[-8px] border border-gray-100"
                 data-aos="zoom-in"
-                data-aos-delay={index * 100}
+                data-aos-delay={index * 150}
               >
-                <div className="flex items-center justify-center h-[220px] mb-4">
+                <div className="flex items-center justify-center h-[200px] mb-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl">
                   <img
                     alt={product.title}
-                    className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-105"
+                    className="object-contain max-w-full max-h-full transition-transform duration-300 group-hover:scale-110"
                     src={product.image}
                   />
                 </div>
                 <div className="flex items-center flex-col flex-grow">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-2 text-[#020202] whitespace-nowrap overflow-hidden text-ellipsis">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 text-center leading-tight">
                     {product.title}
                   </h3>
-                  <p className="text-lg md:text-xl mb-4 text-center text-black/80">
+                  <p className="text-base mb-4 text-center text-gray-600 leading-relaxed flex-grow">
                     {product.description}
                   </p>
 
                   {(product.title === "v240s-p" || product.title === "v230s-p") && (
-                    <p className="text-sm text-red-500 font-semibold mt-2">
+                    <p className="text-sm text-red-500 font-semibold mt-2 mb-4">
                       {language === 'es' ? 'No se encuentra disponible por razones gubernamentales.' : 'Not available for governmental reasons.'}
                     </p>
                   )}
 
                   <button
                     onClick={() => handleOpenModal(product)}
-                    className="relative flex items-center justify-center w-12 h-12 rounded-full bg-gray-300 group mt-auto"
+                    className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 group mt-auto hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                     data-aos="fade-up"
                   >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus text-black w-6 h-6">
-                        <path d="M5 12h14"></path>
-                        <path d="M12 5v14"></path>
-                      </svg>
-                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-plus text-white w-6 h-6">
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5v14"></path>
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -153,25 +151,25 @@ const Productos = () => {
       </div>
 
       {showModal && selectedProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-gradient-to-r from-gray-300 to-gray-600 p-6 rounded-md shadow-xl max-w-4xl w-full relative overflow-hidden">
-            <button onClick={handleCloseModal} className="absolute top-2 right-2 text-white">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 backdrop-blur-sm">
+          <div className="bg-white p-8 rounded-3xl shadow-2xl max-w-6xl w-full relative overflow-hidden mx-4">
+            <button onClick={handleCloseModal} className="absolute top-6 right-6 text-gray-500 hover:text-gray-700 transition-colors duration-300">
               <FontAwesomeIcon icon={faTimes} size="lg" />
             </button>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-3xl font-semibold text-[#020202]" data-aos="fade-up">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-4xl font-bold text-gray-900" data-aos="fade-up">
                 {selectedProduct.title}
               </h3>
             </div>
-            <hr className="mb-6" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[70vh] overflow-y-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mb-8"></div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-h-[70vh] overflow-y-auto pr-4">
               {miniCards.map((miniCard, index) => (
                 <div
                   key={index}
-                  className="cursor-pointer rounded-md overflow-hidden flex flex-col w-full max-w-[300px] transition-all duration-500 hover:bg-white hover:shadow-lg bg-white shadow-lg p-6 transform hover:scale-105 hover:translate-y-[-4px]"
+                  className="cursor-pointer rounded-2xl overflow-hidden flex flex-col w-full max-w-[320px] transition-all duration-500 hover:bg-gray-50 hover:shadow-xl bg-white shadow-lg p-6 transform hover:scale-105 hover:translate-y-[-4px] border border-gray-100"
                   data-aos="zoom-in-up"
                 >
-                  <div className="flex items-center justify-center h-[200px] mb-4">
+                  <div className="flex items-center justify-center h-[180px] mb-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl">
                     <img
                       src={miniCard.imageLink}
                       alt={miniCard.title}
@@ -179,23 +177,22 @@ const Productos = () => {
                     />
                   </div>
                   <div className="flex items-center flex-col flex-grow">
-                    <h3 className="text-xl font-semibold text-[#020202] mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
                       {miniCard.title}
                     </h3>
-                    <p className="text-sm text-center text-black/80 mb-4">
+                    <p className="text-sm text-center text-gray-600 mb-4 leading-relaxed">
                       {miniCard.description}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="flex justify-center mt-6 pb-8">
+            <div className="flex justify-center mt-8 pb-4">
               <a
-                href="https://shop-nature.vercel.app/"
-                className="relative text-gray-800 text-lg font-semibold py-3 px-8 rounded-md group"
+                href="https://shop-ecomerse-lfen.vercel.app/"
+                className="relative bg-gradient-to-r from-purple-600 to-blue-600 text-white text-lg font-semibold py-4 px-8 rounded-full group hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {language === 'es' ? 'Ver todos los productos' : 'View all products'}
-                <span className="absolute left-0 -bottom-1 w-full h-1 bg-black rounded-md scale-x-0 group-hover:scale-x-100 group-hover:bottom-0 transition-all duration-300"></span>
               </a>
             </div>
           </div>

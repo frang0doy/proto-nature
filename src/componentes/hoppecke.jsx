@@ -108,7 +108,7 @@ const Hoppecke = () => {
             <a href="https://www.hoppecke.com" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
               {language === 'es' ? 'Conoce más' : 'Learn More'}
             </a>
-            <a href="https://shop-nature.vercel.app" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+            <a href="https://shop-ecomerse-lfen.vercel.app/" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
               {language === 'es' ? 'Comprar ahora' : 'Buy Now'}
             </a>
           </div>

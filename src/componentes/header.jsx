@@ -68,7 +68,7 @@ export default function Header() {
             <div className="flex items-center space-x-12">
               {/* Enlace "Productos" sin menú desplegable con el mismo hover que los otros enlaces */}
               <a
-                href="https://shop-nature.vercel.app"
+                href="https://shop-ecomerse-lfen.vercel.app/"
                 className="relative text-sm font-semibold text-white group"
                 target="_blank" // Abre el enlace en una nueva pestaña
                 rel="noopener noreferrer"
@@ -154,7 +154,7 @@ export default function Header() {
                   <div className="flex flex-col items-center justify-end mt-auto space-y-4">
   <div className="flex items-center justify-center space-x-4">
     {/* Envolvemos el icono en un <a> para agregar el href */}
-    <a href="https://shop-nature.vercel.app/" className="text-white cursor-pointer hover:text-indigo-600 transition-all">
+    <a href="https://shop-ecomerse-lfen.vercel.app/" className="text-white cursor-pointer hover:text-indigo-600 transition-all">
       <ShoppingCartIcon className="h-6 w-6 text-white" />
     </a>
     <button
